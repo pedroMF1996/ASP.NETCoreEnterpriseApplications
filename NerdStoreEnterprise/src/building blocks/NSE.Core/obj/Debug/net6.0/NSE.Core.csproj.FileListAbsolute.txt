@@ -1,0 +1,11 @@
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.deps.json
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.dll
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.pdb
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.AssemblyInfoInputs.cache
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.AssemblyInfo.cs
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.csproj.CoreCompileInputs.cache
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.dll
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\refint\NSE.Core.dll
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.pdb
+C:\Users\pmfrp\source\repos\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\ref\NSE.Core.dll
