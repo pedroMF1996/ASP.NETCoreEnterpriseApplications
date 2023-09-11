@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "A44po5FALnLJjQ8JDA5KPRKWlbTkOZmVVuT+c6WaENM=",
+  "Source": "NSE.Identity.API",
+  "BasePath": "_content/NSE.Identity.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
