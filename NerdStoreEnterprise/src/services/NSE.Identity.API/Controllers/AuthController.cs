@@ -83,9 +83,23 @@ namespace NSE.Identity.API.Controllers
         private async Task<LoginResponseViewModel> GerarJWT(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
-
+            
             var claims = await _userManager.GetClaimsAsync(user);
 
+            var identityClaims = await ObterClaimsUsuarioAsync(user, claims);
+
+            var encodedToken = CodificarToken(identityClaims);
+
+            return ObterRespostaToken(encodedToken, user, claims);
+        }
+
+        private static long ToUnixEpochDate(DateTime utcNow)
+        {
+            return (long)Math.Round((utcNow.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
+        }
+
+        private async Task<ClaimsIdentity> ObterClaimsUsuarioAsync(IdentityUser user, IList<Claim> claims)
+        {
             var roles = await _userManager.GetRolesAsync(user);
 
             claims.Add(new Claim(JwtRegisteredClaimNames.Sub, user.Id));
@@ -94,13 +108,16 @@ namespace NSE.Identity.API.Controllers
             claims.Add(new Claim(JwtRegisteredClaimNames.Nbf, ToUnixEpochDate(DateTime.UtcNow).ToString())); //quando vai espirar 
             claims.Add(new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(DateTime.UtcNow).ToString(), ClaimValueTypes.Integer64)); //quando foi emitido
 
-            foreach(var role in roles)
+            foreach (var role in roles)
             {
                 claims.Add(new Claim("role", role));
             }
 
-            var identityClaims = new ClaimsIdentity(claims);
+            return new ClaimsIdentity(claims);
+        }
 
+        private string CodificarToken(ClaimsIdentity identityClaims)
+        {
             var tokenHandler = new JwtSecurityTokenHandler();
 
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -114,9 +131,12 @@ namespace NSE.Identity.API.Controllers
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             });
 
-            var encodedToken = tokenHandler.WriteToken(token);
+            return tokenHandler.WriteToken(token);
+        }
 
-            var response = new LoginResponseViewModel()
+        private LoginResponseViewModel ObterRespostaToken(string encodedToken, IdentityUser user, IEnumerable<Claim> claims)
+        {
+            return new LoginResponseViewModel()
             {
                 AccessToken = encodedToken,
                 ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiracaoHoras).TotalSeconds,
@@ -124,16 +144,9 @@ namespace NSE.Identity.API.Controllers
                 {
                     Id = user.Id,
                     Email = user.Email,
-                    Claims = claims.Select(c => new ClaimViewModel() { Type = c.Type, Value = c.Value})
+                    Claims = claims.Select(c => new ClaimViewModel() { Type = c.Type, Value = c.Value })
                 }
             };
-
-            return response;
-        }
-
-        private static long ToUnixEpochDate(DateTime utcNow)
-        {
-            return (long)Math.Round((utcNow.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
         }
     }
 }
