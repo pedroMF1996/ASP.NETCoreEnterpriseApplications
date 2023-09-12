@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VhF0G8t2btxHybXplU5gJFj7bs/dSimeWgKzdbNTcClR8Zyqng/fNONMMnofG+hHVM3ZSjz002pWBHLh9YdDYw==",
+  "dgSpecHash": "LterC2siipBDrFJ2d4zqsgWPtXez3e75mA4OLaolleeQ5gZwQ+d91D2qTzZVaWwzF3qYmWOmTO1Hhh1YkVDI2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Catalogo.API\\NSE.Catalogo.API.csproj",
+  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Catalogo.API\\NSE.Catalogo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
@@ -10,8 +10,7 @@
     "C:\\Users\\pmfrp\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+    "C:\\Users\\pmfrp\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
   ],
   "logs": []
 }

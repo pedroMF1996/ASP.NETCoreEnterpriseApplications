@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj": {}
+    "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj": {
+    "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
+        "projectUniqueName": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
         "projectName": "NSE.Identity.API",
-        "projectPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
+        "projectPath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
         "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\obj\\",
+        "outputPath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,40 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.21, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.19.4, )"
@@ -60,12 +94,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.21, 6.0.21]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

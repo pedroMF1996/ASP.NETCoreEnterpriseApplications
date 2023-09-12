@@ -105,11 +105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
+      "projectUniqueName": "D:\\cursos\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
       "projectName": "NSE.WebApp.MVC",
-      "projectPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
+      "projectPath": "D:\\cursos\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
       "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\obj\\",
+      "outputPath": "D:\\cursos\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -154,12 +154,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[6.0.21, 6.0.21]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

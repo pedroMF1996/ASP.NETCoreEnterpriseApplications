@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj": {}
+    "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj": {
+    "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj",
+        "projectUniqueName": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj",
         "projectName": "NSE.Carrinho.API",
-        "projectPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj",
+        "projectPath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\NSE.Carrinho.API.csproj",
         "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\obj\\",
+        "outputPath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Carrinho.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,12 +60,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.21, 6.0.21]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"

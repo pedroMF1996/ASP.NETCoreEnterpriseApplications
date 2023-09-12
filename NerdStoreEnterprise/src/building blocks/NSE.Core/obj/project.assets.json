@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
+      "projectUniqueName": "D:\\cursos\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
       "projectName": "NSE.Core",
-      "projectPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
+      "projectPath": "D:\\cursos\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
       "packagesPath": "C:\\Users\\pmfrp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\obj\\",
+      "outputPath": "D:\\cursos\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pmfrp\\AppData\\Roaming\\NuGet\\NuGet.Config",

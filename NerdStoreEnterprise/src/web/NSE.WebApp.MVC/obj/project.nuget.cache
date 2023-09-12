@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2EsnLmFaXTtwqeLcYpXFeLb1rvVYEnLG1MBAIsdrEutkslPcPAdeuxS+4H4QQQ4DI2/pv9fQubhOskik1nLR5A==",
+  "dgSpecHash": "UjAXWU/dEDcp2CXUUARJIdetuYZq0iXIpjeABaqvM5sPPd+pv8HgQ+PDCeZJZUWcq8T0ZAs5gVZSxp+UF88rJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pmfrp\\source\\repos\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
+  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
   ],
   "logs": []
 }
