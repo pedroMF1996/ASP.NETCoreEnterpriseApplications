@@ -10,9 +10,8 @@ using System.Text;
 
 namespace NSE.Identity.API.Controllers
 {
-    [ApiController]
     [Route("api/identidade")]
-    public class AuthController : Controller
+    public class AuthController : MainController
     {
         private readonly SignInManager<IdentityUser> _signInManager;
 
@@ -34,7 +33,7 @@ namespace NSE.Identity.API.Controllers
         {
             if(!ModelState.IsValid)
             {
-                return BadRequest();
+                return CustomResponse(ModelState);
             }
 
             var user = new IdentityUser()
@@ -44,31 +43,41 @@ namespace NSE.Identity.API.Controllers
                 EmailConfirmed = true
             };
 
-
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                return Ok(await GerarJWT(model.Email));
+                return CustomResponse(await GerarJWT(model.Email));
             }
 
-            return BadRequest();
+            foreach(var error in result.Errors)
+            {
+                AdicionarErroProcessamento(error.Description);
+            }
+
+            return CustomResponse();
         }
 
         [HttpPost("autenticar")]
         public async Task<IActionResult> Login(LoginUserViewModel model)
         {
-            if(!ModelState.IsValid) { return BadRequest(); }
+            if(!ModelState.IsValid) { return CustomResponse(ModelState); }
 
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, true);
 
             if (result.Succeeded)
             {
-                return Ok(await GerarJWT(model.Email));
+                return CustomResponse(await GerarJWT(model.Email));
             }
 
-            return BadRequest();
+            if(result.IsLockedOut) {
+                AdicionarErroProcessamento("Usuario temporariamente bloqueado por tentativas invalidas");
+                return CustomResponse();
+            }
+
+            AdicionarErroProcessamento("Usuario ou senha incorretos");
+
+            return CustomResponse();
         }
 
         private async Task<LoginResponseViewModel> GerarJWT(string email)
