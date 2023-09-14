@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tbvfPaP50ydJ6FJwiaZMIEu87OS0yEzQ5DSrbpfQjuuzi63x9SgMkYJr8VmhH8JQGXZE4icLTVXONQYx0qyNKA==",
+  "dgSpecHash": "Be4KpDftny1ANAm4OxuRwSaXtIiusYuTq4WUfTh6vz5kqlEimbytPqb+dSe30VTL0VXYnhoFgMJtocrHXUDkWA==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
+  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

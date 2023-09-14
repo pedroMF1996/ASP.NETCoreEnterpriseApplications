@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LterC2siipBDrFJ2d4zqsgWPtXez3e75mA4OLaolleeQ5gZwQ+d91D2qTzZVaWwzF3qYmWOmTO1Hhh1YkVDI2Q==",
+  "dgSpecHash": "9PiWAaZB3nqM1aI4TURgMp3jMIEAWTaXa3XAo9gIclWdPQ1CZq9FPypC839H91BuocOuEaPt0prefH5ADdr5NA==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Catalogo.API\\NSE.Catalogo.API.csproj",
+  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Catalogo.API\\NSE.Catalogo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
