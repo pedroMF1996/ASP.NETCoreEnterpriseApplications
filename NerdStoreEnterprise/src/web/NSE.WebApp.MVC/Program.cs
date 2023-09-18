@@ -7,6 +7,8 @@ builder.Services.AddWebAppConfig();
 
 builder.Services.AddIdentityConfig();
 
+builder.Services.AddRegisterServises();
+
 var app = builder.Build();
 
 app.UseWebAppConfig(app.Environment);
