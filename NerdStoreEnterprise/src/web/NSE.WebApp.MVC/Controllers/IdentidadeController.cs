@@ -8,7 +8,7 @@ using System.Security.Claims;
 
 namespace NSE.WebApp.MVC.Controllers
 {
-    public class IdentidadeController : Controller
+    public class IdentidadeController : MainController
     {
         private readonly IAutenticacaoService _autenticationService;
 
@@ -29,16 +29,12 @@ namespace NSE.WebApp.MVC.Controllers
         public async Task<IActionResult> Registro(RegisterUserViewModel usuarioRegistro) { 
             if(!ModelState.IsValid) return View(usuarioRegistro);
 
-            //API - Registro
-
             var resposta = await _autenticationService.Registro(usuarioRegistro);
 
-            //if (false) return View(usuarioRegistro);
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistro);
 
-            //realizar login na APP
             await RealizarLogin(resposta);
 
-            //Realizar login na app
             return RedirectToAction("Index", controllerName: "Home");
         }
 
@@ -56,16 +52,12 @@ namespace NSE.WebApp.MVC.Controllers
         {
             if (!ModelState.IsValid) return View(usuarioLogin);
 
-            //API - Registro
-
             var resposta = await _autenticationService.Login(usuarioLogin);
 
-            //if (false) return View(usuarioLogin);
-
-            //realizar login na APP
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLogin);
+            
             await RealizarLogin(resposta);
 
-            //Realizar login na app
             return RedirectToAction("Index", controllerName: "Home");
         }
 

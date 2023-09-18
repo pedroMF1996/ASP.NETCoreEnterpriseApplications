@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace NSE.WebApp.MVC.Services
 {
-    public class AutenticacaoServise : IAutenticacaoService
+    public class AutenticacaoServise : Service, IAutenticacaoService
     {
         private readonly HttpClient _httpClient;
 
@@ -23,6 +23,14 @@ namespace NSE.WebApp.MVC.Services
                 PropertyNameCaseInsensitive = true
             };
 
+            if (!TratarErrosResponse(response))
+            {
+                return new LoginResponseViewModel()
+                {
+                    ResponseResult = JsonSerializer.Deserialize<ResponseResult>(await response.Content.ReadAsStringAsync(), options)
+                };
+            }
+
             return JsonSerializer.Deserialize<LoginResponseViewModel>(await response.Content.ReadAsStringAsync(), options);
         }
 
@@ -36,6 +44,14 @@ namespace NSE.WebApp.MVC.Services
             {
                 PropertyNameCaseInsensitive = true
             };
+
+            if (!TratarErrosResponse(response))
+            {
+                return new LoginResponseViewModel()
+                {
+                    ResponseResult = JsonSerializer.Deserialize<ResponseResult>(await response.Content.ReadAsStringAsync(), options)
+                };
+            }
 
             return JsonSerializer.Deserialize<LoginResponseViewModel>(await response.Content.ReadAsStringAsync(), options);
         }
