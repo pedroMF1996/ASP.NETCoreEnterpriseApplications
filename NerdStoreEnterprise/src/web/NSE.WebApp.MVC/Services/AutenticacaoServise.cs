@@ -19,8 +19,6 @@ namespace NSE.WebApp.MVC.Services
 
             var response = await _httpClient.PostAsync("https://localhost:7157/api/identidade/autenticar", loginContent);
 
-            var teste = await response.Content.ReadAsStringAsync();
-
             var options = new JsonSerializerOptions(){
                 PropertyNameCaseInsensitive = true
             };
