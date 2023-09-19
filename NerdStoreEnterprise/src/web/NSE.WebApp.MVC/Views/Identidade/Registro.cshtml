@@ -1,6 +1,6 @@
 ﻿@model RegisterUserViewModel
 
-<h1>@ViewBag.Title</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div class="row">
     <div class="col-md-12">
@@ -8,6 +8,8 @@
             <form method="post">
                 <h4>Registra-se e comece a comprar hoje mesmo</h4>
                 <hr />
+
+                <vc:summary></vc:summary>
 
                 <div class="form-group my-3">
                     <label asp-for="Email"></label>

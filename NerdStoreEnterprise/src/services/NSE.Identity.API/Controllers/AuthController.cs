@@ -31,7 +31,7 @@ namespace NSE.Identity.API.Controllers
         [HttpPost("nova-conta")]
         public async Task<IActionResult> Registrar(RegisterUserViewModel model)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return CustomResponse(ModelState);
             }
@@ -61,6 +61,9 @@ namespace NSE.Identity.API.Controllers
         [HttpPost("autenticar")]
         public async Task<IActionResult> Login(LoginUserViewModel model)
         {
+
+            
+
             if(!ModelState.IsValid) { return CustomResponse(ModelState); }
 
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, true);

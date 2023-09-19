@@ -1,13 +1,15 @@
 ﻿@model LoginUserViewModel
 
-<h1>@ViewBag.Title</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div class="row">
     <div class="col-md-12">
         <section>
-            <form method="post">
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                 <h4>Seja bem vindo e boas compras</h4>
                 <hr />
+
+                <vc:summary></vc:summary>
 
                 <div class="form-group my-3">
                     <label asp-for="Email"></label>

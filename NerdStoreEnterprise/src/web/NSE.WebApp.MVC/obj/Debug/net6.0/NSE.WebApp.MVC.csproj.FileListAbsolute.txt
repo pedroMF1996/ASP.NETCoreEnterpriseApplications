@@ -58,3 +58,12 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\scopedcss\projectbundle\NSE.WebApp.MVC.bundle.scp.css
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.genruntimeconfig.cache
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\ref\NSE.WebApp.MVC.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.csproj.AssemblyReference.cache
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.csproj.CopyComplete
