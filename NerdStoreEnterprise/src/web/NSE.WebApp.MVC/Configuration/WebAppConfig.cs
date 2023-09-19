@@ -4,9 +4,11 @@ namespace NSE.WebApp.MVC.Configuration
 {
     public static class WebAppConfig
     {
-        public static void AddWebAppConfig(this IServiceCollection services)
+        public static void AddWebAppConfig(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddControllersWithViews();
+
+            services.Configure<AppSettings>(configuration);
         }
 
         public static void UseWebAppConfig(this IApplicationBuilder app, IWebHostEnvironment environment)

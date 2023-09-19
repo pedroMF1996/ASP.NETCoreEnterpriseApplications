@@ -20,7 +20,7 @@ namespace NSE.WebApp.MVC.Controllers
         [HttpGet]
         [Route("nova-conta")]
         public IActionResult Registro() {
-            ViewBag.Title = "Nova conta";
+            ViewData["Title"] = "Nova conta";
             return View(); 
         }
         
@@ -40,16 +40,16 @@ namespace NSE.WebApp.MVC.Controllers
 
         [HttpGet]
         [Route("login")]
-        public IActionResult Login(string returnUrl = null)
+        public IActionResult Login(string? returnUrl = null)
         {
-            ViewBag.Title = "Login";
+            ViewData["Title"] = "Login";
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
         
         [HttpPost]
         [Route("login")]
-        public async Task<IActionResult> Login(LoginUserViewModel usuarioLogin, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginUserViewModel usuarioLogin, string? returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (!ModelState.IsValid) return View(usuarioLogin);
