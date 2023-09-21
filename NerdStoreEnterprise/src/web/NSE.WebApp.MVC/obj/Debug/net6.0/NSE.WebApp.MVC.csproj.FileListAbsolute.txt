@@ -69,3 +69,8 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.csproj.CopyComplete
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\NSE.WebAPI.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\NSE.WebAPI.Core.pdb
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.MvcApplicationPartsAssemblyInfo.cs

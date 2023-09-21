@@ -1,5 +1,6 @@
 ﻿using NSE.Catalogo.API.Data;
 using Microsoft.EntityFrameworkCore;
+using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Catalogo.API.Configuration
 {
@@ -25,6 +26,8 @@ namespace NSE.Catalogo.API.Configuration
                                       .AllowAnyMethod());
             });
 
+            services.AddJwtConfiguration(configuration);
+
             services.AddSwaggerConfiguration();
         }
 
@@ -34,7 +37,7 @@ namespace NSE.Catalogo.API.Configuration
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseAuthConfiguration();
         }
     }
 }

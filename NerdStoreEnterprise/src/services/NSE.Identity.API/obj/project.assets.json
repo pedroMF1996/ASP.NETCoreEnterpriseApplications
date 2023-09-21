@@ -1050,7 +1050,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21"
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
+          "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
           "bin/placeholder/NSE.WebAPI.Core.dll": {}

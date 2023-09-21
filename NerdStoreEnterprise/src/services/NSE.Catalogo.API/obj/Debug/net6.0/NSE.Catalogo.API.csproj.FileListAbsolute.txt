@@ -132,3 +132,6 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.Core.pdb
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.WebAPI.Core.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.WebAPI.Core.pdb

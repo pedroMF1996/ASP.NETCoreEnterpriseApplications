@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using NSE.WebAPI.Core.Swagger;
 
 namespace NSE.Catalogo.API.Configuration
 {
@@ -15,6 +16,8 @@ namespace NSE.Catalogo.API.Configuration
                     Contact = new OpenApiContact() { Name = "Pedro Martins Falleiros", Email = "pmfrp@hotmail.com"},
                     License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/license/MIT")}
                 });
+
+                c.AddSwaggerJwtAuthorizationConfiguration();
             });
         }
 
