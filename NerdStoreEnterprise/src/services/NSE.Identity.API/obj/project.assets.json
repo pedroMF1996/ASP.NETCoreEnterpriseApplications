@@ -1045,6 +1045,19 @@
             "rid": "win"
           }
         }
+      },
+      "NSE.WebAPI.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21"
+        },
+        "compile": {
+          "bin/placeholder/NSE.WebAPI.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NSE.WebAPI.Core.dll": {}
+        }
       }
     }
   },
@@ -2967,6 +2980,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "NSE.WebAPI.Core/1.0.0": {
+      "type": "project",
+      "path": "../../building blocks/NSE.WebAPI.Core/NSE.WebAPI.Core.csproj",
+      "msbuildProject": "../../building blocks/NSE.WebAPI.Core/NSE.WebAPI.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2980,6 +2998,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.21",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.21",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
+      "NSE.WebAPI.Core >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
   },
@@ -3009,7 +3028,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.WebAPI.Core\\NSE.WebAPI.Core.csproj": {
+              "projectPath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.WebAPI.Core\\NSE.WebAPI.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

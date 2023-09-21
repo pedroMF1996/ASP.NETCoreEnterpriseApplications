@@ -1,4 +1,5 @@
 ﻿using NSE.WebApp.MVC.Extensions;
+using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.WebApp.MVC.Configuration
 {
@@ -29,7 +30,7 @@ namespace NSE.WebApp.MVC.Configuration
 
             app.UseRouting();
 
-            app.UseIdentityConfig();
+            app.UseAuthConfiguration();
 
             app.UseMiddleware<ExceptionMiddleware>();
 
