@@ -9,7 +9,8 @@
       "NSE.WebApp.MVC/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22",
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4"
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
+          "NSE.WebAPI.Core": "1.0.0"
         },
         "runtime": {
           "NSE.WebApp.MVC.dll": {}
@@ -96,7 +97,15 @@
           }
         }
       },
-      "System.Security.Cryptography.Cng/4.5.0": {}
+      "System.Security.Cryptography.Cng/4.5.0": {},
+      "NSE.WebAPI.Core/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22"
+        },
+        "runtime": {
+          "NSE.WebAPI.Core.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -174,6 +183,11 @@
       "sha512": "sha512-WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
       "path": "system.security.cryptography.cng/4.5.0",
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
+    },
+    "NSE.WebAPI.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

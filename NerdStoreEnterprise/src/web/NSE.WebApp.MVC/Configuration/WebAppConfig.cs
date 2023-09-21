@@ -9,7 +9,7 @@ namespace NSE.WebApp.MVC.Configuration
         {
             services.AddControllersWithViews();
 
-            services.Configure<AppSettings>(configuration);
+            services.Configure<AppSettingsUrl>(configuration);
         }
 
         public static void UseWebAppConfig(this IApplicationBuilder app, IWebHostEnvironment environment)

@@ -8,7 +8,7 @@ namespace NSE.WebApp.MVC.Services
     {
         private readonly HttpClient _httpClient;
 
-        public AutenticacaoServise(HttpClient httpClient, IOptions<AppSettings> appSettings)
+        public AutenticacaoServise(HttpClient httpClient, IOptions<AppSettingsUrl> appSettings)
         {
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(appSettings.Value.AutenticacaoUrl);
