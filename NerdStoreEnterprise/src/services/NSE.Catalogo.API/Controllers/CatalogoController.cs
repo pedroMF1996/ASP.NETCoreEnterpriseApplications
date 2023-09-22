@@ -5,7 +5,6 @@ using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Catalogo.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     [Authorize]
     public class CatalogoController : ControllerBase

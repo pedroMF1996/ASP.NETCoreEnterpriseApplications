@@ -8,6 +8,7 @@ namespace NSE.WebApp.MVC.Configuration
         public static void AddRegisterServises(this IServiceCollection services)
         {
             services.AddHttpClient<IAutenticacaoService, AutenticacaoServise>();
+            services.AddHttpClient<ICatalogoService, CatalogoService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
