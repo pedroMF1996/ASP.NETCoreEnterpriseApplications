@@ -10,7 +10,7 @@ namespace NSE.WebApp.MVC.Extensions
 
         string ObterUserEmail();
 
-        string ObterUserToken(string token);
+        string ObterUserToken();
 
         bool EstahAutenticado();
 
@@ -57,7 +57,7 @@ namespace NSE.WebApp.MVC.Extensions
             return EstahAutenticado() ? _contextAccessor.HttpContext.User.GetUserId() : Guid.Empty;
         }
 
-        public string ObterUserToken(string token)
+        public string ObterUserToken()
         {
             return EstahAutenticado() ? _contextAccessor.HttpContext.User.GetUserToken() : "";
         }
