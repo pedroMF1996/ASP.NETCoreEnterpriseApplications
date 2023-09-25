@@ -2,12 +2,28 @@
 using System.Text.Json;
 using System.Text;
 using Microsoft.Extensions.Options;
-using NSE.WebApp.MVC.Models;
+using NSE.WebApp.MVC.Enum;
 
 namespace NSE.WebApp.MVC.Services
 {
     public abstract class Service
     {
+        protected readonly HttpClient _httpClient;
+
+        protected Service(HttpClient httpClient, AppSettingsUrlEnum appSettingsUrlEnum, IOptions<AppSettingsUrl> appSettingsOpt) 
+        {
+            _httpClient = httpClient;
+            switch (appSettingsUrlEnum)
+            {
+                case AppSettingsUrlEnum.Identidade:
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.AutenticacaoUrl);
+                    break;
+                case AppSettingsUrlEnum.Catalogo:
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.CatalogoUrl);
+                    break;
+            }
+        }
+
         protected StringContent ObterConteudo(object dado)
         {
             return new StringContent(JsonSerializer.Serialize(dado), Encoding.UTF8, "application/json");

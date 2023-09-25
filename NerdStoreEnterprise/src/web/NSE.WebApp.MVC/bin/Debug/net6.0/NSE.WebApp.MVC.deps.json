@@ -10,12 +10,16 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
-          "NSE.WebAPI.Core": "1.0.0"
+          "NSE.WebAPI.Core": "1.0.0",
+          "bootstrap": "5.3.2",
+          "jQuery": "3.7.1"
         },
         "runtime": {
           "NSE.WebApp.MVC.dll": {}
         }
       },
+      "bootstrap/5.3.2": {},
+      "jQuery/3.7.1": {},
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.10.0"
@@ -161,6 +165,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "bootstrap/5.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-m0/GEaLwE35B8P1xScFhwAsQi5o6kWPzOVPdGkoFwv+5YjmbgXFPQai71N5APwRCU52ZO4vHYWJ5DYSqKKgivw==",
+      "path": "bootstrap/5.3.2",
+      "hashPath": "bootstrap.5.3.2.nupkg.sha512"
+    },
+    "jQuery/3.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rF8hnQxmBMlIspf8VN72bALtmIpKx6hKRpUdTOkp/8JzfF8KgNqHut5lOy9kFGvFIStumCqJ+PBxpI9gxpRYfQ==",
+      "path": "jquery/3.7.1",
+      "hashPath": "jquery.3.7.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.22": {
       "type": "package",

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using NSE.WebApp.MVC.Enum;
 using NSE.WebApp.MVC.Extensions;
 using NSE.WebApp.MVC.Models;
 using NSE.WebApp.MVC.Services.Interfaces;
@@ -7,13 +8,9 @@ namespace NSE.WebApp.MVC.Services
 {
     public class CatalogoService : Service, ICatalogoService
     {
-        private readonly HttpClient _httpClient;
-
-        public CatalogoService(HttpClient httpClient, IOptions<AppSettingsUrl> appSettingsOpt)
-        {
-            _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.CatalogoUrl);
-        }
+        public CatalogoService(HttpClient httpClient, IOptions<AppSettingsUrl> appSettingsOpt) 
+            : base (httpClient, AppSettingsUrlEnum.Catalogo, appSettingsOpt)
+        {}
 
         public async Task<ProdutoViewModel> ObterPorId(Guid id)
         {

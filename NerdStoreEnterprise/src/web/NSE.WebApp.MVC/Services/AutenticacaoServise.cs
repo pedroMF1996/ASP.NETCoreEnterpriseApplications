@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using NSE.WebApp.MVC.Enum;
 using NSE.WebApp.MVC.Extensions;
 using NSE.WebApp.MVC.Models;
 using NSE.WebApp.MVC.Services.Interfaces;
@@ -7,13 +8,9 @@ namespace NSE.WebApp.MVC.Services
 {
     public class AutenticacaoServise : Service, IAutenticacaoService
     {
-        private readonly HttpClient _httpClient;
-
         public AutenticacaoServise(HttpClient httpClient, IOptions<AppSettingsUrl> appSettings)
-        {
-            _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(appSettings.Value.AutenticacaoUrl);
-        }
+            : base(httpClient, AppSettingsUrlEnum.Identidade, appSettings)
+        {}
 
         public async Task<LoginResponseViewModel> Login(LoginUserViewModel usuarioLogin)
         {
