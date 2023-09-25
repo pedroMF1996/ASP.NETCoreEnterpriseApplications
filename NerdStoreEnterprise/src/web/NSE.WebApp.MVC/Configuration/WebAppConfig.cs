@@ -1,5 +1,7 @@
 ﻿using NSE.WebApp.MVC.Extensions;
 using NSE.WebAPI.Core.Identidade;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace NSE.WebApp.MVC.Configuration
 {
@@ -32,12 +34,20 @@ namespace NSE.WebApp.MVC.Configuration
 
             app.UseAuthConfiguration();
 
+            var supportCultures = new[] { new CultureInfo("pt-BR") };
+            app.UseRequestLocalization(new RequestLocalizationOptions()
+            {
+                DefaultRequestCulture = new RequestCulture("pt-BR"),
+                SupportedCultures = supportCultures,
+                SupportedUICultures = supportCultures,
+            });
+
             app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Catalogo}/{action=Index}");
             });
         }
     }

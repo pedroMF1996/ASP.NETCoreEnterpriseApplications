@@ -1,4 +1,5 @@
 is_global = true
+build_property.RefitInternalNamespace = NSE.WebApp.MVC
 build_property.TargetFramework = net6.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
@@ -15,6 +16,14 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC
 build_property._RazorSourceGeneratorDebug = 
+
+[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/ProdutoDetalhe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cUHJvZHV0b0RldGFsaGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
 
 [D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
