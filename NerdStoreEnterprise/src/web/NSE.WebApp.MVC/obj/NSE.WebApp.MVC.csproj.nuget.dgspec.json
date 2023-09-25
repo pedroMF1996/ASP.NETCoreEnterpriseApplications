@@ -117,6 +117,10 @@
               "target": "Package",
               "version": "[1.19.4, )"
             },
+            "Refit": {
+              "target": "Package",
+              "version": "[6.3.2, )"
+            },
             "bootstrap": {
               "target": "Package",
               "version": "[5.3.2, )"
