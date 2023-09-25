@@ -13,15 +13,15 @@ namespace NSE.WebApp.MVC.Configuration
 
             services.AddHttpClient<IAutenticacaoService, AutenticacaoServise>();
 
-            //services.AddHttpClient<ICatalogoService, CatalogoService>()
-            //    .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>();
-            
-            services.AddHttpClient("Refit", options =>
-                {
-                    options.BaseAddress = new Uri(configuration.GetSection("CatalogoUrl").Value);
-                })
-                .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
-                .AddTypedClient(Refit.RestService.For<ICatalogoServiceRefit>);
+            services.AddHttpClient<ICatalogoService, CatalogoService>()
+                .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>();
+
+            //services.AddHttpClient("Refit", options =>
+            //    {
+            //        options.BaseAddress = new Uri(configuration.GetSection("CatalogoUrl").Value);
+            //    })
+            //    .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
+            //    .AddTypedClient(Refit.RestService.For<ICatalogoServiceRefit>);
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
