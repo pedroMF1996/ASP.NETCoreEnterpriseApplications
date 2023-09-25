@@ -9,6 +9,7 @@
       "NSE.WebApp.MVC/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.22",
+          "Microsoft.Extensions.Http.Polly": "6.0.21",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
           "NSE.WebAPI.Core": "1.0.0",
           "Refit": "6.3.2",
@@ -34,6 +35,55 @@
       },
       "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
+      "Microsoft.Extensions.DependencyInjection/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {},
+      "Microsoft.Extensions.Http/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Http.Polly/6.0.21": {
+        "dependencies": {
+          "Microsoft.Extensions.Http": "6.0.0",
+          "Polly": "7.2.2",
+          "Polly.Extensions.Http": "3.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Http.Polly.dll": {
+            "assemblyVersion": "6.0.21.0",
+            "fileVersion": "6.0.2123.36438"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/6.0.0": {},
+      "Microsoft.Extensions.Options/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Primitives/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        }
+      },
       "Microsoft.IdentityModel.JsonWebTokens/6.10.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "6.10.0"
@@ -99,6 +149,25 @@
         }
       },
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {},
+      "Polly/7.2.2": {
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.2.0"
+          }
+        }
+      },
+      "Polly.Extensions.Http/3.0.0": {
+        "dependencies": {
+          "Polly": "7.2.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.Extensions.Http.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
       "Refit/6.3.2": {
         "dependencies": {
           "System.Net.Http.Json": "6.0.0"
@@ -146,6 +215,11 @@
             "assemblyVersion": "6.5.0.0",
             "fileVersion": "6.5.0.0"
           }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/6.0.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
       "System.IdentityModel.Tokens.Jwt/6.10.0": {
@@ -230,6 +304,62 @@
       "path": "microsoft.extensions.apidescription.server/6.0.5",
       "hashPath": "microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512"
     },
+    "Microsoft.Extensions.DependencyInjection/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k6PWQMuoBDGGHOQTtyois2u4AwyVcIwL2LaSLlTZQm2CYcJ1pxbt6jfAnpWmzENA/wfrYRI/X9DTLoUkE4AsLw==",
+      "path": "microsoft.extensions.dependencyinjection/6.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xlzi2IYREJH3/m6+lUrQlujzX8wDitm4QGnUu6kUXTQAWPuZY8i+ticFJbzfqaetLA6KR/rO6Ew/HuYD+bxifg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-15+pa2G0bAMHbHewaQIdr/y6ag2H3yh4rd9hTXavtWDzQBkvpe2RMqFg8BxDpcQWssmjmBApGPcw93QRz6YcMg==",
+      "path": "microsoft.extensions.http/6.0.0",
+      "hashPath": "microsoft.extensions.http.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http.Polly/6.0.21": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WQv4GNhtcuHIqSNh1lnffkU+GiPxWOFXVplbzhGTzdQAPu+zT92ZWJPMvyTRoiMZb4Sy1ugC9RbbB7j5hWlVCg==",
+      "path": "microsoft.extensions.http.polly/6.0.21",
+      "hashPath": "microsoft.extensions.http.polly.6.0.21.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eIbyj40QDg1NDz0HBW0S5f3wrLVnKWnDJ/JtZ+yJDFnDj90VoPuoPmFkeaXrtu+0cKm5GRAwoDf+dBWXK0TUdg==",
+      "path": "microsoft.extensions.logging/6.0.0",
+      "hashPath": "microsoft.extensions.logging.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/HggWBbTwy8TgebGSX5DBZ24ndhzi93sHUBDvP1IxbZD7FDokYzdAr6+vbWGjw2XAfR2EJ1sfKUotpjHnFWPxA==",
+      "path": "microsoft.extensions.logging.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dzXN0+V1AyjOe2xcJ86Qbo233KHuLEY0njf/P2Kw8SfJU+d45HNS2ctJdnEnrWbM9Ye2eFgaC5Mj9otRMU6IsQ==",
+      "path": "microsoft.extensions.options/6.0.0",
+      "hashPath": "microsoft.extensions.options.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9+PnzmQFfEFNR9J2aDTfJGGupShHjOuGw4VUv+JB044biSHrnmCIMD+mJHmb2H7YryrfBEXDurxQ47gJZdCKNQ==",
+      "path": "microsoft.extensions.primitives/6.0.0",
+      "hashPath": "microsoft.extensions.primitives.6.0.0.nupkg.sha512"
+    },
     "Microsoft.IdentityModel.JsonWebTokens/6.10.0": {
       "type": "package",
       "serviceable": true,
@@ -279,6 +409,20 @@
       "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.4",
       "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
     },
+    "Polly/7.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E6CeKyS513j7taKAq4q2MESDBvzuzWnR1rQ2Y2zqJvpiVtKMm699Aubb20MUPBDmb0Ov8PmcLHTCVFdCjoy2kA==",
+      "path": "polly/7.2.2",
+      "hashPath": "polly.7.2.2.nupkg.sha512"
+    },
+    "Polly.Extensions.Http/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-drrG+hB3pYFY7w1c3BD+lSGYvH2oIclH8GRSehgfyP5kjnFnHKQuuBhuHLv+PWyFuaTDyk/vfRpnxOzd11+J8g==",
+      "path": "polly.extensions.http/3.0.0",
+      "hashPath": "polly.extensions.http.3.0.0.nupkg.sha512"
+    },
     "Refit/6.3.2": {
       "type": "package",
       "serviceable": true,
@@ -313,6 +457,13 @@
       "sha512": "sha512-OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
       "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
+      "path": "system.diagnostics.diagnosticsource/6.0.0",
+      "hashPath": "system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512"
     },
     "System.IdentityModel.Tokens.Jwt/6.10.0": {
       "type": "package",

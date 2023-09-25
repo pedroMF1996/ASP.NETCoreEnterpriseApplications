@@ -75,3 +75,6 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.MvcApplicationPartsAssemblyInfo.cs
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Refit.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Polly.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\Polly.Extensions.Http.dll
