@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using NSE.Cliente.API.Data;
 using NSE.WebAPI.Core.Identidade;
 
@@ -16,7 +17,9 @@ namespace NSE.Cliente.API.Configuration
 
             services.AddDbContext<ClienteDbContext>(opt =>
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            
+
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
             services.RegisterServiceConfiguration();
 
             services.AddSwaggerConfiguration();

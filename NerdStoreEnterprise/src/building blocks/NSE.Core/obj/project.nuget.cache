@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Be4KpDftny1ANAm4OxuRwSaXtIiusYuTq4WUfTh6vz5kqlEimbytPqb+dSe30VTL0VXYnhoFgMJtocrHXUDkWA==",
+  "dgSpecHash": "0P1nxO9lLgbAZ1AbTJOTjR0M0QO2vYGk1LK803Z6pzOpdNqx0egPjsV1RG0dFXn32lZ70bYUv/g8grDd2iV98A==",
   "success": true,
   "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
