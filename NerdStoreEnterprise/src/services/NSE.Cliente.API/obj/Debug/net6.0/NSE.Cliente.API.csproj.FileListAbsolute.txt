@@ -135,3 +135,6 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\NSE.WebAPI.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\NSE.Core.pdb
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\NSE.WebAPI.Core.pdb
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\FluentValidation.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\MediatR.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

@@ -5,8 +5,17 @@ using NSE.Core.Messages;
 
 namespace NSE.Cliente.API.Application.Commands
 {
-    public class ClienteCommandHandler : CommandHandler, IRequestHandler<RegistrarClienteCommand, ValidationResult>
+    public class ClienteCommandHandler : CommandHandler, 
+                                         IRequestHandler<RegistrarClienteCommand, ValidationResult>
     {
+
+        private readonly IClienteRepository _clienteRepository;
+
+        public ClienteCommandHandler(IClienteRepository clienteRepository)
+        {
+            _clienteRepository = clienteRepository;
+        }
+
         public async Task<ValidationResult> Handle(RegistrarClienteCommand message, CancellationToken cancellationToken)
         {
             if (message.EhValido())
@@ -14,14 +23,17 @@ namespace NSE.Cliente.API.Application.Commands
 
             var cliente = new ClienteEntity(message.Id, message.Name, message.Email, message.Cpf);
 
+            var clienteExistente = await _clienteRepository.ObterPorCpf(cliente.Cpf.Numero);
 
-
-            if (true)//ja existe o cliente com o cpf informado
+            if (clienteExistente != null)//ja existe o cliente com o cpf informado
             {
                 AdicionarErro("Este CPF ja esta em uso");
                 return ValidationResult;
             }
 
+            await _clienteRepository.Adicionar(cliente);
+
+            return await PersistirDados(_clienteRepository.UnitOfWork);
         }
     }
 }

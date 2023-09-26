@@ -7,7 +7,7 @@ namespace NSE.Catalogo.API.Data.Repository
     public class ProdutoRepository : IProdutoRepository
     {
         private readonly CatalogoContext _context;
-        public IUnitOfWork unitOfWork => _context;
+        public IUnitOfWork UnitOfWork => _context;
 
         public ProdutoRepository(CatalogoContext context)
         {

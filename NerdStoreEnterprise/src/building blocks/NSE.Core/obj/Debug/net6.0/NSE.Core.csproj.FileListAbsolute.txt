@@ -31,3 +31,4 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\refint\NSE.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.pdb
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\ref\NSE.Core.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.csproj.AssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using NSE.Core.Messages;
+﻿using NSE.Cliente.API.Application.Commands.Validations;
+using NSE.Core.Messages;
 
 namespace NSE.Cliente.API.Application.Commands
 {
@@ -20,7 +21,9 @@ namespace NSE.Cliente.API.Application.Commands
 
         public override bool EhValido()
         {
-            return base.EhValido();
+            ValidationResult = new RegistrarClienteCommandValidation().Validate(this);
+
+            return ValidationResult.IsValid;
         }
     }
 }
