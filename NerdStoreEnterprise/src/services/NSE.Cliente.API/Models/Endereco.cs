@@ -13,7 +13,7 @@ namespace NSE.Cliente.API.Models
         public string Estado { get; private set; }
         public Guid ClienteId { get; private set; }
 
-        public Cliente Cliente { get; protected set; }
+        public ClienteEntity Cliente { get; protected set; }
 
         //EF Relation
         protected Endereco()

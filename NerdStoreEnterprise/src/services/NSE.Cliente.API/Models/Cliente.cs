@@ -2,7 +2,7 @@
 
 namespace NSE.Cliente.API.Models
 {
-    public class Cliente : Entity, IAggregateRoot
+    public class ClienteEntity : Entity, IAggregateRoot
     {
         public string Nome { get; private set; }
         public Email Email { get; private set; }
@@ -11,10 +11,10 @@ namespace NSE.Cliente.API.Models
         public Endereco Endereco { get; protected set; }
 
         //EF Relation
-        protected Cliente()
+        protected ClienteEntity()
         {}
 
-        public Cliente(Guid id, string nome, string email, string cpf)
+        public ClienteEntity(Guid id, string nome, string email, string cpf)
         {
             Id = id;
             Nome = nome;
