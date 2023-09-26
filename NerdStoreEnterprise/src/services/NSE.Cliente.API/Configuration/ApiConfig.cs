@@ -50,11 +50,6 @@ namespace NSE.Cliente.API.Configuration
             app.UseCors("Total");
 
             app.UseAuthConfiguration();
-
-            app.UseEndpoints(opt =>
-            {
-                opt.MapControllers();
-            });
         }
     }
 }

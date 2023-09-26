@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Application\Queries\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Service\" />
   </ItemGroup>
 

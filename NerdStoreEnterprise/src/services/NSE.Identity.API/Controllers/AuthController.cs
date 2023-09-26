@@ -7,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using NSE.WebAPI.Core.Identidade;
+using NSE.WebAPI.Core.Controllers;
 
 namespace NSE.Identity.API.Controllers
 {

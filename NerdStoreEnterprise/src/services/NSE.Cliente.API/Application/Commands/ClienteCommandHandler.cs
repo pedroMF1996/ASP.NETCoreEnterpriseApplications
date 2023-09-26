@@ -19,7 +19,7 @@ namespace NSE.Cliente.API.Application.Commands
 
         public async Task<ValidationResult> Handle(RegistrarClienteCommand message, CancellationToken cancellationToken)
         {
-            if (message.EhValido())
+            if (!message.EhValido())
                 return message.ValidationResult;
 
             var cliente = new ClienteEntity(message.Id, message.Name, message.Email, message.Cpf);

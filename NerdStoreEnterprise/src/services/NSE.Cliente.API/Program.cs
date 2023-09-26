@@ -19,4 +19,6 @@ var app = builder.Build();
 
 app.UseApiConfiguration(app.Environment);
 
+app.MapControllers();
+
 app.Run();

@@ -550,6 +550,7 @@
       },
       "NSE.WebAPI.Core/1.0.0": {
         "dependencies": {
+          "FluentValidation": "11.7.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
