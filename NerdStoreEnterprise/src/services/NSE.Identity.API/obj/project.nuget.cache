@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nEjLgoBY9mnbylMIhmZz0g4wUJ5k8jLQXZZLUoETs3lLhvQOpvLVDpYtJFhZkqsHj3VcA/HjitpN2pvHyH52HA==",
+  "dgSpecHash": "wLO/NLbE869vdl3Q21kAk11VEn5rAKNh0fU2lbIUQyCe4J/w9ugaOWPhaNEZJabu3A1yTU4DVpJ1eh1CJYE53g==",
   "success": true,
   "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.21\\microsoft.aspnetcore.cryptography.internal.6.0.21.nupkg.sha512",
