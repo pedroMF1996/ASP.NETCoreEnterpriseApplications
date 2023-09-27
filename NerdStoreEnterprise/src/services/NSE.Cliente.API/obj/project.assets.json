@@ -940,7 +940,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FluentValidation": "11.7.1",
-          "MediatR": "9.0.0"
+          "MediatR": "9.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.22"
         },
         "compile": {
           "bin/placeholder/NSE.Core.dll": {}

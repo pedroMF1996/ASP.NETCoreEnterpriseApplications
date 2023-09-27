@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using NSE.Cliente.API.Models;
 using NSE.Core.Data;
-using NSE.Core.DomainObjects;
 using NSE.Core.MediatR;
 using NSE.Core.Messages;
 
@@ -27,9 +26,7 @@ namespace NSE.Cliente.API.Data
             var sucesso = await this.SaveChangesAsync() > 0;
 
             if (sucesso)
-            {
                 await _mediatorHandler.PublicarEventos(this);
-            }
 
             return sucesso;
         }
@@ -48,34 +45,6 @@ namespace NSE.Cliente.API.Data
                 relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClienteDbContext).Assembly);
-        }
-    }
-
-    public static class MediatorExtension
-    {
-        public static async Task PublicarEventos<T>(this IMediatorHandler mediatorHandler, T ctx) where T : DbContext
-        {
-            var domainEntities = ctx.ChangeTracker
-                .Entries<Entity>()
-                .Where(x => x.Entity.Notificacoes != null && x.Entity.Notificacoes.Any());
-
-            var domainEvents = domainEntities
-                .SelectMany(x => x.Entity.Notificacoes)
-                .ToList();
-
-            domainEntities.ToList()
-                .ForEach(e =>
-                {
-                    e.Entity.LimparEventos();
-                });
-
-            var task = domainEvents.
-                Select(async domainEvent =>
-                {
-                    await mediatorHandler.PublicarEvento(domainEvent);
-                });
-
-            await Task.WhenAll(task);
         }
     }
 }
