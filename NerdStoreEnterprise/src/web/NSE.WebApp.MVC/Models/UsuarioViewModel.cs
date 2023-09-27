@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using NSE.WebApp.MVC.Extensions;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace NSE.WebApp.MVC.Models
@@ -11,6 +12,7 @@ namespace NSE.WebApp.MVC.Models
         
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DisplayName("CPF")]
+        [Cpf]
         public string Cpf {  get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]

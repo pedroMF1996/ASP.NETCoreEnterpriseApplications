@@ -1,4 +1,5 @@
-﻿using NSE.WebApp.MVC.Extensions;
+﻿using Microsoft.AspNetCore.Mvc.DataAnnotations;
+using NSE.WebApp.MVC.Extensions;
 using NSE.WebApp.MVC.Services;
 using NSE.WebApp.MVC.Services.Handlers;
 using NSE.WebApp.MVC.Services.Interfaces;
@@ -12,6 +13,8 @@ namespace NSE.WebApp.MVC.Configuration
     {
         public static void AddRegisterServises(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
+
             services.AddTransient<HttpCientAuthorizationDelegateHandler>();
 
             services.AddHttpClient<IAutenticacaoService, AutenticacaoServise>();          
@@ -24,16 +27,21 @@ namespace NSE.WebApp.MVC.Configuration
                 .AddTransientHttpErrorPolicy(
                     p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
+            
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddScoped<IUser, AspNetUser>();
+
+
+            #region Refit
             //services.AddHttpClient("Refit", options =>
             //    {
             //        options.BaseAddress = new Uri(configuration.GetSection("CatalogoUrl").Value);
             //    })
             //    .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
             //    .AddTypedClient(Refit.RestService.For<ICatalogoServiceRefit>);
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-            services.AddScoped<IUser, AspNetUser>();
+            #endregion
         }
     }
 
