@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wlUpRtvV6VTPD/FoUfDnohCELTlpO/xRDuAbYzRqX27cdYcImogktXNhEoZNVGz6V9RqkWfTw0/v2l+JlnLluQ==",
+  "dgSpecHash": "U7nzr5qfBv8Rn5/NwYkSD8nXXhVLI2J3nYoTWblPardYzJGvhQrGNXgxne/0mxrBuZA0CPKrmhPue3q1QGWBAA==",
   "success": true,
   "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
   "expectedPackageFiles": [
@@ -10,9 +10,9 @@
     "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.22\\microsoft.entityframeworkcore.6.0.22.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.22\\microsoft.entityframeworkcore.abstractions.6.0.22.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.22\\microsoft.entityframeworkcore.analyzers.6.0.22.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.21\\microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.21\\microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",

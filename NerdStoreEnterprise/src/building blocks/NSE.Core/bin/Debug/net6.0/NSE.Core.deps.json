@@ -10,7 +10,7 @@
         "dependencies": {
           "FluentValidation": "11.7.1",
           "MediatR": "9.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.22"
+          "Microsoft.EntityFrameworkCore": "6.0.21"
         },
         "runtime": {
           "NSE.Core.dll": {}
@@ -32,10 +32,10 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore/6.0.22": {
+      "Microsoft.EntityFrameworkCore/6.0.21": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.22",
-          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.22",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.21",
+          "Microsoft.EntityFrameworkCore.Analyzers": "6.0.21",
           "Microsoft.Extensions.Caching.Memory": "6.0.1",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.Extensions.Logging": "6.0.0",
@@ -44,20 +44,20 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.40907"
+            "assemblyVersion": "6.0.21.0",
+            "fileVersion": "6.0.2123.36206"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/6.0.22": {
+      "Microsoft.EntityFrameworkCore.Abstractions/6.0.21": {
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "assemblyVersion": "6.0.22.0",
-            "fileVersion": "6.0.2223.40907"
+            "assemblyVersion": "6.0.21.0",
+            "fileVersion": "6.0.2123.36206"
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/6.0.22": {},
+      "Microsoft.EntityFrameworkCore.Analyzers/6.0.21": {},
       "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
@@ -189,26 +189,26 @@
       "path": "mediatr/9.0.0",
       "hashPath": "mediatr.9.0.0.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore/6.0.22": {
+    "Microsoft.EntityFrameworkCore/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vNe+y8ZsEf1CsfmfYttfKAz/IgCCtphgguvao0HWNJNdjZf9cabD288nZJ17b/WaQMWXhLwYAsofk8vNVkfTOA==",
-      "path": "microsoft.entityframeworkcore/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.6.0.22.nupkg.sha512"
+      "sha512": "sha512-XUPcDrn/Vrv9yF4M3b9FYEZvqW1gyS3hfJhFiP0pttuRYnGRB+y3/6g/9k0GIoU62+XkxGa78l1JUccq1uvAXQ==",
+      "path": "microsoft.entityframeworkcore/6.0.21",
+      "hashPath": "microsoft.entityframeworkcore.6.0.21.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/6.0.22": {
+    "Microsoft.EntityFrameworkCore.Abstractions/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3ycEYrtWoa4kv5mUECU2LNBbWiYh345b1uQLvg4pHCEICXoJZ8Sfu/2yGloKiMNgMdDc02gFYCRHxsqQNZpnWA==",
-      "path": "microsoft.entityframeworkcore.abstractions/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.abstractions.6.0.22.nupkg.sha512"
+      "sha512": "sha512-GlNsy7qoFnCxgZlPpb8H/Srq1juOiV6W5XaijSA0+h8V0yn1VJ0owjb01If3di3Covs/8682A+ByTFjmEUxePA==",
+      "path": "microsoft.entityframeworkcore.abstractions/6.0.21",
+      "hashPath": "microsoft.entityframeworkcore.abstractions.6.0.21.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/6.0.22": {
+    "Microsoft.EntityFrameworkCore.Analyzers/6.0.21": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-82SZfdrLe7bdDB8/3INV0UULvlUzsdHkrEYylDCrzFXRWHXG9eO5jJQjRHU8j9XkGIN+MSPgIlczBnqeDvB36A==",
-      "path": "microsoft.entityframeworkcore.analyzers/6.0.22",
-      "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.22.nupkg.sha512"
+      "sha512": "sha512-gS8tH419vOY2kEyqEZBX8VnXWmtHaor7gVx6zVaXCsEyQurGR/aVB++IZ62vzeQFS9R46LbNY6D6bqEA6j3iCg==",
+      "path": "microsoft.entityframeworkcore.analyzers/6.0.21",
+      "hashPath": "microsoft.entityframeworkcore.analyzers.6.0.21.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/6.0.0": {
       "type": "package",

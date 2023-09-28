@@ -8,6 +8,8 @@ using System.Security.Claims;
 using System.Text;
 using NSE.WebAPI.Core.Identidade;
 using NSE.WebAPI.Core.Controllers;
+using NSE.Core.Messages.Integration;
+using EasyNetQ;
 
 namespace NSE.Identity.API.Controllers
 {
@@ -19,6 +21,8 @@ namespace NSE.Identity.API.Controllers
         private readonly UserManager<IdentityUser> _userManager;
 
         private readonly AppSettings _appSettings;
+
+        private IBus _bus;
 
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
@@ -48,6 +52,14 @@ namespace NSE.Identity.API.Controllers
 
             if (result.Succeeded)
             {
+                //Evento de integracao
+                var sucesso = await RegistrarCliente(model);
+
+                if (!sucesso.ValidationResult.IsValid) { 
+                    AdicionarErroProcessamento("Erro no cadastramento do cliente");
+                    return CustomResponse(sucesso);
+                }
+
                 return CustomResponse(await GerarJWT(model.Email));
             }
 
@@ -57,6 +69,20 @@ namespace NSE.Identity.API.Controllers
             }
 
             return CustomResponse();
+        }
+
+        private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)
+        {
+            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
+
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
+                Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
+
+            _bus = RabbitHutch.CreateBus("host=localhost:5672");
+
+            var sucesso = await _bus.Rpc.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+
+            return sucesso;
         }
 
         [HttpPost("autenticar")]
