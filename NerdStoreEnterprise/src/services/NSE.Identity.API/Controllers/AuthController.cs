@@ -10,6 +10,7 @@ using NSE.WebAPI.Core.Identidade;
 using NSE.WebAPI.Core.Controllers;
 using NSE.Core.Messages.Integration;
 using EasyNetQ;
+using NSE.MessageBus;
 
 namespace NSE.Identity.API.Controllers
 {
@@ -22,15 +23,17 @@ namespace NSE.Identity.API.Controllers
 
         private readonly AppSettings _appSettings;
 
-        private IBus _bus;
+        private readonly IMessageBus _bus;
 
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings)
+                              IOptions<AppSettings> appSettings,
+                              IMessageBus bus)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _bus = bus;
         }
 
         [HttpPost("nova-conta")]
@@ -78,18 +81,14 @@ namespace NSE.Identity.API.Controllers
             var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
                 Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
 
-            _bus = RabbitHutch.CreateBus("host=localhost:5672");
-
-            var sucesso = await _bus.Rpc.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+            var sucesso = await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
 
             return sucesso;
         }
 
         [HttpPost("autenticar")]
         public async Task<IActionResult> Login(LoginUserViewModel model)
-        {
-
-            
+        {          
 
             if(!ModelState.IsValid) { return CustomResponse(ModelState); }
 
