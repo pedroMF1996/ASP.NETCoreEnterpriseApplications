@@ -1,4 +1,6 @@
-﻿using NSE.WebAPI.Core.Identidade;
+﻿using Microsoft.EntityFrameworkCore;
+using NSE.Carrinho.API.Data;
+using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Carrinho.API.Configuration
 {
@@ -10,6 +12,8 @@ namespace NSE.Carrinho.API.Configuration
             services.AddRegisterServices();
 
             // Add services to the container.
+
+            services.AddDbContext<CarrinhoContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
