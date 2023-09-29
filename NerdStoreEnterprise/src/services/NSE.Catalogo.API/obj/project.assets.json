@@ -928,7 +928,8 @@
         "dependencies": {
           "FluentValidation": "11.7.1",
           "MediatR": "9.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.22"
+          "Microsoft.EntityFrameworkCore": "6.0.21",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "compile": {
           "bin/placeholder/NSE.Core.dll": {}
