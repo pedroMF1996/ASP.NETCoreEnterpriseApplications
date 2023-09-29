@@ -2,17 +2,14 @@
 using NSE.Core.Messages.Integration;
 using Polly;
 using RabbitMQ.Client.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NSE.MessageBus
 {
     public class MessageBus : IMessageBus
     {
         private IBus _bus;
+        private IAdvancedBus _advancedBus;
+        public IAdvancedBus AdvancedBus => _bus?.Advanced;
 
         private readonly string _connectionString;
 
@@ -23,6 +20,7 @@ namespace NSE.MessageBus
         }
 
         public bool IsConected => _bus?.Advanced.IsConnected ?? false;
+
 
         public void Publish<T>(T message) where T : IntegrationEvent
         {
@@ -91,7 +89,18 @@ namespace NSE.MessageBus
             policy.Execute(() =>
             {
                 _bus = RabbitHutch.CreateBus(_connectionString);
+                _advancedBus = _bus.Advanced;
+                _advancedBus.Disconnected += OnDisconect;
             });
+        }
+
+        private void OnDisconect(object sender, EventArgs e)
+        {
+            var policy = Policy.Handle<EasyNetQException>()
+                .Or<BrokerUnreachableException>()
+                .RetryForever();
+
+            policy.Execute(TryConnectRabbitMQ);
         }
 
         public void Dispose()

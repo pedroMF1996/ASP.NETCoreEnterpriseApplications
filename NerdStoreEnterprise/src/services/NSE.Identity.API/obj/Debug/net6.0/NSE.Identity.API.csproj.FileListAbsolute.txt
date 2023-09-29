@@ -197,3 +197,7 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\Polly.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\Polly.Core.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NSE.MessageBus.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NSE.MessageBus.pdb

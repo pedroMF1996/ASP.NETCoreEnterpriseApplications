@@ -22,16 +22,16 @@ namespace NSE.Cliente.API.Application.Commands
             if (!message.EhValido())
                 return message.ValidationResult;
 
-            var cliente = new ClienteEntity(message.Id, message.Name, message.Email, message.Cpf);
-
-            var clienteExistente = await _clienteRepository.ObterPorCpf(cliente.Cpf.Numero);
-
-            if (clienteExistente != null)//ja existe o cliente com o cpf informado
+            var clienteExistente = await _clienteRepository.ObterPorCpf(message.Cpf);
+            
+            if (clienteExistente != null)
             {
                 AdicionarErro("Este CPF ja esta em uso");
                 return ValidationResult;
             }
 
+            var cliente = new ClienteEntity(message.Id, message.Name, message.Email, message.Cpf);
+            
             await _clienteRepository.Adicionar(cliente);
 
             cliente.AdicionarEvento(new ClienteRegistradoEvent(cliente.Id,cliente.Nome, cliente.Email.Endereco, cliente.Cpf.Numero));

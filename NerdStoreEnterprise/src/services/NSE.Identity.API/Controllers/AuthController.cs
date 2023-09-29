@@ -55,12 +55,12 @@ namespace NSE.Identity.API.Controllers
 
             if (result.Succeeded)
             {
-                //Evento de integracao
-                var sucesso = await RegistrarCliente(model);
+                var clienteResult = await RegistrarCliente(model);
 
-                if (!sucesso.ValidationResult.IsValid) { 
-                    AdicionarErroProcessamento("Erro no cadastramento do cliente");
-                    return CustomResponse(sucesso);
+                if (!clienteResult.ValidationResult.IsValid) 
+                { 
+                    await _userManager.DeleteAsync(user);
+                    return CustomResponse(clienteResult.ValidationResult);
                 }
 
                 return CustomResponse(await GerarJWT(model.Email));
@@ -72,18 +72,6 @@ namespace NSE.Identity.API.Controllers
             }
 
             return CustomResponse();
-        }
-
-        private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)
-        {
-            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
-
-            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
-                Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
-
-            var sucesso = await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
-
-            return sucesso;
         }
 
         [HttpPost("autenticar")]
@@ -176,6 +164,24 @@ namespace NSE.Identity.API.Controllers
                     Claims = claims.Select(c => new ClaimViewModel() { Type = c.Type, Value = c.Value })
                 }
             };
+        }
+
+        private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)
+        {
+            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
+
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
+                Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
+
+            try
+            {
+                return await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+            }
+            catch 
+            {
+                await _userManager.DeleteAsync(usuario);
+                throw;
+            }
         }
     }
 }

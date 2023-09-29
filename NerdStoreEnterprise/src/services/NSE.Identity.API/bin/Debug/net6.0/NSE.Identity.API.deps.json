@@ -8,8 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "NSE.Identity.API/1.0.0": {
         "dependencies": {
-          "EasyNetQ": "7.5.5",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.21",
           "Microsoft.AspNetCore.Identity.UI": "6.0.21",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "6.0.22",
@@ -20,6 +18,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.21",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
           "NSE.Core": "1.0.0",
+          "NSE.MessageBus": "1.0.0",
           "NSE.WebAPI.Core": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
@@ -487,6 +486,25 @@
           }
         }
       },
+      "Polly/8.0.0": {
+        "dependencies": {
+          "Polly.Core": "8.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Polly.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.2195"
+          }
+        }
+      },
+      "Polly.Core/8.0.0": {
+        "runtime": {
+          "lib/net6.0/Polly.Core.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.0.2195"
+          }
+        }
+      },
       "RabbitMQ.Client/6.5.0": {
         "dependencies": {
           "System.Memory": "4.5.5",
@@ -696,10 +714,22 @@
         "dependencies": {
           "FluentValidation": "11.7.1",
           "MediatR": "9.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.21"
+          "Microsoft.EntityFrameworkCore": "6.0.21",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "runtime": {
           "NSE.Core.dll": {}
+        }
+      },
+      "NSE.MessageBus/1.0.0": {
+        "dependencies": {
+          "EasyNetQ": "7.5.5",
+          "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "6.0.22",
+          "NSE.Core": "1.0.0",
+          "Polly": "8.0.0"
+        },
+        "runtime": {
+          "NSE.MessageBus.dll": {}
         }
       },
       "NSE.WebAPI.Core/1.0.0": {
@@ -1056,6 +1086,20 @@
       "path": "newtonsoft.json.bson/1.0.2",
       "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
     },
+    "Polly/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vwIDGI+vUCrufIFi2IpN0EnMyKFRyKHCiJ47yQUvBtAkE76f8xgFjrI7cLmLWv4NwSXZH6DxUG088QmEuHwIFw==",
+      "path": "polly/8.0.0",
+      "hashPath": "polly.8.0.0.nupkg.sha512"
+    },
+    "Polly.Core/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g+8HnRjFTs8Ujz4Si4slrVrEK9M92DjvF75WvNpnF/lbT8M3/xW+tuD2udTiv2KuOsFOsRfOcZ12PddizrtXVA==",
+      "path": "polly.core/8.0.0",
+      "hashPath": "polly.core.8.0.0.nupkg.sha512"
+    },
     "RabbitMQ.Client/6.5.0": {
       "type": "package",
       "serviceable": true,
@@ -1204,6 +1248,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "NSE.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NSE.MessageBus/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

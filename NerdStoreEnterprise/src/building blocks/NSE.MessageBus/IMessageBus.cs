@@ -1,9 +1,11 @@
-﻿using NSE.Core.Messages.Integration;
+﻿using EasyNetQ;
+using NSE.Core.Messages.Integration;
 
 namespace NSE.MessageBus
 {
     public interface IMessageBus : IDisposable
     {
+        IAdvancedBus AdvancedBus { get; }
         void Publish<T>(T message) where T : IntegrationEvent; 
 
         Task PublishAsync<T>(T message) where T : IntegrationEvent;
