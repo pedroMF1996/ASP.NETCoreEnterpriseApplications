@@ -34,7 +34,7 @@ namespace NSE.Carrinho.API.Configuration
             return services;
         }
 
-        public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment environment)
+        public static void UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment environment)
         {
             // Configure the HTTP request pipeline.
             if (environment.IsDevelopment())
@@ -49,8 +49,6 @@ namespace NSE.Carrinho.API.Configuration
             app.UseCors("Total");
 
             app.UseAuthConfiguration();
-
-            return app;
         }
     }
 }
