@@ -55,6 +55,11 @@ namespace NSE.WebAPI.Core.Controllers
             Errors.Add(erro);
         }
 
+        protected void AdicionarErrosProcessamento(List<ValidationFailure> erros)
+        {
+            erros.ForEach(erro => AdicionarErroProcessamento(erro.ErrorMessage));
+        }
+
         protected void LimparErroProcessamento()
         {
             Errors.Clear();
