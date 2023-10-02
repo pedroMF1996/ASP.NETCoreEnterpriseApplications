@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using System.Text.Json.Serialization;
 
 namespace NSE.Carrinho.API.Models
 {
@@ -12,7 +13,8 @@ namespace NSE.Carrinho.API.Models
         public string Imagem { get; set; }
         public Guid CarrinhoId { get; set; }
 
-        public CarrinhoCliente CarrinhoCliente { get; set; }
+        [JsonIgnore]
+        public CarrinhoCliente? CarrinhoCliente { get; set; }
 
         public CarrinhoItem()
         {

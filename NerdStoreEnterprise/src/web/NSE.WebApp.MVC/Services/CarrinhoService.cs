@@ -21,11 +21,11 @@ namespace NSE.WebApp.MVC.Services
             return await DeserializarObjetoResponse<CarrinhoViewModel>(response);
         }
 
-        public async Task<ResponseResult> AdicionarItemCarrinho(CarrinhoViewModel item)
+        public async Task<ResponseResult> AdicionarItemCarrinho(ItemCarrinhoViewModel item)
         {
             var itemContent = ObterConteudo(item);
             
-            var response = await _httpClient.PostAsync("/carrinho/", itemContent);
+            var response = await _httpClient.PostAsync("/carrinho", itemContent);
 
             if(!TratarErrosResponse(response))
             {
