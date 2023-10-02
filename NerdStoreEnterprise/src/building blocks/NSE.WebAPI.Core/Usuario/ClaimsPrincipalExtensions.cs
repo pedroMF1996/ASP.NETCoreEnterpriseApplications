@@ -12,6 +12,7 @@ namespace NSE.WebAPI.Core.Usuario
             }
 
             var claims = principal.FindFirst("sub");
+            claims = claims ?? principal.FindFirst(ClaimTypes.NameIdentifier);
 
             return Guid.Parse(claims?.Value);
         }
