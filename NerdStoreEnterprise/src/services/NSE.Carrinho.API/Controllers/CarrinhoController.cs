@@ -9,7 +9,7 @@ using NSE.WebAPI.Core.Usuario;
 namespace NSE.Carrinho.API.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CarrinhoController : MainController
     {
         private readonly CarrinhoContext _carrinhoContext;

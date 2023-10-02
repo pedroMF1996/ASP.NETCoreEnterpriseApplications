@@ -17,6 +17,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Carrinho/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
