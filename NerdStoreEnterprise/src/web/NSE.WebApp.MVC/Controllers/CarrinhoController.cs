@@ -27,10 +27,9 @@ namespace NSE.WebApp.MVC.Controllers
         public async Task<IActionResult> AdicionarItemCarrinho(ItemCarrinhoViewModel itemCarrinho)
         {
             var produto = await _catalogoService.ObterPorId(itemCarrinho.ProdutoId);
-            var teste = ModelState;
+
             ValidarItemCarrinho(produto, itemCarrinho.Quantidade);
             if (!OperacaoValida()) return View("Index", await _carrinhoService.ObterCarrinho());
-
 
             itemCarrinho.Nome = produto.Nome;
             itemCarrinho.Valor = produto.Valor;

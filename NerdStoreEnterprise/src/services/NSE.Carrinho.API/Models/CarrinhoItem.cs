@@ -63,7 +63,7 @@ namespace NSE.Carrinho.API.Models
                     .WithMessage(item => $"A quantidade minima para o {item.Nome} e 1");
                 
                 RuleFor(c => c.Quantidade)
-                    .LessThan(5)
+                    .LessThanOrEqualTo(5)
                     .WithMessage(item => $"A quantidade maxima para o {item.Nome} e 5");
 
                 RuleFor(c => c.Valor)
