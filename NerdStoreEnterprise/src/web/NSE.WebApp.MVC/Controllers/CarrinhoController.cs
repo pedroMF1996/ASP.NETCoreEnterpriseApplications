@@ -77,14 +77,7 @@ namespace NSE.WebApp.MVC.Controllers
                 return View("Index", await _carrinhoService.ObterCarrinho());
             }
 
-            var itemProduto = new ItemCarrinhoViewModel()
-            {
-                ProdutoId = produto.Id,
-                Nome = produto.Nome,
-                Imagem = produto.Imagem,
-            };
-
-            var resposta = await _carrinhoService.AtualizarIemCarrinho(produtoId, itemProduto);
+            var resposta = await _carrinhoService.RemoverItemCarrinho(produtoId);
 
             if (ResponsePossuiErros(resposta)) return View("Index", await _carrinhoService.ObterCarrinho());
 
