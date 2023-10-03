@@ -68,9 +68,9 @@ namespace NSE.WebApp.MVC.Controllers
 
         [HttpPost]
         [Route("carrinho/remover-item")]
-        public async Task<IActionResult> RemoverItemCarrinho(Guid itemCarrinhoId)
+        public async Task<IActionResult> RemoverItemCarrinho(Guid produtoId)
         {
-            var produto = await _catalogoService.ObterPorId(itemCarrinhoId);
+            var produto = await _catalogoService.ObterPorId(produtoId);
             if (produto == null) 
             { 
                 AdicionarErroValidacao("Produto inexistente!");
@@ -84,7 +84,7 @@ namespace NSE.WebApp.MVC.Controllers
                 Imagem = produto.Imagem,
             };
 
-            var resposta = await _carrinhoService.AtualizarIemCarrinho(itemCarrinhoId, itemProduto);
+            var resposta = await _carrinhoService.AtualizarIemCarrinho(produtoId, itemProduto);
 
             if (ResponsePossuiErros(resposta)) return View("Index", await _carrinhoService.ObterCarrinho());
 
