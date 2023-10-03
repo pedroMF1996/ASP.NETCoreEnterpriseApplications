@@ -94,12 +94,12 @@ namespace NSE.Carrinho.API.Models
                     .WithMessage("Cliente nao reconhecido");
 
                 RuleFor(c => c.Itens.Count)
-                    .GreaterThan(0)
+                    .GreaterThanOrEqualTo(0)
                     .WithMessage("O carrinho nao possui itens");
 
                 RuleFor(c => c.ValorTotal)
-                    .GreaterThan(0)
-                    .WithMessage("O valor total do carrinho deve ser maior que 0");
+                    .GreaterThanOrEqualTo(0)
+                    .WithMessage("O valor total do carrinho deve ser no minimo 0");
             }
         }
     }
