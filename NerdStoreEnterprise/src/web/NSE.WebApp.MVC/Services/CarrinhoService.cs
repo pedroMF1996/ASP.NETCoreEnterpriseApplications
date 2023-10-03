@@ -35,20 +35,20 @@ namespace NSE.WebApp.MVC.Services
             return ResponderOK();
         }
 
-        public async Task<ResponseResult> AtualizarIemCarrinho(Guid idItemCarrinho, ItemCarrinhoViewModel itemCarrinho)
+        public async Task<ResponseResult> AtualizarIemCarrinho(Guid produtoId, ItemCarrinhoViewModel itemCarrinho)
         {
             var itemContent = ObterConteudo(itemCarrinho);
 
-            var response = await _httpClient.PutAsync($"/carrinho/{idItemCarrinho}", itemContent);
+            var response = await _httpClient.PutAsync($"/carrinho/{itemCarrinho.ProdutoId}", itemContent);
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
             return ResponderOK();
         }
 
-        public async Task<ResponseResult> RemoverItemCarrinho(Guid idItemCarrinho)
+        public async Task<ResponseResult> RemoverItemCarrinho(Guid produtoId)
         {
-            var response = await _httpClient.DeleteAsync($"/carrinho/{idItemCarrinho}");
+            var response = await _httpClient.DeleteAsync($"/carrinho/{produtoId}");
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 

@@ -55,6 +55,8 @@ namespace NSE.WebApp.MVC.Controllers
             {
                 ProdutoId = produto.Id,
                 Quantidade = quantidade,
+                Nome = produto.Nome,
+                Imagem = produto.Imagem,
             };
 
             var resposta = await _carrinhoService.AtualizarIemCarrinho(produtoId, itemProduto);

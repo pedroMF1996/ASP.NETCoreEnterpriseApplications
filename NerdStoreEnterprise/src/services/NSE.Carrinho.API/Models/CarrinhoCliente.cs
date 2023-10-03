@@ -57,7 +57,7 @@ namespace NSE.Carrinho.API.Models
 
         internal bool CarrinhoItemExistente(CarrinhoItem item)
         {
-            return Itens.Any(p => p.ProdutoId == item.Id);
+            return Itens.Any(p => p.ProdutoId == item.ProdutoId);
         }
 
         internal CarrinhoItem ObterPorProdutoId(Guid produtoId) 
