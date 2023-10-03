@@ -79,7 +79,9 @@ namespace NSE.WebApp.MVC.Controllers
 
             var itemProduto = new ItemCarrinhoViewModel()
             {
-                ProdutoId = produto.Id
+                ProdutoId = produto.Id,
+                Nome = produto.Nome,
+                Imagem = produto.Imagem,
             };
 
             var resposta = await _carrinhoService.AtualizarIemCarrinho(itemCarrinhoId, itemProduto);
