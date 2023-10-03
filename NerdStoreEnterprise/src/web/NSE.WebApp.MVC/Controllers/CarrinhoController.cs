@@ -44,9 +44,9 @@ namespace NSE.WebApp.MVC.Controllers
 
         [HttpPost]
         [Route("carrinho/atualizar-item")]
-        public async Task<IActionResult> AtualizarItemCarrinho(Guid itemCarrinhoId, int quantidade)
+        public async Task<IActionResult> AtualizarItemCarrinho(Guid produtoId, int quantidade)
         {
-            var produto = await _catalogoService.ObterPorId(itemCarrinhoId);
+            var produto = await _catalogoService.ObterPorId(produtoId);
                         
             ValidarItemCarrinho(produto, quantidade);
             if (!OperacaoValida()) return View("Index", await _carrinhoService.ObterCarrinho());
@@ -57,7 +57,7 @@ namespace NSE.WebApp.MVC.Controllers
                 Quantidade = quantidade,
             };
 
-            var resposta = await _carrinhoService.AtualizarIemCarrinho(itemCarrinhoId, itemProduto);
+            var resposta = await _carrinhoService.AtualizarIemCarrinho(produtoId, itemProduto);
 
             if (ResponsePossuiErros(resposta)) return View("Index", await _carrinhoService.ObterCarrinho());
 
