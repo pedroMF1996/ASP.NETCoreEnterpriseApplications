@@ -1286,6 +1286,9 @@
           "FluentValidation": "11.7.1",
           "MediatR": "9.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.21",
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.21",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.21",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "compile": {
