@@ -11,7 +11,6 @@ namespace NSE.BFF.Compras.Controllers
     [Route("compras")]
     public class CarrinhoController : MainController
     {
-        private readonly IAspNetUser _aspNetUser;
         private readonly ICarrinhoService _carrinhoService;
         private readonly ICatalogoService _catalogoService;
 
@@ -19,7 +18,6 @@ namespace NSE.BFF.Compras.Controllers
             ICarrinhoService carrinhoService, 
             ICatalogoService catalogoService)
         {
-            _aspNetUser = aspNetUser;
             _carrinhoService = carrinhoService;
             _catalogoService = catalogoService;
         }
