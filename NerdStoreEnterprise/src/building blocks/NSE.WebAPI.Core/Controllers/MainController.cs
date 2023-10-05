@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using NSE.Core.Communication;
 
 namespace NSE.WebAPI.Core.Controllers
 {
@@ -58,6 +59,26 @@ namespace NSE.WebAPI.Core.Controllers
         protected void AdicionarErrosProcessamento(List<ValidationFailure> erros)
         {
             erros.ForEach(erro => AdicionarErroProcessamento(erro.ErrorMessage));
+        }
+        
+        protected bool ResponsePossuiErros(ResponseResult result)
+        {
+            if (result != null || !result.Errors.Mensagens.Any())
+                return false;
+            
+            foreach (var mensagem in result.Errors.Mensagens)
+            {
+                AdicionarErroProcessamento(mensagem);
+            }
+
+            return true;
+        }
+
+        protected ActionResult CustomResponse(ResponseResult resposta)
+        {
+            ResponsePossuiErros(resposta);
+
+            return CustomResponse();
         }
 
         protected void LimparErroProcessamento()

@@ -924,6 +924,8 @@
         "dependencies": {
           "FluentValidation": "11.7.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.21",
+          "Microsoft.Extensions.Http.Polly": "6.0.21",
+          "NSE.Core": "1.0.0",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
@@ -2340,7 +2342,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.22",
-      "Microsoft.Extensions.Http.Polly >= 6.0.21",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
       "NSE.Core >= 1.0.0",
       "NSE.WebAPI.Core >= 1.0.0",
@@ -2398,10 +2399,6 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[6.0.22, )"
-          },
-          "Microsoft.Extensions.Http.Polly": {
-            "target": "Package",
-            "version": "[6.0.21, )"
           },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",

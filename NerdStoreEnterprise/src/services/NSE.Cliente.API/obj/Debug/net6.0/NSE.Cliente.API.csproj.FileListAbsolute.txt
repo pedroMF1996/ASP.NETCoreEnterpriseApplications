@@ -149,3 +149,5 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\Polly.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\NSE.MessageBus.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\NSE.MessageBus.pdb
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Cliente.API\bin\Debug\net6.0\Polly.Extensions.Http.dll

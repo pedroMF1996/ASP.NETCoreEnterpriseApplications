@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using NSE.BFF.Compras.Enum;
 using NSE.BFF.Compras.Extensions;
 using System.Net;
+using NSE.Core.Communication;
 
 namespace NSE.BFF.Compras.Services
 {
@@ -52,6 +53,11 @@ namespace NSE.BFF.Compras.Services
 
             response.EnsureSuccessStatusCode();
             return true;
+        }
+
+        protected ResponseResult ResponderOK()
+        {
+            return new ResponseResult();
         }
     }
 }
