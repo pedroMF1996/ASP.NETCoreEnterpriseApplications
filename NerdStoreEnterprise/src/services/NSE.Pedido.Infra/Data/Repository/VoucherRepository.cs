@@ -1,4 +1,6 @@
-﻿using NSE.Core.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using NSE.Core.Data;
+using NSE.Pedido.Domain.Voucher;
 using NSE.Pedido.Domain.Voucher.Interface;
 
 namespace NSE.Pedido.Infra.Data.Repository
@@ -17,6 +19,11 @@ namespace NSE.Pedido.Infra.Data.Repository
         public void Dispose()
         {
             _context.Dispose();
+        }
+
+        public async Task<Voucher> ObterVoucherPorCodigo(string codigo)
+        {
+            return await _context.Vouchers.FirstOrDefaultAsync(v => v.Codigo == codigo);
         }
     }
 }
