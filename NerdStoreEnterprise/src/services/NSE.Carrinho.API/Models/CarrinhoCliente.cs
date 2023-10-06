@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
+using System.Drawing;
 
 namespace NSE.Carrinho.API.Models
 {
@@ -10,6 +11,9 @@ namespace NSE.Carrinho.API.Models
         public decimal ValorTotal { get; set; }
         public List<CarrinhoItem> Itens { get; set; } = new List<CarrinhoItem>();
         public ValidationResult ValidationResult { get; set; }
+        public bool VoucherUtilizado { get; set; }
+        public decimal Desconto { get; set; }
+        public Voucher Voucher { get; set; }
 
         public CarrinhoCliente(Guid clienteId)
         {
@@ -50,14 +54,40 @@ namespace NSE.Carrinho.API.Models
             CalcularValorCarrinho();
         }
 
+        internal void AplicarVoucher(Voucher voucher)
+        {
+            Voucher = voucher;
+            VoucherUtilizado = true;
+            CalcularValorCarrinho();
+        }
+
         internal void CalcularValorCarrinho()
         {
             ValorTotal = Itens.Sum(p => p.CalcularValor());
+            CalcularValorTotalDesconto();
         }
 
         internal bool CarrinhoItemExistente(CarrinhoItem item)
         {
             return Itens.Any(p => p.ProdutoId == item.ProdutoId);
+        }
+
+        internal void CalcularValorTotalDesconto()
+        {
+            if(!VoucherUtilizado) { return; }
+
+            decimal desconto = 0;
+            var valor = ValorTotal;
+
+            desconto = ObterDesconto(desconto, valor);
+
+            if (desconto <= 0)
+                return;
+
+            valor -= desconto;
+
+            ValorTotal = valor < 0 ? 0 : valor;
+            Desconto = desconto;
         }
 
         internal CarrinhoItem ObterPorProdutoId(Guid produtoId) 
@@ -83,6 +113,26 @@ namespace NSE.Carrinho.API.Models
             erros.AddRange(new CarrinhoClienteValidation().Validate(this).Errors);
             ValidationResult = new ValidationResult(erros);
             return ValidationResult.IsValid;
+        }
+
+        private decimal ObterDesconto(decimal desconto, decimal valor)
+        {
+            if (Voucher.TipoDesconto == TipoDescontoVoucher.Porcentagem)
+            {
+                if (Voucher.Percentual.HasValue)
+                {
+                    desconto = (valor + Voucher.Percentual.Value) / 100;
+                }
+            }
+            else
+            {
+                if (Voucher.ValorDesconto.HasValue)
+                {
+                    desconto = Voucher.ValorDesconto.Value;
+                }
+            }
+
+            return desconto;
         }
 
         public class CarrinhoClienteValidation : AbstractValidator<CarrinhoCliente>
