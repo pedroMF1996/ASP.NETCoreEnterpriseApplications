@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using NSE.WebApp.MVC.Enum;
 using NSE.WebApp.MVC.Models;
+using NSE.Core.Communication;
 
 namespace NSE.WebApp.MVC.Services
 {
@@ -22,8 +23,8 @@ namespace NSE.WebApp.MVC.Services
                 case AppSettingsUrlEnum.Catalogo:
                     _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.CatalogoUrl);
                     break;
-                case AppSettingsUrlEnum.Carrinho:
-                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.CarrinhoUrl);
+                case AppSettingsUrlEnum.ComprasBff:
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ComprasBffUrl);
                     break;
             }
         }
