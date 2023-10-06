@@ -38,11 +38,22 @@
           }
         }
       },
-      "MediatR/9.0.0": {
+      "MediatR/10.0.1": {
+        "dependencies": {
+          "MediatR.Contracts": "1.0.1"
+        },
         "runtime": {
           "lib/netstandard2.1/MediatR.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.0.0"
+            "assemblyVersion": "10.0.0.0",
+            "fileVersion": "10.0.1.0"
+          }
+        }
+      },
+      "MediatR.Contracts/1.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -363,6 +374,18 @@
           }
         }
       },
+      "NetDevPack/6.1.0": {
+        "dependencies": {
+          "FluentValidation": "11.7.1",
+          "MediatR": "10.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetDevPack.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        }
+      },
       "Polly/7.2.2": {
         "runtime": {
           "lib/netstandard2.0/Polly.dll": {
@@ -569,9 +592,13 @@
       "NSE.Core/1.0.0": {
         "dependencies": {
           "FluentValidation": "11.7.1",
-          "MediatR": "9.0.0",
+          "MediatR": "10.0.1",
           "Microsoft.EntityFrameworkCore": "6.0.22",
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+          "Microsoft.EntityFrameworkCore.Abstractions": "6.0.22",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.22",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.22",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "NetDevPack": "6.1.0"
         },
         "runtime": {
           "NSE.Core.dll": {}
@@ -611,12 +638,19 @@
       "path": "humanizer.core/2.8.26",
       "hashPath": "humanizer.core.2.8.26.nupkg.sha512"
     },
-    "MediatR/9.0.0": {
+    "MediatR/10.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
-      "path": "mediatr/9.0.0",
-      "hashPath": "mediatr.9.0.0.nupkg.sha512"
+      "sha512": "sha512-vnjbk4giDJzJelh34Ygt0eorApCKrRFB7j0pauFPY1oxfO3cEZ7FugBrIOjCM76SDGTOmPFfbfmVnz1t3iFrGA==",
+      "path": "mediatr/10.0.1",
+      "hashPath": "mediatr.10.0.1.nupkg.sha512"
+    },
+    "MediatR.Contracts/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NsRvOxthhkYml4DcBMyJsmym8C4MchioH7wxKVPEg7plFj9Euh/i4IcmZ3Gvgx6+K8obeuhPeJdoBl56wnuo3A==",
+      "path": "mediatr.contracts/1.0.1",
+      "hashPath": "mediatr.contracts.1.0.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.21": {
       "type": "package",
@@ -855,6 +889,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "NetDevPack/6.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/Qyr2+g/0HA7MFKHwv0kI/zdedLYrZE73dhcxVB3hbTu91J7DGVRXSfvH0Fy4zAe69ZxO0bAizaXSY3bi5JlAg==",
+      "path": "netdevpack/6.1.0",
+      "hashPath": "netdevpack.6.1.0.nupkg.sha512"
     },
     "Polly/7.2.2": {
       "type": "package",
