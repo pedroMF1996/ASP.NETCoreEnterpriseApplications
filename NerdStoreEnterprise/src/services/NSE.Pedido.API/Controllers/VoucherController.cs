@@ -7,7 +7,6 @@ using System.Net;
 
 namespace NSE.Pedido.API.Controllers
 {
-    [Route("api/[controller]")]
     [Authorize]
     public class VoucherController : MainController
     {

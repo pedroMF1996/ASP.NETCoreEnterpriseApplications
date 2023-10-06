@@ -151,3 +151,4 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\Microsoft.Extensions.Http.Polly.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\Polly.Extensions.Http.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\MediatR.Contracts.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\NetDevPack.dll
