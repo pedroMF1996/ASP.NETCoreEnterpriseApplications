@@ -8,6 +8,9 @@ using System.Security.Claims;
 using System.Text;
 using NSE.WebAPI.Core.Identidade;
 using NSE.WebAPI.Core.Controllers;
+using NSE.Core.Messages.Integration;
+using EasyNetQ;
+using NSE.MessageBus;
 
 namespace NSE.Identity.API.Controllers
 {
@@ -20,13 +23,17 @@ namespace NSE.Identity.API.Controllers
 
         private readonly AppSettings _appSettings;
 
+        private readonly IMessageBus _bus;
+
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings)
+                              IOptions<AppSettings> appSettings,
+                              IMessageBus bus)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _bus = bus;
         }
 
         [HttpPost("nova-conta")]
@@ -48,6 +55,14 @@ namespace NSE.Identity.API.Controllers
 
             if (result.Succeeded)
             {
+                var clienteResult = await RegistrarCliente(model);
+
+                if (!clienteResult.ValidationResult.IsValid) 
+                { 
+                    await _userManager.DeleteAsync(user);
+                    return CustomResponse(clienteResult.ValidationResult);
+                }
+
                 return CustomResponse(await GerarJWT(model.Email));
             }
 
@@ -61,9 +76,7 @@ namespace NSE.Identity.API.Controllers
 
         [HttpPost("autenticar")]
         public async Task<IActionResult> Login(LoginUserViewModel model)
-        {
-
-            
+        {          
 
             if(!ModelState.IsValid) { return CustomResponse(ModelState); }
 
@@ -151,6 +164,24 @@ namespace NSE.Identity.API.Controllers
                     Claims = claims.Select(c => new ClaimViewModel() { Type = c.Type, Value = c.Value })
                 }
             };
+        }
+
+        private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)
+        {
+            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
+
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
+                Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
+
+            try
+            {
+                return await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+            }
+            catch 
+            {
+                await _userManager.DeleteAsync(usuario);
+                throw;
+            }
         }
     }
 }

@@ -22,6 +22,8 @@ namespace NSE.Cliente.API.Configuration
 
             services.RegisterServiceConfiguration();
 
+            services.AddMessageBusConfiguration(configuration);
+
             services.AddSwaggerConfiguration();
 
             services.AddJwtConfiguration(configuration);

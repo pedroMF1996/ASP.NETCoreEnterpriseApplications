@@ -3,6 +3,8 @@ using System.Text.Json;
 using System.Text;
 using Microsoft.Extensions.Options;
 using NSE.WebApp.MVC.Enum;
+using NSE.WebApp.MVC.Models;
+using NSE.Core.Communication;
 
 namespace NSE.WebApp.MVC.Services
 {
@@ -20,6 +22,9 @@ namespace NSE.WebApp.MVC.Services
                     break;
                 case AppSettingsUrlEnum.Catalogo:
                     _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.CatalogoUrl);
+                    break;
+                case AppSettingsUrlEnum.ComprasBff:
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ComprasBffUrl);
                     break;
             }
         }
@@ -55,6 +60,11 @@ namespace NSE.WebApp.MVC.Services
 
             response.EnsureSuccessStatusCode();
             return true;
+        }
+
+        protected ResponseResult ResponderOK()
+        {
+            return new ResponseResult();
         }
     }
 }
