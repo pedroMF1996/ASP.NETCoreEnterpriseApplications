@@ -23,7 +23,7 @@ namespace NSE.Pedido.Domain.Voucher
         public bool EstaValidoParaUso()
         {
             return new VoucherAtivoSpecification()
-                        .And(new VoucherDataSpecification())
+                        .And(new VoucherSpec())
                         .And(new VoucherQuantidadeSpecification())
                         .IsSatisfiedBy(this);
         }
