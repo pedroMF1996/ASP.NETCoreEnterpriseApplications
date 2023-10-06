@@ -11,7 +11,7 @@ namespace NSE.Pedido.API.Configurations
             {
                 c.SwaggerDoc("v1", new OpenApiInfo()
                 {
-                    Title = "NerdStore Enterprise Cliente API",
+                    Title = "NerdStore Enterprise Pedido API",
                     Description = "Esta API faz parte do curso ASP.NET Core Enterprise Application",
                     Contact = new OpenApiContact() { Name = "Pedro Martins Falleiros", Email = "pmfrp@hotmail.com" },
                     License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/license/MIT") }
