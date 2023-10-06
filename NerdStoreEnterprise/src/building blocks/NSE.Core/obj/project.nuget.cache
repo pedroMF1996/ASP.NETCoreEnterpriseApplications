@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5NSq5tR2W3kX8WyM/NPCot5wsnrWep/Wcl/MV5fCXS/AJ4+Xh6DYPGhF8aNBG0Fep9nRQrrzcjxJxkNCYQpnUg==",
+  "dgSpecHash": "/QCmm/0MK8o+iIGjuRLbdphMRBVbA7bK0TblwBejUeuvMCGk/DL1uB0YlBe6zk6sXC+C5pEmlzFKn8Pl8YVR8w==",
   "success": true,
   "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
@@ -35,6 +36,7 @@
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\netdevpack\\6.1.0\\netdevpack.6.1.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

@@ -44,8 +44,11 @@
           }
         }
       },
-      "MediatR/9.0.0": {
+      "MediatR/10.0.1": {
         "type": "package",
+        "dependencies": {
+          "MediatR.Contracts": "1.0.1"
+        },
         "compile": {
           "lib/netstandard2.1/MediatR.dll": {
             "related": ".xml"
@@ -57,17 +60,30 @@
           }
         }
       },
-      "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
+      "MediatR.Contracts/1.0.1": {
         "type": "package",
-        "dependencies": {
-          "MediatR": "9.0.0",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
-        },
         "compile": {
-          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "MediatR": "10.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.21": {
@@ -673,6 +689,19 @@
           }
         }
       },
+      "NetDevPack/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "10.4.0",
+          "mediatr": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/NetDevPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetDevPack.dll": {}
+        }
+      },
       "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
@@ -1135,12 +1164,13 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FluentValidation": "11.7.1",
-          "MediatR": "9.0.0",
+          "MediatR": "10.0.1",
           "Microsoft.EntityFrameworkCore": "6.0.21",
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.21",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.21",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "NetDevPack": "6.1.0"
         },
         "compile": {
           "bin/placeholder/NSE.Core.dll": {}
@@ -1267,34 +1297,46 @@
         "logo.png"
       ]
     },
-    "MediatR/9.0.0": {
-      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+    "MediatR/10.0.1": {
+      "sha512": "vnjbk4giDJzJelh34Ygt0eorApCKrRFB7j0pauFPY1oxfO3cEZ7FugBrIOjCM76SDGTOmPFfbfmVnz1t3iFrGA==",
       "type": "package",
-      "path": "mediatr/9.0.0",
+      "path": "mediatr/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "gradient_128x128.png",
-        "lib/net461/MediatR.dll",
-        "lib/net461/MediatR.xml",
-        "lib/netstandard2.0/MediatR.dll",
-        "lib/netstandard2.0/MediatR.xml",
         "lib/netstandard2.1/MediatR.dll",
         "lib/netstandard2.1/MediatR.xml",
-        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.10.0.1.nupkg.sha512",
         "mediatr.nuspec"
       ]
     },
-    "MediatR.Extensions.Microsoft.DependencyInjection/9.0.0": {
-      "sha512": "msreY4ogiPdIRWiCQVHQDytIQpsZCLWsixWPZ+Xs86KZrvtuiV8BDHbIT0kBmogynVYWNpspb3caw+86YU8L6w==",
+    "MediatR.Contracts/1.0.1": {
+      "sha512": "NsRvOxthhkYml4DcBMyJsmym8C4MchioH7wxKVPEg7plFj9Euh/i4IcmZ3Gvgx6+K8obeuhPeJdoBl56wnuo3A==",
       "type": "package",
-      "path": "mediatr.extensions.microsoft.dependencyinjection/9.0.0",
+      "path": "mediatr.contracts/1.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "gradient_128x128.png",
-        "lib/netstandard2.0/MediatR.Extensions.Microsoft.DependencyInjection.dll",
-        "mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
+        "lib/net461/MediatR.Contracts.dll",
+        "lib/net461/MediatR.Contracts.xml",
+        "lib/netstandard2.0/MediatR.Contracts.dll",
+        "lib/netstandard2.0/MediatR.Contracts.xml",
+        "mediatr.contracts.1.0.1.nupkg.sha512",
+        "mediatr.contracts.nuspec"
+      ]
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/10.0.1": {
+      "sha512": "mYdfMvpkahCAj4tRfBoeMlUBZa2WthaONdQ4y5TtIyxcZYb5e7AE7c1eITTZVWcQhguxvD8AdExdaiAW6RhrVA==",
+      "type": "package",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/10.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll",
+        "mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
         "mediatr.extensions.microsoft.dependencyinjection.nuspec"
       ]
     },
@@ -2414,6 +2456,19 @@
         "version.txt"
       ]
     },
+    "NetDevPack/6.1.0": {
+      "sha512": "/Qyr2+g/0HA7MFKHwv0kI/zdedLYrZE73dhcxVB3hbTu91J7DGVRXSfvH0Fy4zAe69ZxO0bAizaXSY3bi5JlAg==",
+      "type": "package",
+      "path": "netdevpack/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "IconNuget.png",
+        "lib/netstandard2.1/NetDevPack.dll",
+        "netdevpack.6.1.0.nupkg.sha512",
+        "netdevpack.nuspec"
+      ]
+    },
     "Newtonsoft.Json/13.0.1": {
       "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
@@ -3195,8 +3250,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "MediatR >= 9.0.0",
-      "MediatR.Extensions.Microsoft.DependencyInjection >= 9.0.0",
+      "MediatR >= 10.0.1",
+      "MediatR.Extensions.Microsoft.DependencyInjection >= 10.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.21",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
       "NSE.Core >= 1.0.0",
@@ -3264,11 +3319,11 @@
         "dependencies": {
           "MediatR": {
             "target": "Package",
-            "version": "[9.0.0, )"
+            "version": "[10.0.1, )"
           },
           "MediatR.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
-            "version": "[9.0.0, )"
+            "version": "[10.0.1, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

@@ -28,8 +28,11 @@
           }
         }
       },
-      "MediatR/9.0.0": {
+      "MediatR/10.0.1": {
         "type": "package",
+        "dependencies": {
+          "MediatR.Contracts": "1.0.1"
+        },
         "compile": {
           "lib/netstandard2.1/MediatR.dll": {
             "related": ".xml"
@@ -37,6 +40,19 @@
         },
         "runtime": {
           "lib/netstandard2.1/MediatR.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MediatR.Contracts/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MediatR.Contracts.dll": {
             "related": ".xml"
           }
         }
@@ -618,6 +634,19 @@
           }
         }
       },
+      "NetDevPack/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "10.4.0",
+          "mediatr": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/NetDevPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/NetDevPack.dll": {}
+        }
+      },
       "Polly/7.2.2": {
         "type": "package",
         "compile": {
@@ -993,12 +1022,13 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "FluentValidation": "11.7.1",
-          "MediatR": "9.0.0",
+          "MediatR": "10.0.1",
           "Microsoft.EntityFrameworkCore": "6.0.21",
           "Microsoft.EntityFrameworkCore.Abstractions": "6.0.21",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.21",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.21",
-          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "NetDevPack": "6.1.0"
         },
         "compile": {
           "bin/placeholder/NSE.Core.dll": {}
@@ -1066,22 +1096,34 @@
         "logo.png"
       ]
     },
-    "MediatR/9.0.0": {
-      "sha512": "8b3UYNxegHVYcJMG2zH8wn+YqxLvXG+eMfj0cMCq/jTW72p6O3PCKMkrIv0mqyxdW7bA4gblsocw7n+/9Akg5g==",
+    "MediatR/10.0.1": {
+      "sha512": "vnjbk4giDJzJelh34Ygt0eorApCKrRFB7j0pauFPY1oxfO3cEZ7FugBrIOjCM76SDGTOmPFfbfmVnz1t3iFrGA==",
       "type": "package",
-      "path": "mediatr/9.0.0",
+      "path": "mediatr/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "gradient_128x128.png",
-        "lib/net461/MediatR.dll",
-        "lib/net461/MediatR.xml",
-        "lib/netstandard2.0/MediatR.dll",
-        "lib/netstandard2.0/MediatR.xml",
         "lib/netstandard2.1/MediatR.dll",
         "lib/netstandard2.1/MediatR.xml",
-        "mediatr.9.0.0.nupkg.sha512",
+        "mediatr.10.0.1.nupkg.sha512",
         "mediatr.nuspec"
+      ]
+    },
+    "MediatR.Contracts/1.0.1": {
+      "sha512": "NsRvOxthhkYml4DcBMyJsmym8C4MchioH7wxKVPEg7plFj9Euh/i4IcmZ3Gvgx6+K8obeuhPeJdoBl56wnuo3A==",
+      "type": "package",
+      "path": "mediatr.contracts/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.Contracts.dll",
+        "lib/net461/MediatR.Contracts.xml",
+        "lib/netstandard2.0/MediatR.Contracts.dll",
+        "lib/netstandard2.0/MediatR.Contracts.xml",
+        "mediatr.contracts.1.0.1.nupkg.sha512",
+        "mediatr.contracts.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.21": {
@@ -2188,6 +2230,19 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "NetDevPack/6.1.0": {
+      "sha512": "/Qyr2+g/0HA7MFKHwv0kI/zdedLYrZE73dhcxVB3hbTu91J7DGVRXSfvH0Fy4zAe69ZxO0bAizaXSY3bi5JlAg==",
+      "type": "package",
+      "path": "netdevpack/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "IconNuget.png",
+        "lib/netstandard2.1/NetDevPack.dll",
+        "netdevpack.6.1.0.nupkg.sha512",
+        "netdevpack.nuspec"
       ]
     },
     "Polly/7.2.2": {

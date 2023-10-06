@@ -1,4 +1,6 @@
-﻿using NSE.Core.DomainObjects;
+﻿using FluentValidation;
+using NSE.Core.DomainObjects;
+using NSE.Pedido.Domain.Voucher.Specs;
 
 namespace NSE.Pedido.Domain.Voucher
 {
@@ -18,6 +20,20 @@ namespace NSE.Pedido.Domain.Voucher
         public Voucher()
         {}
 
+        public bool EstaValidoParaUso()
+        {
+            return new VoucherAtivoSpecification()
+                        .And(new VoucherDataSpecification())
+                        .And(new VoucherQuantidadeSpecification())
+                        .IsSatisfiedBy(this);
+        }
 
+        public void MarcarComoUtilizado()
+        {
+            Ativo = false;
+            Utilizado = true;
+            Quantidade = 0;
+            DataUtilizacao = DateTime.Now;
+        }
     }
 }

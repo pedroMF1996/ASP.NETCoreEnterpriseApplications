@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "37+4NL39r54GbIUG8HwdngVXeaP+6ldFXzgYdWzYroMHblj1OijMHCbYrJ9p17tNYtGgGfxtWD3LFwimXdfBlw==",
+  "dgSpecHash": "Qbeyh/P0/d1tQ15nNvaHZw+gFnxtL/WwshyPI4WofmKL4TyXTHAQisiC+L4USrrqcDNYr0ch6cDJwds6tal8gQ==",
   "success": true,
   "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Catalogo.API\\NSE.Catalogo.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
@@ -41,6 +42,7 @@
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\netdevpack\\6.1.0\\netdevpack.6.1.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\polly\\7.2.2\\polly.7.2.2.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\polly.extensions.http\\3.0.0\\polly.extensions.http.3.0.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
