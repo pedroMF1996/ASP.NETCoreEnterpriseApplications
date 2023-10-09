@@ -52,7 +52,7 @@ namespace NSE.Pedido.Domain.Pedidos
             Endereco = endereco;
         }
 
-        internal void CalcularValorPedido()
+        public void CalcularValorPedido()
         {
             ValorTotal = PedidoItens.Sum(p => p.CalcularValor());
             CalcularValorTotalDesconto();

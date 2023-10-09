@@ -16,6 +16,11 @@ namespace NSE.Pedido.Infra.Data.Repository
 
         public IUnitOfWork UnitOfWork => _context;
 
+        public void Atualizar(Voucher voucher)
+        {
+            _context.Vouchers.Update(voucher);
+        }
+
         public void Dispose()
         {
             _context.Dispose();
