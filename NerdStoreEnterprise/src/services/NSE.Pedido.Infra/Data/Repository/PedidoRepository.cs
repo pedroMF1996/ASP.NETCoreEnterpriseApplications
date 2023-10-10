@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NSE.Core.Data;
 using NSE.Pedido.Domain.Pedidos;
+using System.Data.Common;
 
 namespace NSE.Pedido.Infra.Data.Repository
 {
@@ -50,6 +51,11 @@ namespace NSE.Pedido.Infra.Data.Repository
         public void Dispose()
         {
             _context?.Dispose();
+        }
+
+        public DbConnection ObterConexao()
+        {
+            return _context.Database.GetDbConnection();
         }
     }
 }
