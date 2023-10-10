@@ -10,17 +10,17 @@ namespace NSE.Pedido.API.Configurations
         public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddRegisterService();
-            services.AddJwtConfiguration(configuration);
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddControllers();
+            services.AddEndpointsApiExplorer();
 
-
+            
             services.AddDbContext<PedidosContext>(opt =>
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            // Add services to the container.
-            services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            services.AddEndpointsApiExplorer();
+            services.AddJwtConfiguration(configuration);
+
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            
             services.AddSwaggerConfiguration();
 
             services.AddCors(opt =>

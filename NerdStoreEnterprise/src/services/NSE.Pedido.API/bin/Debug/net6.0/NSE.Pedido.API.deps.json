@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "NSE.Pedido.API/1.0.0": {
         "dependencies": {
+          "Dapper": "2.1.4",
           "MediatR": "10.0.1",
           "MediatR.Extensions.Microsoft.DependencyInjection": "10.0.1",
           "Microsoft.EntityFrameworkCore.Design": "6.0.21",
@@ -21,6 +22,14 @@
         },
         "runtime": {
           "NSE.Pedido.API.dll": {}
+        }
+      },
+      "Dapper/2.1.4": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.4.42149"
+          }
         }
       },
       "EasyNetQ/7.5.5": {
@@ -746,6 +755,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Dapper/2.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TnTa28ktP/drRXnnXChHANq2WoF8af9DLu3VBtyPn3RYjxwDzuYhGrSvAN2CrmE+RyNaN1v81kf6rYbp0a4UaQ==",
+      "path": "dapper/2.1.4",
+      "hashPath": "dapper.2.1.4.nupkg.sha512"
     },
     "EasyNetQ/7.5.5": {
       "type": "package",

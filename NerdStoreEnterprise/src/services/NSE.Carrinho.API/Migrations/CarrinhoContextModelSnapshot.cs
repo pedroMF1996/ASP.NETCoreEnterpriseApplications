@@ -32,7 +32,8 @@ namespace NSE.Carrinho.API.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Desconto")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)")
+                        .HasColumnName("Desconto");
 
                     b.Property<decimal>("ValorTotal")
                         .HasColumnType("decimal(18,2)");
@@ -122,6 +123,7 @@ namespace NSE.Carrinho.API.Migrations
                     b.HasOne("NSE.Carrinho.API.Models.CarrinhoCliente", "CarrinhoCliente")
                         .WithMany("Itens")
                         .HasForeignKey("CarrinhoId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("CarrinhoCliente");

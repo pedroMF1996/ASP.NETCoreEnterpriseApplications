@@ -1,4 +1,4 @@
-﻿namespace NSE.Pedido.Domain.Voucher
+﻿namespace NSE.Pedido.Domain.Vouchers
 {
     public enum TipoDescontoVoucher
     {

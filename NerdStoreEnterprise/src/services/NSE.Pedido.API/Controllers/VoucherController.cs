@@ -17,7 +17,7 @@ namespace NSE.Pedido.API.Controllers
             _voucherQuery = voucherQuery;
         }
 
-        [HttpGet("voucher/{codigo:string}")]
+        [HttpGet("voucher/{codigo}")]
         [ProducesResponseType(typeof(VoucherDTO), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> ObterPorCodigo(string codigo)
