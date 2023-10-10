@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EasyNetQ;
+using Microsoft.EntityFrameworkCore;
 using NSE.Carrinho.API.Data;
 using NSE.Core.Messages.Integration;
 using NSE.MessageBus;
@@ -19,6 +20,12 @@ namespace NSE.Carrinho.API.Services
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             await SetSubscribers();
+            _messageBus.AdvancedBus.Connected += OnConnect;
+        }
+
+        private void OnConnect(object? sender, ConnectedEventArgs e)
+        {
+            Task.Run(SetSubscribers);
         }
 
         private async Task SetSubscribers()
