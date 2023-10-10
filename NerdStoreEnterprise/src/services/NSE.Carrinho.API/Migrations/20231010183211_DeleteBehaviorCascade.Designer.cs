@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NSE.Carrinho.API.Data;
 
@@ -11,9 +12,10 @@ using NSE.Carrinho.API.Data;
 namespace NSE.Carrinho.API.Migrations
 {
     [DbContext(typeof(CarrinhoContext))]
-    partial class CarrinhoContextModelSnapshot : ModelSnapshot
+    [Migration("20231010183211_DeleteBehaviorCascade")]
+    partial class DeleteBehaviorCascade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
