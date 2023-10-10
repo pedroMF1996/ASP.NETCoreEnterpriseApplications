@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NSE.Carrinho.API.Configurations;
 using NSE.Carrinho.API.Data;
 using NSE.WebAPI.Core.Identidade;
 
@@ -20,6 +21,7 @@ namespace NSE.Carrinho.API.Configuration
             services.AddEndpointsApiExplorer();
             
             services.AddJwtConfiguration(configuration);
+            services.AddMessageBusConfiguration(configuration);
 
             services.AddSwaggerConfiguration();
             
