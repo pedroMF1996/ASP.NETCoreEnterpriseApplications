@@ -1,6 +1,6 @@
 ﻿using NSE.Core.MediatR;
 using NSE.Pedido.API.Application.Queries;
-using NSE.Pedido.Domain.Voucher.Interface;
+using NSE.Pedido.Domain.Vouchers.Interface;
 using NSE.Pedido.Infra.Data;
 using NSE.Pedido.Infra.Data.Repository;
 using NSE.WebAPI.Core.Usuario;

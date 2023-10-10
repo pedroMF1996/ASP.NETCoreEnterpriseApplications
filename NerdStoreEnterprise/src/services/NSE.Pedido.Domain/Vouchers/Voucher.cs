@@ -1,8 +1,7 @@
-﻿using FluentValidation;
-using NSE.Core.DomainObjects;
-using NSE.Pedido.Domain.Voucher.Specs;
+﻿using NSE.Core.DomainObjects;
+using NSE.Pedido.Domain.Vouchers.Specs;
 
-namespace NSE.Pedido.Domain.Voucher
+namespace NSE.Pedido.Domain.Vouchers
 {
     public class Voucher : Entity, IAggregateRoot
     {
@@ -23,7 +22,7 @@ namespace NSE.Pedido.Domain.Voucher
         public bool EstaValidoParaUso()
         {
             return new VoucherAtivoSpecification()
-                        .And(new VoucherSpec())
+                        .And(new VoucherDataSpecification())
                         .And(new VoucherQuantidadeSpecification())
                         .IsSatisfiedBy(this);
         }
@@ -33,6 +32,17 @@ namespace NSE.Pedido.Domain.Voucher
             Ativo = false;
             Utilizado = true;
             Quantidade = 0;
+            DataUtilizacao = DateTime.Now;
+        }
+
+        public void DebitarQuantidade()
+        {
+            Quantidade -= 1;
+
+            if(Quantidade >= 1) { return; }
+
+            Ativo = false;
+            Utilizado = true;
             DataUtilizacao = DateTime.Now;
         }
     }
