@@ -5,7 +5,7 @@ using NSE.Core.Communication;
 
 namespace NSE.WebAPI.Core.Controllers
 {
-    
+
     [ApiController]
     public abstract class MainController : Controller
     {
@@ -14,7 +14,8 @@ namespace NSE.WebAPI.Core.Controllers
 
         protected ActionResult CustomResponse(object? result = null)
         {
-            if(OperacaoValida()) {
+            if (OperacaoValida())
+            {
                 return Ok(result);
             }
 
@@ -47,8 +48,8 @@ namespace NSE.WebAPI.Core.Controllers
         }
 
         protected bool OperacaoValida()
-        { 
-            return !Errors.Any(); 
+        {
+            return !Errors.Any();
         }
 
         protected void AdicionarErroProcessamento(string erro)
@@ -60,12 +61,12 @@ namespace NSE.WebAPI.Core.Controllers
         {
             erros.ForEach(erro => AdicionarErroProcessamento(erro.ErrorMessage));
         }
-        
+
         protected bool ResponsePossuiErros(ResponseResult result)
         {
             if (result != null || !result.Errors.Mensagens.Any())
                 return false;
-            
+
             foreach (var mensagem in result.Errors.Mensagens)
             {
                 AdicionarErroProcessamento(mensagem);

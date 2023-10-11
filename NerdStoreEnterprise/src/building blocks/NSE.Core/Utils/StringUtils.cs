@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace NSE.Core.Utils
+﻿namespace NSE.Core.Utils
 {
     public static class StringUtils
     {

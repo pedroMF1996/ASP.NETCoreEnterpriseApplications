@@ -37,11 +37,11 @@ namespace NSE.Cliente.API.Data
             modelBuilder.Ignore<Event>();
 
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
-                e => e.GetProperties().Where(p => p.ClrType == typeof(string)))) 
+                e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
             {
                 property.SetColumnType("varchar(160)");
             }
-            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) 
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
                 relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ClienteDbContext).Assembly);

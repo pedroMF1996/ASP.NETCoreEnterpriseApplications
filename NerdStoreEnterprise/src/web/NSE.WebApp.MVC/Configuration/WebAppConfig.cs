@@ -1,6 +1,6 @@
-﻿using NSE.WebApp.MVC.Extensions;
+﻿using Microsoft.AspNetCore.Localization;
 using NSE.WebAPI.Core.Identidade;
-using Microsoft.AspNetCore.Localization;
+using NSE.WebApp.MVC.Extensions;
 using System.Globalization;
 
 namespace NSE.WebApp.MVC.Configuration

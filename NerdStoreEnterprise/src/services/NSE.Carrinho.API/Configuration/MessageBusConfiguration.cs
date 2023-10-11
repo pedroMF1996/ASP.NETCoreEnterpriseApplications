@@ -1,6 +1,6 @@
-﻿using NSE.MessageBus;
+﻿using NSE.Carrinho.API.Services;
 using NSE.Core.Utils;
-using NSE.Carrinho.API.Services;
+using NSE.MessageBus;
 
 namespace NSE.Carrinho.API.Configurations
 {

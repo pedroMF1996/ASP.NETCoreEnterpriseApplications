@@ -10,6 +10,6 @@ namespace NSE.Cliente.API.Configuration
         {
             services.AddMessageBus(configuration.GetMessageQueueConnectionString("RabbitMQ"))
                 .AddHostedService<RegistroClienteIntegrationHandler>();
-        } 
+        }
     }
 }

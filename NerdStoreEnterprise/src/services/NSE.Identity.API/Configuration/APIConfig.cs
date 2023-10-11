@@ -4,7 +4,8 @@ namespace NSE.Identity.API.Configuration
 {
     public static class APIConfig
     {
-        public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration) {
+        public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
+        {
             // Add services to the container.
 
             services.AddControllers();
@@ -15,7 +16,8 @@ namespace NSE.Identity.API.Configuration
 
             return services;
         }
-        public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment environment) {
+        public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment environment)
+        {
             app.UseISwaggerConfiguration(environment);
 
             app.UseHttpsRedirection();

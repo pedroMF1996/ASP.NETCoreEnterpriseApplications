@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 
 namespace NSE.WebApp.MVC.Services.Handlers
 {
-    public class HttpCientAuthorizationDelegateHandler : DelegatingHandler  
+    public class HttpCientAuthorizationDelegateHandler : DelegatingHandler
     {
         private readonly IAspNetUser _user;
 
@@ -16,7 +16,7 @@ namespace NSE.WebApp.MVC.Services.Handlers
         {
             var authorizationHeader = _user.ObterHttpContext().Request.Headers["Authorization"];
 
-            if(!string.IsNullOrEmpty(authorizationHeader))
+            if (!string.IsNullOrEmpty(authorizationHeader))
             {
                 request.Headers.Add("Authorization", new List<string>() { authorizationHeader });
             }

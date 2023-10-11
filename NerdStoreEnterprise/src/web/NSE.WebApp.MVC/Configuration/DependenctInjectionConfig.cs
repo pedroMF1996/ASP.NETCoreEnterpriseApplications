@@ -36,7 +36,13 @@ namespace NSE.WebApp.MVC.Configuration
                 .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
                 .AddPolicyHandler(PolicyExtensions.EsperarTentar())
                 .AddTransientHttpErrorPolicy(
-                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));           
+                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
+
+            services.AddHttpClient<IClienteService, ClienteService>()
+                .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
+                .AddPolicyHandler(PolicyExtensions.EsperarTentar())
+                .AddTransientHttpErrorPolicy(
+                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
             #endregion
 

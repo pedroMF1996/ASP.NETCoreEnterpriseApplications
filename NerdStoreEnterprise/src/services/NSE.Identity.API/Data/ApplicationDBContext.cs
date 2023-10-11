@@ -7,7 +7,7 @@ namespace NSE.Identity.API.Data
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> opt) : base(opt)
         {
-            
+
         }
     }
 }

@@ -38,13 +38,13 @@ namespace NSE.WebApp.MVC.Extensions
 
         private void HandleRequestExceptionAsync(HttpContext context, HttpStatusCode statusCode)
         {
-            if(statusCode == HttpStatusCode.Unauthorized)
+            if (statusCode == HttpStatusCode.Unauthorized)
             {
                 context.Response.Redirect($"/login?ReturnUrl={context.Request.Path}");
                 return;
             }
 
-            context.Response.StatusCode = (int)statusCode; 
+            context.Response.StatusCode = (int)statusCode;
         }
 
         private void HandleCirquitBreakerException(HttpContext httpContext)

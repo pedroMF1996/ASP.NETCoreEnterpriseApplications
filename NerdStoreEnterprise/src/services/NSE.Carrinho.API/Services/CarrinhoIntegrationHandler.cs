@@ -16,7 +16,7 @@ namespace NSE.Carrinho.API.Services
             _serviceProvider = serviceProvider;
             _messageBus = messageBus;
         }
-        
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             await SetSubscribers();
@@ -30,7 +30,7 @@ namespace NSE.Carrinho.API.Services
 
         private async Task SetSubscribers()
         {
-            await _messageBus.SubscribeAsync<PedidoRealizadoIntegrationEvent>("PedidoRealizado", async request => 
+            await _messageBus.SubscribeAsync<PedidoRealizadoIntegrationEvent>("PedidoRealizado", async request =>
                 await ApagarCarrinho(request));
         }
 

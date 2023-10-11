@@ -13,8 +13,8 @@ namespace NSE.Catalogo.API.Configuration
                 {
                     Title = "NerdStore Enterprise Catalogo API",
                     Description = "Esta API faz parte do curso ASP.NET Core Enterprise Application",
-                    Contact = new OpenApiContact() { Name = "Pedro Martins Falleiros", Email = "pmfrp@hotmail.com"},
-                    License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/license/MIT")}
+                    Contact = new OpenApiContact() { Name = "Pedro Martins Falleiros", Email = "pmfrp@hotmail.com" },
+                    License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/license/MIT") }
                 });
 
                 c.AddSwaggerJwtAuthorizationConfiguration();

@@ -22,7 +22,7 @@ namespace NSE.WebApp.MVC.Extensions
 
         public override void AddValidation(ClientModelValidationContext context)
         {
-            if(context == null)
+            if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
@@ -42,7 +42,7 @@ namespace NSE.WebApp.MVC.Extensions
         private readonly IValidationAttributeAdapterProvider _adapterProvider = new ValidationAttributeAdapterProvider();
         public IAttributeAdapter? GetAttributeAdapter(ValidationAttribute attribute, IStringLocalizer? stringLocalizer)
         {
-            if(attribute is CpfAttribute cpfAttribute)
+            if (attribute is CpfAttribute cpfAttribute)
             {
                 return new CpfAttributeAdapter(cpfAttribute, stringLocalizer);
             }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NSE.Carrinho.API.Configurations;
 using NSE.Carrinho.API.Data;
 using NSE.WebAPI.Core.Identidade;
 
@@ -19,12 +18,11 @@ namespace NSE.Carrinho.API.Configuration
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
-            
+
             services.AddJwtConfiguration(configuration);
-            services.AddMessageBusConfiguration(configuration);
 
             services.AddSwaggerConfiguration();
-            
+
             services.AddCors(opt =>
             {
                 opt.AddPolicy("Total",
@@ -32,7 +30,7 @@ namespace NSE.Carrinho.API.Configuration
                                       .AllowAnyHeader()
                                       .AllowAnyMethod());
             });
-            
+
             return services;
         }
 
@@ -45,9 +43,9 @@ namespace NSE.Carrinho.API.Configuration
             }
 
             app.UseSwaggerConfiguration(environment);
-            
+
             app.UseHttpsRedirection();
-            
+
             app.UseCors("Total");
 
             app.UseAuthConfiguration();
