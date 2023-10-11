@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.4" />
     <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.21">
@@ -29,8 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Commands\" />
-    <Folder Include="Application\Events\" />
     <Folder Include="Extensions\" />
   </ItemGroup>
 

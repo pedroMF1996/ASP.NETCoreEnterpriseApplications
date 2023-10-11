@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Bq/BJCuhZI0ai4qzPx38Rx2nZPuPUqMxxckegHR376B4IOwosx+u9FhbGyR1h+ITOVGapoArvypy9Ae9G/ELlQ==",
+  "dgSpecHash": "GxF5PuaXgTiGmjsSSBas29GJM7+Z5K0xcFVx/E9VAWwzkIEztCh1m4hf9dbkTSECU88wpYutS6mSokBf2UsBbw==",
   "success": true,
   "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Pedido.API\\NSE.Pedido.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pmfrp\\.nuget\\packages\\dapper\\2.1.4\\dapper.2.1.4.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\easynetq\\7.5.5\\easynetq.7.5.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

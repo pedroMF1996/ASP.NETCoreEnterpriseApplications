@@ -157,3 +157,4 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\MediatR.Contracts.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\NetDevPack.dll
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\Dapper.dll

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NSE.Core.Data;
-using NSE.Pedido.Domain.Voucher;
-using NSE.Pedido.Domain.Voucher.Interface;
+using NSE.Pedido.Domain.Vouchers;
+using NSE.Pedido.Domain.Vouchers.Interface;
 
 namespace NSE.Pedido.Infra.Data.Repository
 {
@@ -15,6 +15,11 @@ namespace NSE.Pedido.Infra.Data.Repository
         }
 
         public IUnitOfWork UnitOfWork => _context;
+
+        public void Atualizar(Voucher voucher)
+        {
+            _context.Vouchers.Update(voucher);
+        }
 
         public void Dispose()
         {
