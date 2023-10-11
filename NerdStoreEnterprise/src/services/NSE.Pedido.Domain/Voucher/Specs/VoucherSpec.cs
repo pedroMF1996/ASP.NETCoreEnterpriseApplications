@@ -1,9 +1,9 @@
 ﻿using NetDevPack.Specification;
 using System.Linq.Expressions;
 
-namespace NSE.Pedido.Domain.Vouchers.Specs
+namespace NSE.Pedido.Domain.Voucher.Specs
 {
-    public class VoucherDataSpecification : Specification<Voucher>
+    public class VoucherSpec : Specification<Voucher>
     {
         public override Expression<Func<Voucher, bool>> ToExpression()
         {

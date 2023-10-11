@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using NSE.Pedido.Domain.Vouchers;
+using NSE.Pedido.Domain.Voucher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
