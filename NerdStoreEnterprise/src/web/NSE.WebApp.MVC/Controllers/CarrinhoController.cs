@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NSE.WebApp.MVC.Models;
 using NSE.WebApp.MVC.Services.Interfaces;
 
 namespace NSE.WebApp.MVC.Controllers
 {
+    [Authorize]
     public class CarrinhoController : MainController
     {
         private readonly IComprasBffService _comprasBffService;
@@ -13,7 +15,7 @@ namespace NSE.WebApp.MVC.Controllers
             _comprasBffService = comprasBffService;
         }
 
-        [Route("carrinho")] 
+        [Route("carrinho")]
         public async Task<IActionResult> Index()
         {
             return View(await _comprasBffService.ObterCarrinho());
@@ -35,7 +37,7 @@ namespace NSE.WebApp.MVC.Controllers
         [Route("carrinho/atualizar-item")]
         public async Task<IActionResult> AtualizarItemCarrinho(Guid produtoId, int quantidade)
         {
-            var itemCarrinho = new ItemCarrinhoViewModel() { ProdutoId = produtoId, Quantidade = quantidade};
+            var itemCarrinho = new ItemCarrinhoViewModel() { ProdutoId = produtoId, Quantidade = quantidade };
             TratarNomeImagem(itemCarrinho);
 
             var resposta = await _comprasBffService.AtualizarIemCarrinho(produtoId, itemCarrinho);

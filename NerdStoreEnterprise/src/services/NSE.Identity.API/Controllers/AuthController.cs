@@ -2,15 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using NSE.Core.Messages.Integration;
 using NSE.Identity.API.Models;
+using NSE.MessageBus;
+using NSE.WebAPI.Core.Controllers;
+using NSE.WebAPI.Core.Identidade;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using NSE.WebAPI.Core.Identidade;
-using NSE.WebAPI.Core.Controllers;
-using NSE.Core.Messages.Integration;
-using EasyNetQ;
-using NSE.MessageBus;
 
 namespace NSE.Identity.API.Controllers
 {
@@ -57,8 +56,8 @@ namespace NSE.Identity.API.Controllers
             {
                 var clienteResult = await RegistrarCliente(model);
 
-                if (!clienteResult.ValidationResult.IsValid) 
-                { 
+                if (!clienteResult.ValidationResult.IsValid)
+                {
                     await _userManager.DeleteAsync(user);
                     return CustomResponse(clienteResult.ValidationResult);
                 }
@@ -66,7 +65,7 @@ namespace NSE.Identity.API.Controllers
                 return CustomResponse(await GerarJWT(model.Email));
             }
 
-            foreach(var error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 AdicionarErroProcessamento(error.Description);
             }
@@ -76,9 +75,9 @@ namespace NSE.Identity.API.Controllers
 
         [HttpPost("autenticar")]
         public async Task<IActionResult> Login(LoginUserViewModel model)
-        {          
+        {
 
-            if(!ModelState.IsValid) { return CustomResponse(ModelState); }
+            if (!ModelState.IsValid) { return CustomResponse(ModelState); }
 
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, true);
 
@@ -87,7 +86,8 @@ namespace NSE.Identity.API.Controllers
                 return CustomResponse(await GerarJWT(model.Email));
             }
 
-            if(result.IsLockedOut) {
+            if (result.IsLockedOut)
+            {
                 AdicionarErroProcessamento("Usuario temporariamente bloqueado por tentativas invalidas");
                 return CustomResponse();
             }
@@ -100,7 +100,7 @@ namespace NSE.Identity.API.Controllers
         private async Task<LoginResponseViewModel> GerarJWT(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
-            
+
             var claims = await _userManager.GetClaimsAsync(user);
 
             var identityClaims = await ObterClaimsUsuarioAsync(user, claims);
@@ -177,7 +177,7 @@ namespace NSE.Identity.API.Controllers
             {
                 return await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
             }
-            catch 
+            catch
             {
                 await _userManager.DeleteAsync(usuario);
                 throw;

@@ -11,7 +11,7 @@ namespace NSE.Cliente.API.Configuration
 {
     public static class DependencyInjectionConfig
     {
-        public static void RegisterServiceConfiguration( this IServiceCollection services)
+        public static void RegisterServiceConfiguration(this IServiceCollection services)
         {
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IAspNetUser, AspNetUser>();

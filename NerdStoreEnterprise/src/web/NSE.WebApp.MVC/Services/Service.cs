@@ -1,10 +1,9 @@
-﻿using NSE.WebApp.MVC.Extensions;
-using System.Text.Json;
-using System.Text;
-using Microsoft.Extensions.Options;
-using NSE.WebApp.MVC.Enum;
-using NSE.WebApp.MVC.Models;
+﻿using Microsoft.Extensions.Options;
 using NSE.Core.Communication;
+using NSE.WebApp.MVC.Enum;
+using NSE.WebApp.MVC.Extensions;
+using System.Text;
+using System.Text.Json;
 
 namespace NSE.WebApp.MVC.Services
 {
@@ -12,7 +11,7 @@ namespace NSE.WebApp.MVC.Services
     {
         protected readonly HttpClient _httpClient;
 
-        protected Service(HttpClient httpClient, AppSettingsUrlEnum appSettingsUrlEnum, IOptions<AppSettingsUrl> appSettingsOpt) 
+        protected Service(HttpClient httpClient, AppSettingsUrlEnum appSettingsUrlEnum, IOptions<AppSettingsUrl> appSettingsOpt)
         {
             _httpClient = httpClient;
             switch (appSettingsUrlEnum)
@@ -25,6 +24,9 @@ namespace NSE.WebApp.MVC.Services
                     break;
                 case AppSettingsUrlEnum.ComprasBff:
                     _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ComprasBffUrl);
+                    break;
+                case AppSettingsUrlEnum.Cliente:
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ClienteUrl);
                     break;
             }
         }
@@ -54,7 +56,7 @@ namespace NSE.WebApp.MVC.Services
                 case 500:
                     throw new CustomHttpRequestException(response.StatusCode);
 
-                case 400: 
+                case 400:
                     return false;
             }
 

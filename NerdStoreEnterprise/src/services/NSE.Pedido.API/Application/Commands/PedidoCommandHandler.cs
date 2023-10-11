@@ -9,7 +9,7 @@ using NSE.Pedido.Domain.Vouchers.Specs;
 
 namespace NSE.Pedido.API.Application.Commands
 {
-    public class PedidoCommandHandler : CommandHandler, 
+    public class PedidoCommandHandler : CommandHandler,
         IRequestHandler<AdicionarPedidoCommand, ValidationResult>
     {
 
@@ -28,7 +28,7 @@ namespace NSE.Pedido.API.Application.Commands
 
             var pedido = MapearPedido(message);
 
-            if(! await AplicarVoucher(message, pedido)) return ValidationResult;
+            if (!await AplicarVoucher(message, pedido)) return ValidationResult;
 
             if (!ValidarPedido(pedido)) return ValidationResult;
 
@@ -55,13 +55,13 @@ namespace NSE.Pedido.API.Application.Commands
 
             pedido.CalcularValorPedido();
 
-            if(pedido.ValorTotal != pedidoValorOriginal)
+            if (pedido.ValorTotal != pedidoValorOriginal)
             {
                 AdicionarErro("O valor total do pedido nao confere com o calculo do pedido");
                 return false;
             }
 
-            if(pedido.Desconto != desconto)
+            if (pedido.Desconto != desconto)
             {
                 AdicionarErro("O valor do desconto nao confere com o desconto");
                 return false;
@@ -72,11 +72,11 @@ namespace NSE.Pedido.API.Application.Commands
 
         private async Task<bool> AplicarVoucher(AdicionarPedidoCommand message, Domain.Pedidos.Pedido pedido)
         {
-            if(!message.VoucherUtilizado) return true;
+            if (!message.VoucherUtilizado) return true;
 
             var voucher = await _voucherRepository.ObterVoucherPorCodigo(message.VoucherCodigo);
 
-            if(voucher == null)
+            if (voucher == null)
             {
                 AdicionarErro("O voucher informado nao existe");
                 return false;
@@ -84,7 +84,7 @@ namespace NSE.Pedido.API.Application.Commands
 
             var voucherValidation = new VoucherValidation().Validate(voucher);
 
-            if(!voucherValidation.IsValid)
+            if (!voucherValidation.IsValid)
             {
                 voucherValidation.Errors.ToList().ForEach(m => AdicionarErro(m.ErrorMessage));
                 return false;
@@ -111,7 +111,7 @@ namespace NSE.Pedido.API.Application.Commands
                 Estado = message.Endereco.Estado,
             };
 
-            var pedido = new Domain.Pedidos.Pedido(message.ClienteId, message.ValorTotal, 
+            var pedido = new Domain.Pedidos.Pedido(message.ClienteId, message.ValorTotal,
                 message.PedidoItems.Select(PedidoItemDTO.ParaPedidoItem).ToList(), message.VoucherUtilizado, message.Desconto);
 
             pedido.AtribuirEndereco(endereco);

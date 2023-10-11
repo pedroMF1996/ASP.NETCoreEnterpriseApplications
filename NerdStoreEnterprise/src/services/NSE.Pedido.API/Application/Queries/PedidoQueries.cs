@@ -46,7 +46,7 @@ namespace NSE.Pedido.API.Application.Queries
 
         private PedidoDTO MapearPedido(dynamic result)
         {
-            var pedido =  new PedidoDTO()
+            var pedido = new PedidoDTO()
             {
                 Codigo = result[0].CODIGO,
                 Status = result[0].PEDIDOSTATUS,

@@ -17,7 +17,7 @@ namespace NSE.Cliente.API.Models
 
         //EF Relation
         protected Endereco()
-        {}
+        { }
 
         public Endereco(string logradouro, string numero, string complemento, string bairro, string cep, string cidade, string estado, Guid? clienteId)
         {

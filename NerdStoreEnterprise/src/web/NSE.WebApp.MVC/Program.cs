@@ -1,4 +1,3 @@
-using Microsoft.Extensions.Configuration;
 using NSE.WebApp.MVC.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);

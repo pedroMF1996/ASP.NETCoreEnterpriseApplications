@@ -1,5 +1,4 @@
 ﻿using NSE.Pedido.API.Application.DTO;
-using NSE.Pedido.Domain.Vouchers.Interface;
 
 namespace NSE.Pedido.API.Application.Queries
 {
@@ -20,7 +19,7 @@ namespace NSE.Pedido.API.Application.Queries
         {
             var voucher = await _voucherRepository.ObterVoucherPorCodigo(codigo);
 
-            if(voucher == null)
+            if (voucher == null)
             {
                 return null;
             }

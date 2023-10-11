@@ -22,12 +22,12 @@ namespace NSE.Pedido.API.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> ObterPorCodigo(string codigo)
         {
-            if(string.IsNullOrEmpty(codigo))
+            if (string.IsNullOrEmpty(codigo))
                 return NotFound();
 
             var voucher = await _voucherQuery.ObterVoucherPorCodigo(codigo);
 
-            return voucher == null? NotFound() : CustomResponse(voucher);
+            return voucher == null ? NotFound() : CustomResponse(voucher);
         }
     }
 }

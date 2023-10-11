@@ -19,15 +19,17 @@ namespace NSE.WebApp.MVC.Controllers
 
         [HttpGet]
         [Route("nova-conta")]
-        public IActionResult Registro() {
+        public IActionResult Registro()
+        {
             ViewData["Title"] = "Nova conta";
-            return View(); 
+            return View();
         }
-        
+
         [HttpPost]
         [Route("nova-conta")]
-        public async Task<IActionResult> Registro(RegisterUserViewModel usuarioRegistro) { 
-            if(!ModelState.IsValid) return View(usuarioRegistro);
+        public async Task<IActionResult> Registro(RegisterUserViewModel usuarioRegistro)
+        {
+            if (!ModelState.IsValid) return View(usuarioRegistro);
 
             var resposta = await _autenticationService.Registro(usuarioRegistro);
 
@@ -46,7 +48,7 @@ namespace NSE.WebApp.MVC.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
-        
+
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login(LoginUserViewModel usuarioLogin, string? returnUrl = null)
@@ -57,7 +59,7 @@ namespace NSE.WebApp.MVC.Controllers
             var resposta = await _autenticationService.Login(usuarioLogin);
 
             if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioLogin);
-            
+
             await RealizarLogin(resposta);
 
             if (string.IsNullOrEmpty(returnUrl)) return RedirectToAction("Index", controllerName: "Catalogo");
@@ -90,8 +92,8 @@ namespace NSE.WebApp.MVC.Controllers
                 IsPersistent = true,
             };
 
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, 
-                new ClaimsPrincipal(claimsIdentity), 
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
                 authProperties);
         }
 

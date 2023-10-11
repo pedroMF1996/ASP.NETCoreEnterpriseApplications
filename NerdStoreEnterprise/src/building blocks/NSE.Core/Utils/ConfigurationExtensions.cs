@@ -7,6 +7,6 @@ namespace NSE.Core.Utils
         public static string GetMessageQueueConnectionString(this IConfiguration configuration, string name)
         {
             return configuration?.GetSection("MessageQueueConnection")?[name];
-        } 
+        }
     }
 }

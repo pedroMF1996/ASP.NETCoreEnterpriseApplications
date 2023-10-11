@@ -6,7 +6,7 @@ namespace NSE.Core.DomainObjects
     {
         public const int CpfMaxLength = 11;
 
-        public string Numero {  get; private set; }
+        public string Numero { get; private set; }
 
         protected Cpf() { }
 

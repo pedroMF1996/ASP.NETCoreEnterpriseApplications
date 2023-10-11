@@ -6,7 +6,7 @@ using NSE.Core.Messages;
 
 namespace NSE.Cliente.API.Application.Commands
 {
-    public class ClienteCommandHandler : CommandHandler, 
+    public class ClienteCommandHandler : CommandHandler,
                                          IRequestHandler<RegistrarClienteCommand, ValidationResult>,
                                          IRequestHandler<AdicionarEnderecoCommand, ValidationResult>
     {
@@ -24,7 +24,7 @@ namespace NSE.Cliente.API.Application.Commands
                 return message.ValidationResult;
 
             var clienteExistente = await _clienteRepository.ObterPorCpf(message.Cpf);
-            
+
             if (clienteExistente != null)
             {
                 AdicionarErro("Este CPF ja esta em uso");
@@ -32,14 +32,14 @@ namespace NSE.Cliente.API.Application.Commands
             }
 
             var cliente = new ClienteEntity(message.Id, message.Name, message.Email, message.Cpf);
-            
+
             await _clienteRepository.Adicionar(cliente);
 
-            cliente.AdicionarEvento(new ClienteRegistradoEvent(cliente.Id,cliente.Nome, cliente.Email.Endereco, cliente.Cpf.Numero));
+            cliente.AdicionarEvento(new ClienteRegistradoEvent(cliente.Id, cliente.Nome, cliente.Email.Endereco, cliente.Cpf.Numero));
 
             return await PersistirDados(_clienteRepository.UnitOfWork);
         }
-            
+
         public async Task<ValidationResult> Handle(AdicionarEnderecoCommand message, CancellationToken cancellationToken)
         {
             if (!message.EhValido()) return message.ValidationResult;

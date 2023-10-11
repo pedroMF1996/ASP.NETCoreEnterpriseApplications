@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
-using System.Drawing;
 
 namespace NSE.Carrinho.API.Models
 {
@@ -17,18 +16,18 @@ namespace NSE.Carrinho.API.Models
 
         public CarrinhoCliente(Guid clienteId)
         {
-            Id = Guid.NewGuid();    
+            Id = Guid.NewGuid();
             ClienteId = clienteId;
         }
 
         public CarrinhoCliente()
-        {}
+        { }
 
         internal void AdicionarItem(CarrinhoItem item)
         {
             item.AssociarCarrinho(Id);
 
-            if(CarrinhoItemExistente(item))
+            if (CarrinhoItemExistente(item))
             {
                 var itemExistente = ObterPorProdutoId(item.ProdutoId);
                 itemExistente.AdicionarUnidades(item.Quantidade);
@@ -74,7 +73,7 @@ namespace NSE.Carrinho.API.Models
 
         internal void CalcularValorTotalDesconto()
         {
-            if(!VoucherUtilizado) { return; }
+            if (!VoucherUtilizado) { return; }
 
             decimal desconto = 0;
             var valor = ValorTotal;
@@ -90,9 +89,9 @@ namespace NSE.Carrinho.API.Models
             Desconto = desconto;
         }
 
-        internal CarrinhoItem ObterPorProdutoId(Guid produtoId) 
-        { 
-            return Itens.FirstOrDefault(p => p.ProdutoId == produtoId); 
+        internal CarrinhoItem ObterPorProdutoId(Guid produtoId)
+        {
+            return Itens.FirstOrDefault(p => p.ProdutoId == produtoId);
         }
 
         internal void AtualizarUnidades(CarrinhoItem item, int unidades)
