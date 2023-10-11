@@ -33,5 +33,15 @@ namespace NSE.Cliente.API.Data
         {
             _dbContext.Dispose();
         }
+
+        public async Task<Endereco> ObterEnderecoPorId(Guid clienteId)
+        {
+            return await _dbContext.Enderecos.FirstOrDefaultAsync(e => e.ClienteId == clienteId);
+        }
+
+        public async Task AdicionarEndereco(Endereco endereco)
+        {
+            await _dbContext.Enderecos.AddAsync(endereco);
+        }
     }
 }
