@@ -1,5 +1,11 @@
-﻿using NSE.Core.MediatR;
+﻿using FluentValidation.Results;
+using MediatR;
+using NSE.Core.MediatR;
+using NSE.Pedido.API.Application.Commands;
+using NSE.Pedido.API.Application.Events;
 using NSE.Pedido.API.Application.Queries;
+using NSE.Pedido.Domain.Pedidos;
+using NSE.Pedido.Domain.Vouchers.Interface;
 using NSE.Pedido.Infra.Data;
 using NSE.Pedido.Infra.Data.Repository;
 using NSE.WebAPI.Core.Usuario;
@@ -36,6 +42,7 @@ namespace NSE.Pedido.API.Configurations
 
             services.AddScoped<PedidosContext>();
             services.AddScoped<IVoucherRepository, VoucherRepository>();
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
 
             #endregion
             return services;
