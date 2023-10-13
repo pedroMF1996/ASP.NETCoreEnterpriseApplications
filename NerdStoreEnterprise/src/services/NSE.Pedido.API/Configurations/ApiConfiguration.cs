@@ -18,7 +18,7 @@ namespace NSE.Pedido.API.Configurations
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddJwtConfiguration(configuration);
-
+            services.AddMessageBusConfiguration(configuration);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
             
             services.AddSwaggerConfiguration();
