@@ -2,7 +2,7 @@
 
 namespace NSE.Core.Messages.Integration
 {
-    public class ResponseMessage : Message 
+    public class ResponseMessage : Message
     {
         public ValidationResult ValidationResult { get; private set; }
 

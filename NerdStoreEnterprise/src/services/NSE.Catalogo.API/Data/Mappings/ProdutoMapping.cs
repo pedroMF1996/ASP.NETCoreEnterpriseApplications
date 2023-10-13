@@ -13,11 +13,11 @@ namespace NSE.Catalogo.API.Data.Mappings
             builder.Property(x => x.Nome)
                 .IsRequired()
                 .HasColumnType("varchar(250)");
-            
+
             builder.Property(x => x.Descricao)
                 .IsRequired()
                 .HasColumnType("varchar(500)");
-            
+
             builder.Property(x => x.Imagem)
                 .IsRequired()
                 .HasColumnType("varchar(250)");

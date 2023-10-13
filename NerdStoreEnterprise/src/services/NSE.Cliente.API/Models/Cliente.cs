@@ -12,7 +12,7 @@ namespace NSE.Cliente.API.Models
 
         //EF Relation
         protected ClienteEntity()
-        {}
+        { }
 
         public ClienteEntity(Guid id, string nome, string email, string cpf)
         {

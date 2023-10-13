@@ -23,7 +23,7 @@ namespace NSE.Cliente.API.Data.Mappings
                 .HasColumnName("CPF")
                 .HasColumnType("varchar(11)");
             });
-            
+
             builder.OwnsOne(c => c.Email, tf =>
             {
                 tf.Property(c => c.Endereco)

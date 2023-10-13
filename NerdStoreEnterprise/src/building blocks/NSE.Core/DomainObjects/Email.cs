@@ -7,7 +7,7 @@ namespace NSE.Core.DomainObjects
         public const int EmailMaxLength = 254;
         public const int EmailMinLength = 5;
 
-        public string Endereco {  get; private set; }
+        public string Endereco { get; private set; }
 
         protected Email() { }
 

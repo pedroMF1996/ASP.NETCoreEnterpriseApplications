@@ -1,5 +1,5 @@
-﻿using NSE.MessageBus;
-using NSE.Core.Utils;
+﻿using NSE.Core.Utils;
+using NSE.MessageBus;
 
 namespace NSE.Pedido.API.Configurations
 {

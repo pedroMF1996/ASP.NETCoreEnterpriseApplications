@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NSE.Identity.API.Configuration
+﻿namespace NSE.Identity.API.Configuration
 {
     public static class SwaggerConfig
     {

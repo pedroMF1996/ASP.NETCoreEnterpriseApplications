@@ -11,7 +11,7 @@ namespace NSE.WebApp.MVC.Services
     {
         public AutenticacaoServise(HttpClient httpClient, IOptions<AppSettingsUrl> appSettings)
             : base(httpClient, AppSettingsUrlEnum.Identidade, appSettings)
-        {}
+        { }
 
         public async Task<LoginResponseViewModel> Login(LoginUserViewModel usuarioLogin)
         {
