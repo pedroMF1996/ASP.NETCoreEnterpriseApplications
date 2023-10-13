@@ -13,6 +13,7 @@ namespace NSE.Cliente.API.Configuration
     {
         public static void RegisterServiceConfiguration(this IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IAspNetUser, AspNetUser>();
 
