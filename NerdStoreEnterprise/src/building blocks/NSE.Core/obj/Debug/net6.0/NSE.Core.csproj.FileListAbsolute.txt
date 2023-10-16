@@ -21,8 +21,10 @@ D:\cursos\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\refi
 D:\cursos\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.pdb
 D:\cursos\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\ref\NSE.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.deps.json
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.runtimeconfig.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.pdb
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.csproj.AssemblyReference.cache
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.GeneratedMSBuildEditorConfig.editorconfig
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.AssemblyInfoInputs.cache
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.AssemblyInfo.cs
@@ -30,7 +32,5 @@ D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterpr
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\refint\NSE.Core.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.pdb
-D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\ref\NSE.Core.dll
-D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.csproj.AssemblyReference.cache
-D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\bin\Debug\net6.0\NSE.Core.runtimeconfig.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.genruntimeconfig.cache
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\ref\NSE.Core.dll
