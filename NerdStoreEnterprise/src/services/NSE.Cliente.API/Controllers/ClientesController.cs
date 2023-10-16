@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NSE.Cliente.API.Application.Commands;
 using NSE.Cliente.API.Models;
 using NSE.Core.MediatR;
@@ -7,7 +8,7 @@ using NSE.WebAPI.Core.Usuario;
 
 namespace NSE.Cliente.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
     public class ClientesController : MainController
     {
         private readonly IMediatorHandler _mediator;
