@@ -1,11 +1,13 @@
 ﻿using NSE.Cliente.API.Application.Commands.Validations;
 using NSE.Core.Messages;
+using System.Text.Json.Serialization;
 
 namespace NSE.Cliente.API.Application.Commands
 {
     public class AdicionarEnderecoCommand : Command
     {
-        public Guid ClienteId { get; set; }
+        [JsonIgnore]
+        public Guid? ClienteId { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
