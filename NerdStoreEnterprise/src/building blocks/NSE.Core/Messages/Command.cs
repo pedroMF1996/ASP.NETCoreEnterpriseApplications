@@ -10,11 +10,12 @@ namespace NSE.Core.Messages
         public DateTime Timestamp { get; private set; }
 
         [JsonIgnore]
-        public ValidationResult? ValidationResult { get; set; }
+        public ValidationResult ValidationResult { get; set; }
 
         protected Command()
         {
             Timestamp = DateTime.UtcNow;
+            ValidationResult = new ValidationResult();
         }
 
         public virtual bool EhValido()
