@@ -9,6 +9,17 @@ namespace NSE.Cliente.API.Configuration
     {
         public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
+
+            services.RegisterServiceConfiguration();
+
+            services.AddMessageBusConfiguration(configuration);
+
+            services.AddSwaggerConfiguration();
+
+            services.AddJwtConfiguration(configuration);
+           
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
             // Add services to the container.
             services.AddControllers();
 
@@ -18,15 +29,7 @@ namespace NSE.Cliente.API.Configuration
             services.AddDbContext<ClienteDbContext>(opt =>
                 opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
-
-            services.RegisterServiceConfiguration();
-
-            services.AddMessageBusConfiguration(configuration);
-
-            services.AddSwaggerConfiguration();
-
-            services.AddJwtConfiguration(configuration);
+                       
 
             services.AddCors(opt =>
             {
@@ -48,6 +51,8 @@ namespace NSE.Cliente.API.Configuration
             app.UseSwaggerConfiguration(environment);
 
             app.UseHttpsRedirection();
+            
+            app.UseRouting();
 
             app.UseCors("Total");
 
