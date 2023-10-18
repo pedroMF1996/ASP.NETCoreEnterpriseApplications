@@ -20,6 +20,17 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
+    
+    - name: Verificar Instalação do dotnet-ef
+      run: |
+          if ! command -v dotnet-ef &> /dev/null
+          then
+              echo "dotnet-ef não está instalado. Instalando..."
+              dotnet tool install --global dotnet-ef
+          else
+              echo "dotnet-ef já está instalado."
+          fi
+          
     - name: Restore dependencies API Identity
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
     - name: Build API Identity
