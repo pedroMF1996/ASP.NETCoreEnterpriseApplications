@@ -17,22 +17,33 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
+      env:
+          ASPNETCORE_ENVIRONMENT: Development
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies API Identity
-      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
+      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
     - name: Build API Identity
-      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
     - name: Test API Identity
-      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
-      
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
+    - name: Aplicar Migrações para API Identity
+      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
+      env:
+          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          
     - name: Restore dependencies API Cliente
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
     - name: Build API Cliente
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
     - name: Test API Cliente
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
+    - name: Aplicar Migrações para API Cliente
+      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
+      env:
+          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+
       
     - name: Restore dependencies API Catalogo
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
@@ -40,6 +51,10 @@ jobs:
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
     - name: Test API Catalogo
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
+    - name: Aplicar Migrações para API Catalogo
+      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
+      env:
+          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
       
     - name: Restore dependencies API Carrinho
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
@@ -47,14 +62,22 @@ jobs:
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
     - name: Test API Carrinho
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
-      
+    - name: Aplicar Migrações para API Carrinho
+      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
+      env:
+          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          
     - name: Restore dependencies API Pedido
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
     - name: Build API Pedido
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
     - name: Test API Pedido
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
-      
+    - name: Aplicar Migrações para API Pedidos
+      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj -p ./NerdStoreEnterprise/src/services/NSE.Pedido.Infra/NSE.Pedido.Infra.csproj
+      env:
+          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          
     - name: Restore dependencies MVC
       run: dotnet restore ./NerdStoreEnterprise/src/web/NSE.WebApp.MVC/NSE.WebApp.MVC.csproj
     - name: Build MVC
