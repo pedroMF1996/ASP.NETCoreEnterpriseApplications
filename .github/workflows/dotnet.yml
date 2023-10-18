@@ -78,7 +78,11 @@ jobs:
             docker run -d --hostname rabbit-host --name ${{ env.RabbitMQ_Container_Name }} -p 5672:5672 -p 15672:15672 rabbitmq:management
             echo "O contêiner RabbitMQ está em execução."
           fi
-          
+
+    - name: Testar Conexão ao SQL Server
+      run: |
+        sqlcmd -S SqlServer,1433 -U SA -P ${{ env.SENHA_BANCO_DE_DADOS }} -Q "SELECT 1"
+
     - name: Restore dependencies API Identity
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
     - name: Build API Identity
