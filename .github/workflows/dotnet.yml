@@ -29,76 +29,7 @@ jobs:
       with:
         dotnet-version: 6.0.x
     
-    - name: Verificar Instalação do dotnet-ef
-      run: |
-          if ! command -v dotnet-ef &> /dev/null
-          then
-              echo "dotnet-ef não está instalado. Instalando..."
-              dotnet tool install --global dotnet-ef
-          else
-              echo "dotnet-ef já está instalado."
-          fi
 
-    - name: Verificar se o Docker está instalado
-      id: check-docker
-      run: |
-        if ! command -v docker &> /dev/null
-          then
-              echo "Docker não está instalado. Instalando..."
-              sudo apt-get update
-              sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-              curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-              echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-              sudo apt-get update
-              sudo apt-get install -y docker-ce
-          else
-              echo "Docker já está instalado."
-          fi
-
-    - name: Verificar e Excluir Contêineres SQL Server
-      run: |
-        # Verifique quantos contêineres estão em execução com o nome especificado
-        if [ $(docker ps -q -f "name=EnterpriseApplicationSqlServerContainer" | wc -l) -gt 0 ]; then
-          echo "Existem contêineres SQL Server com o nome antigo em execução. Excluindo todos..."
-        
-          for container_id in $(docker ps -q -f "name=EnterpriseApplicationSqlServerContainer"); do
-            docker stop $container_id
-            docker rm $container_id
-          done
-
-          echo "Todos os contêineres SQL Server foram excluídos."
-        else
-          echo "Não foram encontrados contêineres SQL Server adicionais em execução."
-        fi
-  
-
-    - name: Verificar se o Contêiner do SQL Server está em Execução
-      id: check-sql-server-container
-      run: |
-          if [[ $(docker ps -q -f "name=${{ env.SqlServer_Container_Name }}") ]]; then
-            echo "O contêiner do SQL Server já está em execução."
-          else
-            echo "O contêiner do SQL Server não está em execução. Criando..."
-            docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=${{ env.SENHA_BANCO_DE_DADOS }}" --network host -p 1433:1433 --name ${{ env.SqlServer_Container_Name }} -d mcr.microsoft.com/mssql/server:2022-latest
-            sleep 15s
-            echo "O contêiner SqlServer está em execução."
-          fi
-
-          
-    - name: Verificar se o contêiner RabbitMQ está em execução
-      id: check-rabbitmq-container
-      run: |
-          if [[ $(docker ps -q -f "name=${{ env.RabbitMQ_Container_Name }}") ]]; then
-            echo "O contêiner RabbitMQ já está em execução."
-          else
-            echo "O contêiner RabbitMQ não está em execução. Criando..."
-            docker run -d --hostname rabbit-host --name ${{ env.RabbitMQ_Container_Name }} -p 5672:5672 -p 15672:15672 rabbitmq:management
-            echo "O contêiner RabbitMQ está em execução."
-          fi
-
-    - name: Testar Conexão ao SQL Server
-      run: |
-        sqlcmd -S localhost,1433 -U SA -P ${{ env.SENHA_BANCO_DE_DADOS }} -Q "SELECT 1"
 
     - name: Restore dependencies API Identity
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
@@ -106,45 +37,35 @@ jobs:
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
     - name: Test API Identity
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
-    - name: Aplicar Migrações para API Identity
-      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
-          
+   
     - name: Restore dependencies API Cliente
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
     - name: Build API Cliente
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
     - name: Test API Cliente
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
-    - name: Aplicar Migrações para API Cliente
-      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
-      
+    
     - name: Restore dependencies API Catalogo
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
     - name: Build API Catalogo
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
     - name: Test API Catalogo
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
-    - name: Aplicar Migrações para API Catalogo
-      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
-      
+    
     - name: Restore dependencies API Carrinho
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
     - name: Build API Carrinho
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
     - name: Test API Carrinho
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
-    - name: Aplicar Migrações para API Carrinho
-      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
-          
+    
     - name: Restore dependencies API Pedido
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
     - name: Build API Pedido
       run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
     - name: Test API Pedido
       run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
-    - name: Aplicar Migrações para API Pedidos
-      run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj -p ./NerdStoreEnterprise/src/services/NSE.Pedido.Infra/NSE.Pedido.Infra.csproj
-          
+    
     - name: Restore dependencies MVC
       run: dotnet restore ./NerdStoreEnterprise/src/web/NSE.WebApp.MVC/NSE.WebApp.MVC.csproj
     - name: Build MVC
