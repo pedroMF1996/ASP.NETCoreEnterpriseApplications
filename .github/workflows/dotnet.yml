@@ -1,7 +1,7 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: .NET
+name: .NET Enterprise Applications
 
 on:
   push:
@@ -17,8 +17,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
-      env:
-          ASPNETCORE_ENVIRONMENT: Development
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
@@ -31,7 +29,7 @@ jobs:
     - name: Aplicar Migrações para API Identity
       run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
       env:
-          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          ASPNETCORE_ENVIRONMENT: Development
           
     - name: Restore dependencies API Cliente
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
@@ -42,7 +40,7 @@ jobs:
     - name: Aplicar Migrações para API Cliente
       run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
       env:
-          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          ASPNETCORE_ENVIRONMENT: Development
 
       
     - name: Restore dependencies API Catalogo
@@ -54,7 +52,7 @@ jobs:
     - name: Aplicar Migrações para API Catalogo
       run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
       env:
-          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          ASPNETCORE_ENVIRONMENT: Development
       
     - name: Restore dependencies API Carrinho
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
@@ -65,7 +63,7 @@ jobs:
     - name: Aplicar Migrações para API Carrinho
       run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
       env:
-          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          ASPNETCORE_ENVIRONMENT: Development
           
     - name: Restore dependencies API Pedido
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
@@ -76,7 +74,7 @@ jobs:
     - name: Aplicar Migrações para API Pedidos
       run: dotnet ef database update -s ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj -p ./NerdStoreEnterprise/src/services/NSE.Pedido.Infra/NSE.Pedido.Infra.csproj
       env:
-          ASPNETCORE_ENVIRONMENT: ${{ env.ASPNETCORE_ENVIRONMENT }}
+          ASPNETCORE_ENVIRONMENT: Development
           
     - name: Restore dependencies MVC
       run: dotnet restore ./NerdStoreEnterprise/src/web/NSE.WebApp.MVC/NSE.WebApp.MVC.csproj
