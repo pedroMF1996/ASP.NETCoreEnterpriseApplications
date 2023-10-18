@@ -3,17 +3,25 @@ using Microsoft.EntityFrameworkCore;
 using NSE.Identity.API.Data;
 using NSE.Identity.API.Extensions;
 using NSE.WebAPI.Core.Identidade;
+using System;
 
 namespace NSE.Identity.API.Configuration
 {
     public static class IdentityConfig
     {
-        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
-            services.AddDbContext<ApplicationDBContext>(opt =>
+            string connectionString = "";
+            if (environment.IsProduction())
             {
-                opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-            });
+                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
+            }
+            if (environment.IsDevelopment())
+            {
+                connectionString = configuration.GetConnectionString("DefaultConnection");
+            }
+
+            services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer(connectionString));
 
 
             services.AddDefaultIdentity<IdentityUser>()

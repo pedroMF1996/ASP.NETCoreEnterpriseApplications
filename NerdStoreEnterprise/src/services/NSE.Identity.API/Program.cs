@@ -12,7 +12,7 @@ builder.Services.AddApiConfiguration(builder.Configuration);
 
 builder.Services.AddSwaggerConfiguration();
 
-builder.Services.AddIdentityConfiguration(builder.Configuration);
+builder.Services.AddIdentityConfiguration(builder.Configuration, builder.Environment);
 
 
 var app = builder.Build();

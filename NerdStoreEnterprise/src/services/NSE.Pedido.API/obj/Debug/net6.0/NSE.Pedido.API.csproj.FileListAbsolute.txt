@@ -64,6 +64,7 @@ D:\cursos\NerdStoreEnterprise\src\services\NSE.Pedido.API\obj\Debug\net6.0\NSE.P
 D:\cursos\NerdStoreEnterprise\src\services\NSE.Pedido.API\obj\Debug\net6.0\ref\NSE.Pedido.API.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\appsettings.Development.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\appsettings.json
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\appsettings.Production.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\NSE.Pedido.API.exe
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\NSE.Pedido.API.deps.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\NSE.Pedido.API.runtimeconfig.json

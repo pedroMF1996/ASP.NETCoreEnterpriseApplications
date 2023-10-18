@@ -1,15 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NSE.Catalogo.API.Data;
 using NSE.WebAPI.Core.Identidade;
+using System;
 
 namespace NSE.Catalogo.API.Configuration
 {
     public static class ApiConfig
     {
 
-        public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
-            services.AddDbContext<CatalogoContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            string connectionString = "";
+            if (environment.IsProduction())
+            {
+                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
+            }
+            if (environment.IsDevelopment())
+            {
+                connectionString = configuration.GetConnectionString("DefaultConnection");
+            }
+
+            services.AddDbContext<CatalogoContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddDependencyInjectionConfiguration(configuration);
 

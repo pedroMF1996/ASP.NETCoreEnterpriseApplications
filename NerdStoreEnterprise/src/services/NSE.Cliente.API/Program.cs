@@ -12,7 +12,7 @@ if (builder.Environment.IsDevelopment())
 
 
 
-builder.Services.AddApiConfiguration(builder.Configuration);
+builder.Services.AddApiConfiguration(builder.Configuration, builder.Environment);
 
 
 var app = builder.Build();

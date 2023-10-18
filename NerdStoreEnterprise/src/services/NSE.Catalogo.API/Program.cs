@@ -15,7 +15,7 @@ if (builder.Environment.IsDevelopment())
 
 // Add services to the container.
 
-builder.Services.AddApiConfiguration(builder.Configuration);
+builder.Services.AddApiConfiguration(builder.Configuration, builder.Environment);
 
 var app = builder.Build();
 
