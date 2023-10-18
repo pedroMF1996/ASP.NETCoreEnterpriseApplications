@@ -16,7 +16,7 @@ jobs:
 
     env:
       ASPNETCORE_ENVIRONMENT: Production
-      SqlServer_Container_Name: EnterpriseApplicationSqlServerContainer
+      SqlServer_Container_Name: SqlServer
       RabbitMQ_Container_Name: rabbit-nerdstore
       SEU_SERVIDOR: SqlServer
       SENHA_BANCO_DE_DADOS: 9#KtGwPz$@6mJ^F 
@@ -54,6 +54,30 @@ jobs:
           else
               echo "Docker já está instalado."
           fi
+
+    - name: Verificar e Excluir Contêineres SQL Server
+      run: |
+        # Defina o nome do contêiner SQL Server
+        SQL_SERVER_CONTAINER_NAME="sql-server-container"
+    
+        # Verifique quantos contêineres estão em execução com o nome especificado
+        container_count=$(docker ps -q -f "name=$SQL_SERVER_CONTAINER_NAME" | wc -l)
+    
+        # Se houver mais de um contêiner em execução, exclua todos os contêineres
+        if [ $container_count -gt 1 ]; then
+          echo "Existem $container_count contêineres SQL Server em execução. Excluindo todos..."
+    
+          # Para cada contêiner em execução com o nome especificado, pare e remova o contêiner
+          for container_id in $(docker ps -q -f "name=$SQL_SERVER_CONTAINER_NAME"); do
+            docker stop $container_id
+            docker rm $container_id
+          done
+
+          echo "Todos os contêineres SQL Server foram excluídos."
+        else
+          echo "Não foram encontrados contêineres SQL Server adicionais em execução."
+        fi
+  
 
     - name: Verificar se o Contêiner do SQL Server está em Execução
       id: check-sql-server-container
