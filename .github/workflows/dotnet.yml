@@ -19,8 +19,8 @@ jobs:
       SqlServer_Container_Name: SqlServer
       RabbitMQ_Container_Name: rabbit-nerdstore
       SEU_SERVIDOR: SqlServer
-      SENHA_BANCO_DE_DADOS: 9#KtGwPz$@6mJ^F 
-      CONNECTION_STRING: Server=localhost,1433;Database=NerdStoreEnterprise;User=SA;Password=9#KtGwPz$@6mJ^F
+      SENHA_BANCO_DE_DADOS: SenhaSuperNaoSegura123 
+      CONNECTION_STRING: Server=localhost,1433;Database=NerdStoreEnterprise;User=SA;Password=SenhaSuperNaoSegura123
       
     steps:
     - uses: actions/checkout@v3
