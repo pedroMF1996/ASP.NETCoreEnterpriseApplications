@@ -79,7 +79,7 @@ jobs:
             echo "O contêiner do SQL Server já está em execução."
           else
             echo "O contêiner do SQL Server não está em execução. Criando..."
-            docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=${{ env.SENHA_BANCO_DE_DADOS }}" -p 1433:1433 --name ${{ env.SqlServer_Container_Name }} -d mcr.microsoft.com/mssql/server:2022-latest
+            docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=${{ env.SENHA_BANCO_DE_DADOS }}" --network host -p 1433:1433 --name ${{ env.SqlServer_Container_Name }} -d mcr.microsoft.com/mssql/server:2022-latest
             sleep 15s
             echo "O contêiner SqlServer está em execução."
           fi
