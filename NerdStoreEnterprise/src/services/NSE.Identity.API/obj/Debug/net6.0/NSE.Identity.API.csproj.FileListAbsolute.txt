@@ -109,6 +109,7 @@ D:\cursos\NerdStoreEnterprise\src\services\NSE.Identity.API\obj\Debug\net6.0\NSE
 D:\cursos\NerdStoreEnterprise\src\services\NSE.Identity.API\obj\Debug\net6.0\ref\NSE.Identity.API.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\appsettings.Development.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\appsettings.json
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\appsettings.Production.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NSE.Identity.API.staticwebassets.runtime.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NSE.Identity.API.exe
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NSE.Identity.API.deps.json

@@ -64,6 +64,7 @@ D:\cursos\NerdStoreEnterprise\src\services\NSE.Carrinho.API\obj\Debug\net6.0\NSE
 D:\cursos\NerdStoreEnterprise\src\services\NSE.Carrinho.API\obj\Debug\net6.0\ref\NSE.Carrinho.API.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\appsettings.Development.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\appsettings.json
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\appsettings.Production.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\NSE.Carrinho.API.exe
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\NSE.Carrinho.API.deps.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\NSE.Carrinho.API.runtimeconfig.json

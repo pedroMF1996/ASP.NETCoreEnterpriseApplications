@@ -7,13 +7,22 @@ namespace NSE.Carrinho.API.Configuration
     public static class ApiConfig
     {
 
-        public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
             services.AddRegisterServices();
 
             // Add services to the container.
+            string connectionString = "";
+            if (environment.IsProduction())
+            {
+                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
+            }
+            if (environment.IsDevelopment())
+            {
+                connectionString = configuration.GetConnectionString("DefaultConnection");
+            }
 
-            services.AddDbContext<CarrinhoContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<CarrinhoContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
