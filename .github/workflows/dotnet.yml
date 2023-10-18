@@ -20,7 +20,7 @@ jobs:
       RabbitMQ_Container_Name: rabbit-nerdstore
       SEU_SERVIDOR: SqlServer
       SENHA_BANCO_DE_DADOS: 9#KtGwPz$@6mJ^F 
-      CONNECTION_STRING: Server=SqlServer,1433;Database=EnterpriseApplicationBd;User=SA;Password=9#KtGwPz$@6mJ^F
+      CONNECTION_STRING: Server=localhost,1433;Database=NerdStoreEnterprise;User=SA;Password=9#KtGwPz$@6mJ^F
       
     steps:
     - uses: actions/checkout@v3
@@ -98,7 +98,7 @@ jobs:
 
     - name: Testar Conexão ao SQL Server
       run: |
-        sqlcmd -S SqlServer,1433 -U SA -P ${{ env.SENHA_BANCO_DE_DADOS }} -Q "SELECT 1"
+        sqlcmd -S localhost,1433 -U SA -P ${{ env.SENHA_BANCO_DE_DADOS }} -Q "SELECT 1"
 
     - name: Restore dependencies API Identity
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
