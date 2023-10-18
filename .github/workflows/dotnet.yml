@@ -57,18 +57,11 @@ jobs:
 
     - name: Verificar e Excluir Contêineres SQL Server
       run: |
-        # Defina o nome do contêiner SQL Server
-        SQL_SERVER_CONTAINER_NAME="sql-server-container"
-    
         # Verifique quantos contêineres estão em execução com o nome especificado
-        container_count=$(docker ps -q -f "name=$SQL_SERVER_CONTAINER_NAME" | wc -l)
-    
-        # Se houver mais de um contêiner em execução, exclua todos os contêineres
-        if [ $container_count -gt 1 ]; then
-          echo "Existem $container_count contêineres SQL Server em execução. Excluindo todos..."
-    
-          # Para cada contêiner em execução com o nome especificado, pare e remova o contêiner
-          for container_id in $(docker ps -q -f "name=$SQL_SERVER_CONTAINER_NAME"); do
+        if [ $(docker ps -q -f "name=EnterpriseApplicationSqlServerContainer" | wc -l) -gt 0 ]; then
+          echo "Existem contêineres SQL Server com o nome antigo em execução. Excluindo todos..."
+        
+          for container_id in $(docker ps -q -f "name=EnterpriseApplicationSqlServerContainer"); do
             docker stop $container_id
             docker rm $container_id
           done
