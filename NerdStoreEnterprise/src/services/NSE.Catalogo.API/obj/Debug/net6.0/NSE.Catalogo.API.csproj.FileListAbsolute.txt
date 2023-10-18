@@ -64,6 +64,7 @@ D:\cursos\NerdStoreEnterprise\src\services\NSE.Catalogo.API\obj\Debug\net6.0\NSE
 D:\cursos\NerdStoreEnterprise\src\services\NSE.Catalogo.API\obj\Debug\net6.0\ref\NSE.Catalogo.API.dll
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\appsettings.Development.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\appsettings.json
+D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\appsettings.Production.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.Catalogo.API.exe
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.Catalogo.API.deps.json
 D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.Catalogo.API.runtimeconfig.json

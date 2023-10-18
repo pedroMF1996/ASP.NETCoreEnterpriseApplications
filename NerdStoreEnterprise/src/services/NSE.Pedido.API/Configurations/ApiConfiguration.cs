@@ -2,20 +2,30 @@
 using Microsoft.EntityFrameworkCore;
 using NSE.Pedido.Infra.Data;
 using NSE.WebAPI.Core.Identidade;
+using System;
 
 namespace NSE.Pedido.API.Configurations
 {
     public static class ApiConfiguration
     {
-        public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddApiConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
             services.AddRegisterService();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
 
-            
-            services.AddDbContext<PedidosContext>(opt =>
-                opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            string connectionString = "";
+            if (environment.IsProduction())
+            {
+                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
+            }
+            if (environment.IsDevelopment())
+            {
+                connectionString = configuration.GetConnectionString("DefaultConnection");
+            }
+
+            services.AddDbContext<PedidosContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddJwtConfiguration(configuration);
             services.AddMessageBusConfiguration(configuration);

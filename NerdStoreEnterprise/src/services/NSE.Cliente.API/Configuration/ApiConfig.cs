@@ -2,13 +2,26 @@
 using Microsoft.EntityFrameworkCore;
 using NSE.Cliente.API.Data;
 using NSE.WebAPI.Core.Identidade;
+using System;
 
 namespace NSE.Cliente.API.Configuration
 {
     public static class ApiConfig
     {
-        public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
+
+            string connectionString = "";
+            if (environment.IsProduction())
+            {
+                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
+            }
+            if (environment.IsDevelopment())
+            {
+                connectionString = configuration.GetConnectionString("DefaultConnection");
+            }
+
+            services.AddDbContext<ClienteDbContext>(opt => opt.UseSqlServer(connectionString));
 
             services.RegisterServiceConfiguration();
 
@@ -25,11 +38,6 @@ namespace NSE.Cliente.API.Configuration
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
-
-            services.AddDbContext<ClienteDbContext>(opt =>
-                opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-
-                       
 
             services.AddCors(opt =>
             {
