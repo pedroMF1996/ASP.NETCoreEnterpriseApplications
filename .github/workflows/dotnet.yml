@@ -60,17 +60,17 @@ jobs:
           CONTAINER_NAME=${{ env.Container_Name }}
           if [[ $(docker ps -q -f "name=$CONTAINER_NAME") ]]; then
             echo "O contêiner do SQL Server já está em execução."
-            echo "::set-output name=container_running::true"
+            echo "{container_running}={true}" >> $GITHUB_OUTPUT
           else
             echo "O contêiner do SQL Server não está em execução."
-            echo "::set-output name=container_running::false"
+            echo "{container_running}={false}" >> $GITHUB_OUTPUT
           fi
 
     - name: Iniciar Contêiner do SQL Server (se necessário)
       if: steps.check-sql-server-container.outputs.container_running == 'false'
       run: |
           docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=${{ env.SENHA_BANCO_DE_DADOS }}" -p 1433:1433 --name ${{ env.Container_Name }} -d mcr.microsoft.com/mssql/server:2022-latest
-          sleep 30s
+          sleep 15s
       
     - name: Restore dependencies API Identity
       run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
