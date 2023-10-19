@@ -71,6 +71,7 @@ namespace NSE.Pedido.Infra.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("PedidoId")
+                        .IsRequired()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ProdutoId")
