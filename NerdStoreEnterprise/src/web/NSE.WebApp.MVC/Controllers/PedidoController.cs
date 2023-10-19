@@ -34,9 +34,10 @@ namespace NSE.WebApp.MVC.Controllers
         public async Task<IActionResult> Pagamento()
         {
             var carrinho = await _comprasBffService.ObterCarrinho();
+            var endereco = await _clienteService.ObterEndereco();
             if (carrinho.Itens.Count == 0) return RedirectToAction("Index", "Carrinho");
 
-            var pedido = _comprasBffService.MapearParaPedido(carrinho, null);
+            var pedido = _comprasBffService.MapearParaPedido(carrinho, endereco);
 
             return View(pedido);
         }

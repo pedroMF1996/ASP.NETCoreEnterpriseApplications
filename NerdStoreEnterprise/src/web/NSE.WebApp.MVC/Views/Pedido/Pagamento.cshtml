@@ -119,6 +119,19 @@
                             </div>
                         </article>
 
+                        <input type="hidden" asp-For="Endereco.Cep" value="@Model.Endereco.Cep" />
+                        <input type="hidden" asp-For="Endereco.Numero" value="@Model.Endereco.Numero" />
+                        <input type="hidden" asp-For="Endereco.Logradouro" value="@Model.Endereco.Logradouro" />
+                        <input type="hidden" asp-For="Endereco.Bairro" value="@Model.Endereco.Bairro" />
+                        <input type="hidden" asp-For="Endereco.Cidade" value="@Model.Endereco.Cidade" />
+                        <input type="hidden" asp-For="Endereco.Complemento" value="@Model.Endereco.Complemento" />
+                        <input type="hidden" asp-For="Endereco.Estado" value="@Model.Endereco.Estado" />
+                        <input type="hidden" asp-For="ValorTotal" value="@Model.ValorTotal" />
+                        <input type="hidden" asp-For="VoucherCodigo" value="@Model.VoucherCodigo" />
+                        <input type="hidden" asp-For="VoucherUtilizado" value="@Model.VoucherUtilizado" />
+                        <input type="hidden" asp-For="Desconto" value="@Model.Desconto" />
+                        <input type="hidden" asp-For="Itens" value="@Model.Itens" />
+
                         <div class="card-body border-top">
                             <div class="text-left">
                                 <button type="submit" class="btn btn-primary float-md-right"> Finalizar Pedido <i class="fa fa-chevron-right"></i> </button>
