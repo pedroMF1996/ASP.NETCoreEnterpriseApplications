@@ -20,12 +20,14 @@ namespace NSE.Pedido.API.Configurations
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IAspNetUser, AspNetUser>();
+            services.AddScoped<IMediatorHandler, MediatorHandler>();
 
             #endregion
             #region Application
 
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IVoucherQuery, VoucherQuery>();
+            services.AddScoped<IPedidoQueries, PedidoQueries>();
 
             #endregion           
             #region Events

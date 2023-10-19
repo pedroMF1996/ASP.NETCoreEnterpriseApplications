@@ -45,7 +45,7 @@ namespace NSE.Pedido.API.Application.Commands
 
         private bool ProcessarPagamento(Domain.Pedidos.Pedido pedido)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         private bool ValidarPedido(Domain.Pedidos.Pedido pedido)
@@ -111,8 +111,13 @@ namespace NSE.Pedido.API.Application.Commands
                 Estado = message.Endereco.Estado,
             };
 
-            var pedido = new Domain.Pedidos.Pedido(message.ClienteId, message.ValorTotal,
-                message.PedidoItems.Select(PedidoItemDTO.ParaPedidoItem).ToList(), message.VoucherUtilizado, message.Desconto);
+            var clienteId = message.ClienteId.Value;
+
+            var pedido = new Domain.Pedidos.Pedido(clienteId, 
+                                                   message.ValorTotal,
+                                                   message.PedidoItems.Select(PedidoItemDTO.ParaPedidoItem).ToList(), 
+                                                   message.VoucherUtilizado, 
+                                                   message.Desconto);
 
             pedido.AtribuirEndereco(endereco);
 
