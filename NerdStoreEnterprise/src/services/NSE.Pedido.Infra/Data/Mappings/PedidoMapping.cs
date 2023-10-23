@@ -36,7 +36,7 @@ namespace NSE.Pedido.Infra.Data.Mappings
             builder.Property(c => c.Codigo)
                 .HasDefaultValueSql("NEXT VALUE FOR MinhaSequencia");
 
-            builder.HasMany(c => c.PedidoItens)
+            builder.HasMany(c => c.PedidoItems)
                 .WithOne(c => c.Pedido)
                 .HasForeignKey(c => c.PedidoId);
 

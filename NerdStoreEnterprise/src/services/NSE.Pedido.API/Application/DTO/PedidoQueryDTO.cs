@@ -33,7 +33,7 @@
                 Endereco = new EnderecoDTO()
             };
 
-            foreach (var item in pedido.PedidoItens)
+            foreach (var item in pedido.PedidoItems)
             {
                 pedidoDTO.PedidoItems.Add(new PedidoItemDTO()
                 {

@@ -15,10 +15,10 @@ namespace NSE.Pedido.Domain.Pedidos
         public Endereco Endereco { get; private set; }
 
         public Guid? VoucherId { get; private set; }
-        public Voucher Voucher { get; private set; }
+        public Voucher? Voucher { get; private set; }
 
         private readonly List<PedidoItem> _pedidoItems;
-        public IReadOnlyCollection<PedidoItem> PedidoItens => _pedidoItems;
+        public IReadOnlyCollection<PedidoItem> PedidoItems => _pedidoItems;
 
         protected Pedido()
         { }
@@ -54,7 +54,7 @@ namespace NSE.Pedido.Domain.Pedidos
 
         public void CalcularValorPedido()
         {
-            ValorTotal = PedidoItens.Sum(p => p.CalcularValor());
+            ValorTotal = PedidoItems.Sum(p => p.CalcularValor());
             CalcularValorTotalDesconto();
         }
 

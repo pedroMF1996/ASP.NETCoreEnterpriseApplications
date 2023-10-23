@@ -15,7 +15,7 @@ namespace NSE.Pedido.Infra.Data.Mappings
                 .HasColumnType("varchar(250)");
 
             builder.HasOne(c => c.Pedido)
-                .WithMany(c => c.PedidoItens);
+                .WithMany(c => c.PedidoItems);
 
             builder.ToTable("PedidoItems");
         }
