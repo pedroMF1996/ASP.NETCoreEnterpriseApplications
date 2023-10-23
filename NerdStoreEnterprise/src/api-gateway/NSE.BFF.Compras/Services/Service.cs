@@ -29,6 +29,9 @@ namespace NSE.BFF.Compras.Services
                 case AppSettingsUrlEnum.Pagamento:
                     _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.PagamentoUrl);
                     break;
+                case AppSettingsUrlEnum.Cliente:
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ClienteUrl);
+                    break;
             }
         }
 

@@ -6,7 +6,7 @@ namespace NSE.Pedido.API.Application.Commands
     {
         public AdicionarPedidoCommandValidation()
         {
-            RuleFor(c => c.ClienteId)
+            RuleFor(c => c.ClienteId.Value)
                 .NotEqual(Guid.Empty)
                 .WithMessage("Id do cliente inválido");
 
