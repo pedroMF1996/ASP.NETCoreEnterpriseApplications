@@ -1,10 +1,10 @@
-﻿using System.Text.Json;
-using System.Text;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using NSE.BFF.Compras.Enum;
 using NSE.BFF.Compras.Extensions;
-using System.Net;
 using NSE.Core.Communication;
+using System.Net;
+using System.Text;
+using System.Text.Json;
 
 namespace NSE.BFF.Compras.Services
 {
@@ -12,7 +12,7 @@ namespace NSE.BFF.Compras.Services
     {
         protected readonly HttpClient _httpClient;
 
-        protected Service(HttpClient httpClient, AppSettingsUrlEnum appSettingsUrlEnum, IOptions<AppServiceSettings> appSettingsOpt) 
+        protected Service(HttpClient httpClient, AppSettingsUrlEnum appSettingsUrlEnum, IOptions<AppServiceSettings> appSettingsOpt)
         {
             _httpClient = httpClient;
             switch (appSettingsUrlEnum)
@@ -52,7 +52,7 @@ namespace NSE.BFF.Compras.Services
 
         protected bool TratarErrosResponse(HttpResponseMessage response)
         {
-            if(response.StatusCode == HttpStatusCode.BadRequest) return false;
+            if (response.StatusCode == HttpStatusCode.BadRequest) return false;
 
             response.EnsureSuccessStatusCode();
             return true;

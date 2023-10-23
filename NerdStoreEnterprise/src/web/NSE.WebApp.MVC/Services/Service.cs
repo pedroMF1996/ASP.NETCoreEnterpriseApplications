@@ -26,7 +26,7 @@ namespace NSE.WebApp.MVC.Services
                     _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ComprasBffUrl);
                     break;
                 case AppSettingsUrlEnum.Cliente:
-                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value. ClienteUrl);
+                    _httpClient.BaseAddress = new Uri(appSettingsOpt.Value.ClienteUrl);
                     break;
             }
         }

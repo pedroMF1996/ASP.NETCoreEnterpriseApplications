@@ -1,5 +1,4 @@
-﻿using NSE.Pedido.Domain.Pedidos;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace NSE.Pedido.API.Application.DTO
 {

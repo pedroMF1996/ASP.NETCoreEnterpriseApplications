@@ -1,6 +1,6 @@
 ﻿namespace NSE.BFF.Compras.Models
 {
-    public class CarrinhoDTO 
+    public class CarrinhoDTO
     {
         public decimal ValorTotal { get; set; }
         public VoucherDTO Voucher { get; set; }

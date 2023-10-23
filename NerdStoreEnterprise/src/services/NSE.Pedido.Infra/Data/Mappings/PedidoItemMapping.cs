@@ -4,7 +4,7 @@ using NSE.Pedido.Domain.Pedidos;
 
 namespace NSE.Pedido.Infra.Data.Mappings
 {
-    public class PedidoItemMapping : IEntityTypeConfiguration<PedidoItem>  
+    public class PedidoItemMapping : IEntityTypeConfiguration<PedidoItem>
     {
         public void Configure(EntityTypeBuilder<PedidoItem> builder)
         {
@@ -15,7 +15,7 @@ namespace NSE.Pedido.Infra.Data.Mappings
                 .HasColumnType("varchar(250)");
 
             builder.HasOne(c => c.Pedido)
-                .WithMany(c => c.PedidoItens);
+                .WithMany(c => c.PedidoItems);
 
             builder.ToTable("PedidoItems");
         }

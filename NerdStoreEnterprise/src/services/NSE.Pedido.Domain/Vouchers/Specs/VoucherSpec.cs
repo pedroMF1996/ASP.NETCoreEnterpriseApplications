@@ -10,7 +10,7 @@ namespace NSE.Pedido.Domain.Vouchers.Specs
             return voucher => voucher.DataValidade >= DateTime.Now;
         }
     }
-    
+
     public class VoucherQuantidadeSpecification : Specification<Voucher>
     {
         public override Expression<Func<Voucher, bool>> ToExpression()
@@ -18,7 +18,7 @@ namespace NSE.Pedido.Domain.Vouchers.Specs
             return voucher => voucher.Quantidade > 0;
         }
     }
-    
+
     public class VoucherAtivoSpecification : Specification<Voucher>
     {
         public override Expression<Func<Voucher, bool>> ToExpression()

@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using NSE.Pedido.Infra.Data;
 using NSE.WebAPI.Core.Identidade;
-using System;
 
 namespace NSE.Pedido.API.Configurations
 {
@@ -30,7 +29,7 @@ namespace NSE.Pedido.API.Configurations
             services.AddJwtConfiguration(configuration);
             services.AddMessageBusConfiguration(configuration);
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
-            
+
             services.AddSwaggerConfiguration();
 
             services.AddCors(opt =>

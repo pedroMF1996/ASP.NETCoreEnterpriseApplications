@@ -12,7 +12,7 @@ namespace NSE.BFF.Compras.Services
     }
     public class ClienteService : Service, IClienteService
     {
-        public ClienteService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt) : 
+        public ClienteService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt) :
             base(httpClient, AppSettingsUrlEnum.Cliente, appSettingsOpt)
         {
         }

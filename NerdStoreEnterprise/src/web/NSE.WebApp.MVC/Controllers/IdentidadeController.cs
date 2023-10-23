@@ -53,7 +53,7 @@ namespace NSE.WebApp.MVC.Controllers
         [Route("login")]
         public async Task<IActionResult> Login(LoginUserViewModel usuarioLogin, string? returnUrl = null)
         {
-            if(string.IsNullOrEmpty(ViewData["ReturnUrl"]?.ToString()))
+            if (string.IsNullOrEmpty(ViewData["ReturnUrl"]?.ToString()))
                 ViewData["ReturnUrl"] = returnUrl;
 
             if (!ModelState.IsValid) return View(usuarioLogin);

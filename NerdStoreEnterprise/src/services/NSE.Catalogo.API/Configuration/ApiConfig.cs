@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NSE.Catalogo.API.Data;
 using NSE.WebAPI.Core.Identidade;
-using System;
 
 namespace NSE.Catalogo.API.Configuration
 {

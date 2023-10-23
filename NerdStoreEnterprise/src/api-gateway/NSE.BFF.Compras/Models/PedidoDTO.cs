@@ -1,6 +1,6 @@
 ﻿using NSE.Core.Validations;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace NSE.BFF.Compras.Models
 {

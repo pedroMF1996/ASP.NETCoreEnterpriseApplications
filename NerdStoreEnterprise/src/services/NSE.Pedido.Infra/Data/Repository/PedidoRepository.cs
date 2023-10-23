@@ -39,8 +39,10 @@ namespace NSE.Pedido.Infra.Data.Repository
 
         public async Task<IEnumerable<Domain.Pedidos.Pedido>> ObterListaPorClienteId(Guid clienteId)
         {
-            return await _context.Pedidos.Include(p => p.PedidoItens)
-                .AsNoTracking().Where(p => p.ClienteId == clienteId).ToListAsync();
+            return await _context.Pedidos.Include(p => p.PedidoItems)
+                                         .AsNoTracking()
+                                         .Where(p => p.ClienteId == clienteId)
+                                         .ToListAsync(); 
         }
 
         public async Task<Domain.Pedidos.Pedido> ObterPorId(Guid pedidoId)

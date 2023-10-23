@@ -1,5 +1,4 @@
-﻿using EasyNetQ;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NSE.Carrinho.API.Data;
 using NSE.Core.Messages.Integration;
 using NSE.MessageBus;
@@ -19,33 +18,28 @@ namespace NSE.Carrinho.API.Services
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            await SetSubscribers();
-            _messageBus.AdvancedBus.Connected += OnConnect;
+            SetSubscribers();
         }
 
-        private void OnConnect(object? sender, ConnectedEventArgs e)
+        private void SetSubscribers()
         {
-            Task.Run(SetSubscribers);
-        }
-
-        private async Task SetSubscribers()
-        {
-            await _messageBus.SubscribeAsync<PedidoRealizadoIntegrationEvent>("PedidoRealizado", async request =>
+            _messageBus.SubscribeAsync<PedidoRealizadoIntegrationEvent>("PedidoRealizado", async request =>
                 await ApagarCarrinho(request));
         }
 
-        private async Task ApagarCarrinho(PedidoRealizadoIntegrationEvent pedidoRealizado)
+        private async Task ApagarCarrinho(PedidoRealizadoIntegrationEvent message)
         {
             using (var scope = _serviceProvider.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<CarrinhoContext>();
 
-                var carrinho = await context.CarrinhoCliente.FirstOrDefaultAsync(c => c.ClienteId == pedidoRealizado.ClienteId);
+                var carrinho = await context.CarrinhoCliente
+                                                .Include(x => x.Itens)
+                                                .FirstOrDefaultAsync(c => c.ClienteId == message.ClienteId);
 
-                if (carrinho != null)
+                if (carrinho != null && carrinho.Itens.Count > 0)
                 {
                     context.CarrinhoCliente.Remove(carrinho);
-
                     await context.SaveChangesAsync();
                 }
             }

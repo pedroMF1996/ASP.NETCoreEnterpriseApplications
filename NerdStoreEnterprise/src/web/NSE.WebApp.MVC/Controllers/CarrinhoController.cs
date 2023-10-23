@@ -25,7 +25,6 @@ namespace NSE.WebApp.MVC.Controllers
         [Route("carrinho/adicionar-item")]
         public async Task<IActionResult> AdicionarItemCarrinho(ItemCarrinhoViewModel itemCarrinho)
         {
-            TratarNomeImagem(itemCarrinho);
             var resposta = await _comprasBffService.AdicionarItemCarrinho(itemCarrinho);
 
             if (ResponsePossuiErros(resposta)) return View("Index", await _comprasBffService.ObterCarrinho());
@@ -38,7 +37,6 @@ namespace NSE.WebApp.MVC.Controllers
         public async Task<IActionResult> AtualizarItemCarrinho(Guid produtoId, int quantidade)
         {
             var itemCarrinho = new ItemCarrinhoViewModel() { ProdutoId = produtoId, Quantidade = quantidade };
-            TratarNomeImagem(itemCarrinho);
 
             var resposta = await _comprasBffService.AtualizarIemCarrinho(produtoId, itemCarrinho);
 
@@ -67,12 +65,6 @@ namespace NSE.WebApp.MVC.Controllers
             if (ResponsePossuiErros(resposta)) return View("Index", await _comprasBffService.ObterCarrinho());
 
             return RedirectToAction("Index");
-        }
-
-        private void TratarNomeImagem(ItemCarrinhoViewModel itemCarrinho)
-        {
-            itemCarrinho.Nome = "";
-            itemCarrinho.Imagem = "";
         }
     }
 }
