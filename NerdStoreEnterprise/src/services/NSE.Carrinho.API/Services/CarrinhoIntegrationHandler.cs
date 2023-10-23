@@ -30,16 +30,20 @@ namespace NSE.Carrinho.API.Services
 
         private async Task ApagarCarrinho(PedidoRealizadoIntegrationEvent message)
         {
-            using var scope = _serviceProvider.CreateScope();
-            var context = scope.ServiceProvider.GetRequiredService<CarrinhoContext>();
-
-            var carrinho = await context.CarrinhoCliente
-                .FirstOrDefaultAsync(c => c.ClienteId == message.ClienteId);
-
-            if (carrinho != null)
+            using(var scope = _serviceProvider.CreateScope())
             {
-                context.CarrinhoCliente.Remove(carrinho);
-                await context.SaveChangesAsync();
+                var context = scope.ServiceProvider.GetRequiredService<CarrinhoContext>();
+
+                var carrinho = await context.CarrinhoCliente
+                                                .Include(x => x.Itens)
+                                                .FirstOrDefaultAsync(c => c.ClienteId == message.ClienteId);
+
+                if (carrinho != null && carrinho.Itens.Count > 0)
+                {
+                    context.CarrinhoItems.RemoveRange(carrinho.Itens);
+                    context.CarrinhoCliente.Remove(carrinho);
+                    await context.SaveChangesAsync();
+                }
             }
         }
 
