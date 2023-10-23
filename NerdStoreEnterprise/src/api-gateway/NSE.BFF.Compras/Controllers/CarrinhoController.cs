@@ -30,7 +30,7 @@ namespace NSE.BFF.Compras.Controllers
         {
             return CustomResponse(await _carrinhoService.ObterCarrinho());
         }
-        
+
         [HttpGet("carrinho-quantidade")]
         public async Task<int> ObterQauntidadeCarrinho()
         {
@@ -51,7 +51,7 @@ namespace NSE.BFF.Compras.Controllers
             itemProduto.Imagem = produto.Imagem;
 
             var resposta = await _carrinhoService.AdicionarItemCarrinho(itemProduto);
-            
+
             return CustomResponse(resposta);
         }
 
@@ -73,7 +73,7 @@ namespace NSE.BFF.Compras.Controllers
         {
             var produto = await _catalogoService.ObterPorId(produtoId);
 
-            if(produto == null)
+            if (produto == null)
             {
                 AdicionarErroProcessamento("Produto Inexistente");
                 return CustomResponse();
@@ -89,7 +89,7 @@ namespace NSE.BFF.Compras.Controllers
         {
             var voucher = await _pedidoService.ObterVoucherPorCodigo(voucherCodigo);
 
-            if(voucher is null)
+            if (voucher is null)
             {
                 AdicionarErroProcessamento("Voucher invalido ou nao encontrado");
                 return CustomResponse();
@@ -114,7 +114,7 @@ namespace NSE.BFF.Compras.Controllers
                 return;
             }
 
-            if (quantidade > produto.QuantidadeEstoque) 
+            if (quantidade > produto.QuantidadeEstoque)
                 AdicionarErroProcessamento($"O produto {produto.Nome} possui {produto.QuantidadeEstoque} unidades em estoque e voce escolheu {quantidade}");
         }
     }

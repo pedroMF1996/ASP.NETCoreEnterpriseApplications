@@ -16,7 +16,7 @@ namespace NSE.BFF.Compras.Services
     }
     public class PedidoService : Service, IPedidoService
     {
-        public PedidoService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt) 
+        public PedidoService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt)
             : base(httpClient, AppSettingsUrlEnum.Pedido, appSettingsOpt)
         {
         }
@@ -58,7 +58,7 @@ namespace NSE.BFF.Compras.Services
         {
             var response = await _httpClient.GetAsync($"/voucher/{codigo}/");
 
-            if(HttpStatusCode.NotFound == response.StatusCode) return null; 
+            if (HttpStatusCode.NotFound == response.StatusCode) return null;
 
             TratarErrosResponse(response);
 

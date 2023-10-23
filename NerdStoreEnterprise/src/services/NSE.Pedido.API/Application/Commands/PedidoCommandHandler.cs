@@ -113,10 +113,10 @@ namespace NSE.Pedido.API.Application.Commands
 
             var clienteId = message.ClienteId.Value;
 
-            var pedido = new Domain.Pedidos.Pedido(clienteId, 
+            var pedido = new Domain.Pedidos.Pedido(clienteId,
                                                    message.ValorTotal,
-                                                   message.PedidoItems.Select(PedidoItemDTO.ParaPedidoItem).ToList(), 
-                                                   message.VoucherUtilizado, 
+                                                   message.PedidoItems.Select(PedidoItemDTO.ParaPedidoItem).ToList(),
+                                                   message.VoucherUtilizado,
                                                    message.Desconto);
 
             pedido.AtribuirEndereco(endereco);

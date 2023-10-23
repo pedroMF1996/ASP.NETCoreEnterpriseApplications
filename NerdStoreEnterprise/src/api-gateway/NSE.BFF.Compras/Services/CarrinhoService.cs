@@ -16,7 +16,7 @@ namespace NSE.BFF.Compras.Services
     }
     public class CarrinhoService : Service, ICarrinhoService
     {
-        public CarrinhoService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt) 
+        public CarrinhoService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt)
             : base(httpClient, AppSettingsUrlEnum.Carrinho, appSettingsOpt)
         {
         }

@@ -27,7 +27,7 @@ namespace NSE.BFF.Compras.Configurations
                 .AddPolicyHandler(PolicyExtensions.EsperarTentar())
                 .AddTransientHttpErrorPolicy(
                     p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
-            
+
             services.AddHttpClient<IClienteService, ClienteService>()
                 .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
                 .AddPolicyHandler(PolicyExtensions.EsperarTentar())
@@ -43,5 +43,5 @@ namespace NSE.BFF.Compras.Configurations
             return services;
         }
     }
-    
+
 }

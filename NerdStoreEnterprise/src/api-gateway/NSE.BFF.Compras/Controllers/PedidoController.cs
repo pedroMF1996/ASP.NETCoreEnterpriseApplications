@@ -124,11 +124,14 @@ namespace NSE.BFF.Compras.Controllers
             pedido.ValorTotal = carrinho.ValorTotal;
             pedido.Desconto = carrinho.Desconto;
 
-            carrinho.Itens.ForEach(item => pedido.PedidoItems.Add(new ItemPedidoDTO() { Nome = item.Nome, 
-                                                                                        ProdutoId = item.ProdutoId, 
-                                                                                        Quantidade = item.Quantidade, 
-                                                                                        ValorUnitario = item.Valor, 
-                                                                                        Imagem = item.Imagem}));
+            carrinho.Itens.ForEach(item => pedido.PedidoItems.Add(new ItemPedidoDTO()
+            {
+                Nome = item.Nome,
+                ProdutoId = item.ProdutoId,
+                Quantidade = item.Quantidade,
+                ValorUnitario = item.Valor,
+                Imagem = item.Imagem
+            }));
 
 
             pedido.Endereco = endereco;

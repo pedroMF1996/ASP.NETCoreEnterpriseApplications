@@ -2,7 +2,6 @@
 using NSE.BFF.Compras.Enum;
 using NSE.BFF.Compras.Extensions;
 using NSE.BFF.Compras.Models;
-using NuGet.Packaging.Signing;
 
 namespace NSE.BFF.Compras.Services
 {
@@ -14,7 +13,7 @@ namespace NSE.BFF.Compras.Services
     }
     public class CatalogoService : Service, ICatalogoService
     {
-        public CatalogoService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt) 
+        public CatalogoService(HttpClient httpClient, IOptions<AppServiceSettings> appSettingsOpt)
             : base(httpClient, AppSettingsUrlEnum.Catalogo, appSettingsOpt)
         {
         }
@@ -42,7 +41,7 @@ namespace NSE.BFF.Compras.Services
         public async Task<IEnumerable<ItemProdutoDTO>> ObterTodos()
         {
             var response = await _httpClient.GetAsync("/catalogo/produtos");
-             
+
             TratarErrosResponse(response);
 
             return await DeserializarObjetoResponse<IEnumerable<ItemProdutoDTO>>(response);

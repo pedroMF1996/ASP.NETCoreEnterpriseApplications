@@ -1,5 +1,4 @@
-﻿using EasyNetQ;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NSE.Carrinho.API.Data;
 using NSE.Core.Messages.Integration;
 using NSE.MessageBus;
@@ -30,7 +29,7 @@ namespace NSE.Carrinho.API.Services
 
         private async Task ApagarCarrinho(PedidoRealizadoIntegrationEvent message)
         {
-            using(var scope = _serviceProvider.CreateScope())
+            using (var scope = _serviceProvider.CreateScope())
             {
                 var context = scope.ServiceProvider.GetRequiredService<CarrinhoContext>();
 
@@ -40,7 +39,6 @@ namespace NSE.Carrinho.API.Services
 
                 if (carrinho != null && carrinho.Itens.Count > 0)
                 {
-                    context.CarrinhoItems.RemoveRange(carrinho.Itens);
                     context.CarrinhoCliente.Remove(carrinho);
                     await context.SaveChangesAsync();
                 }

@@ -1,6 +1,6 @@
 ﻿using NSE.Core.Validations;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace NSE.BFF.Compras.Models
 {
@@ -10,8 +10,8 @@ namespace NSE.BFF.Compras.Models
 
         public decimal ValorTotal { get; set; }
         public List<ItemPedidoDTO> PedidoItems { get; set; } = new();
-        
-        
+
+
         public string VoucherCodigo { get; set; }
         public bool VoucherUtilizado { get; set; }
         public decimal Desconto { get; set; }

@@ -4,7 +4,7 @@ using NSE.Pedido.Domain.Pedidos;
 
 namespace NSE.Pedido.Infra.Data.Mappings
 {
-    public class PedidoItemMapping : IEntityTypeConfiguration<PedidoItem>  
+    public class PedidoItemMapping : IEntityTypeConfiguration<PedidoItem>
     {
         public void Configure(EntityTypeBuilder<PedidoItem> builder)
         {

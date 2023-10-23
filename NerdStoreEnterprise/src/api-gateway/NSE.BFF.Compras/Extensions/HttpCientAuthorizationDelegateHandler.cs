@@ -3,7 +3,7 @@ using System.Net.Http.Headers;
 
 namespace NSE.BFF.Compras.Extensions
 {
-    public class HttpCientAuthorizationDelegateHandler : DelegatingHandler  
+    public class HttpCientAuthorizationDelegateHandler : DelegatingHandler
     {
         private readonly IAspNetUser _user;
 
@@ -16,7 +16,7 @@ namespace NSE.BFF.Compras.Extensions
         {
             var authorizationHeader = _user.ObterHttpContext().Request.Headers["Authorization"];
 
-            if(!string.IsNullOrEmpty(authorizationHeader))
+            if (!string.IsNullOrEmpty(authorizationHeader))
             {
                 request.Headers.Add("Authorization", new List<string>() { authorizationHeader });
             }

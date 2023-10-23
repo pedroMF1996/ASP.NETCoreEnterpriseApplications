@@ -21,9 +21,9 @@ namespace NSE.Pedido.Domain.Pedidos
         public IReadOnlyCollection<PedidoItem> PedidoItens => _pedidoItems;
 
         protected Pedido()
-        {}
+        { }
 
-        public Pedido(Guid clienteId, decimal valorTotal, List<PedidoItem> pedidoItems, 
+        public Pedido(Guid clienteId, decimal valorTotal, List<PedidoItem> pedidoItems,
             bool voucherUtilizado = false, decimal desconto = 0, Guid? voucherId = null)
         {
             ClienteId = clienteId;
