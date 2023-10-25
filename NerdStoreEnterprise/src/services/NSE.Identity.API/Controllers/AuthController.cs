@@ -2,8 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using NSE.Identity.API.Extensions;
+using NSE.Core.Messages.Integration;
 using NSE.Identity.API.Models;
+using NSE.MessageBus;
+using NSE.WebAPI.Core.Controllers;
+using NSE.WebAPI.Core.Identidade;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -19,19 +22,23 @@ namespace NSE.Identity.API.Controllers
 
         private readonly AppSettings _appSettings;
 
+        private readonly IMessageBus _bus;
+
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings)
+                              IOptions<AppSettings> appSettings,
+                              IMessageBus bus)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _bus = bus;
         }
 
         [HttpPost("nova-conta")]
         public async Task<IActionResult> Registrar(RegisterUserViewModel model)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return CustomResponse(ModelState);
             }
@@ -47,10 +54,18 @@ namespace NSE.Identity.API.Controllers
 
             if (result.Succeeded)
             {
+                var clienteResult = await RegistrarCliente(model);
+
+                if (!clienteResult.ValidationResult.IsValid)
+                {
+                    await _userManager.DeleteAsync(user);
+                    return CustomResponse(clienteResult.ValidationResult);
+                }
+
                 return CustomResponse(await GerarJWT(model.Email));
             }
 
-            foreach(var error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 AdicionarErroProcessamento(error.Description);
             }
@@ -61,7 +76,8 @@ namespace NSE.Identity.API.Controllers
         [HttpPost("autenticar")]
         public async Task<IActionResult> Login(LoginUserViewModel model)
         {
-            if(!ModelState.IsValid) { return CustomResponse(ModelState); }
+
+            if (!ModelState.IsValid) { return CustomResponse(ModelState); }
 
             var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, true);
 
@@ -70,7 +86,8 @@ namespace NSE.Identity.API.Controllers
                 return CustomResponse(await GerarJWT(model.Email));
             }
 
-            if(result.IsLockedOut) {
+            if (result.IsLockedOut)
+            {
                 AdicionarErroProcessamento("Usuario temporariamente bloqueado por tentativas invalidas");
                 return CustomResponse();
             }
@@ -83,7 +100,7 @@ namespace NSE.Identity.API.Controllers
         private async Task<LoginResponseViewModel> GerarJWT(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
-            
+
             var claims = await _userManager.GetClaimsAsync(user);
 
             var identityClaims = await ObterClaimsUsuarioAsync(user, claims);
@@ -148,6 +165,24 @@ namespace NSE.Identity.API.Controllers
                     Claims = claims.Select(c => new ClaimViewModel() { Type = c.Type, Value = c.Value })
                 }
             };
+        }
+
+        private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)
+        {
+            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
+
+            var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
+                Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
+
+            try
+            {
+                return await _bus.RequestAsync<UsuarioRegistradoIntegrationEvent, ResponseMessage>(usuarioRegistrado);
+            }
+            catch
+            {
+                await _userManager.DeleteAsync(usuario);
+                throw;
+            }
         }
     }
 }

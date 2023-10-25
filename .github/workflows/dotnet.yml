@@ -1,0 +1,74 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET Enterprise Applications
+
+on:
+  push:
+    branches: [ "master", "developer" ]
+  pull_request:
+    branches: [ "master", "developer" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    env:
+      ASPNETCORE_ENVIRONMENT: ${{ secrets.ASPNETCORE_ENVIRONMENT }}
+      SqlServer_Container_Name: ${{ secrets.SqlServer_Container_Name }}
+      RabbitMQ_Container_Name: ${{ secrets.RabbitMQ_Container_Name }}
+      SEU_SERVIDOR: ${{ secrets.SEU_SERVIDOR }}
+      SENHA_BANCO_DE_DADOS: ${{ secrets.SENHA_BANCO_DE_DADOS }}
+      CONNECTION_STRING: ${{ secrets.CONNECTION_STRING }}
+      
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    
+
+
+    - name: Restore dependencies API Identity
+      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
+    - name: Build API Identity
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
+    - name: Test API Identity
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Identity.API/NSE.Identity.API.csproj
+   
+    - name: Restore dependencies API Cliente
+      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
+    - name: Build API Cliente
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
+    - name: Test API Cliente
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Cliente.API/NSE.Cliente.API.csproj
+    
+    - name: Restore dependencies API Catalogo
+      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
+    - name: Build API Catalogo
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
+    - name: Test API Catalogo
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Catalogo.API/NSE.Catalogo.API.csproj
+    
+    - name: Restore dependencies API Carrinho
+      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
+    - name: Build API Carrinho
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
+    - name: Test API Carrinho
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Carrinho.API/NSE.Carrinho.API.csproj
+    
+    - name: Restore dependencies API Pedido
+      run: dotnet restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
+    - name: Build API Pedido
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
+    - name: Test API Pedido
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/services/NSE.Pedido.API/NSE.Pedido.API.csproj
+    
+    - name: Restore dependencies MVC
+      run: dotnet restore ./NerdStoreEnterprise/src/web/NSE.WebApp.MVC/NSE.WebApp.MVC.csproj
+    - name: Build MVC
+      run: dotnet build --no-restore ./NerdStoreEnterprise/src/web/NSE.WebApp.MVC/NSE.WebApp.MVC.csproj
+    - name: Test MVC
+      run: dotnet test --no-build --verbosity normal ./NerdStoreEnterprise/src/web/NSE.WebApp.MVC/NSE.WebApp.MVC.csproj

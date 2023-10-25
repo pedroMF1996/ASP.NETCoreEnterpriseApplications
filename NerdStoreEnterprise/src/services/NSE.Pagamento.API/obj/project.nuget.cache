@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "f6QpIHWHZ2+WaczuPz3b3WuhrzGvR2lGbh5Jx6Jbwa/OjdcV4GdBiaVcyxhNZX/R1L+a72TyV25kRQQUwvZ0qg==",
+  "dgSpecHash": "95+lRlZywAueFn2VEhgKLBfKL7czSod2Gf/fxWHXN8diV7N5+r0UOv5gZAu8VMNZFS4p4FdGvVhZl7BeFcsI8g==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\src\\services\\NSE.Pagamento.API\\NSE.Pagamento.API.csproj",
+  "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\services\\NSE.Pagamento.API\\NSE.Pagamento.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

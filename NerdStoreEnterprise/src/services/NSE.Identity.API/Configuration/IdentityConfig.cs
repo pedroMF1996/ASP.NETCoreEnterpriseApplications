@@ -1,21 +1,26 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using NSE.Identity.API.Data;
 using NSE.Identity.API.Extensions;
-using System.Text;
+using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Identity.API.Configuration
 {
     public static class IdentityConfig
     {
-        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
-            services.AddDbContext<ApplicationDBContext>(opt =>
+            string connectionString = "";
+            if (environment.IsProduction())
             {
-                opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-            });
+                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
+            }
+            if (environment.IsDevelopment())
+            {
+                connectionString = configuration.GetConnectionString("DefaultConnection");
+            }
+
+            services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer(connectionString));
 
 
             services.AddDefaultIdentity<IdentityUser>()
@@ -26,43 +31,9 @@ namespace NSE.Identity.API.Configuration
 
 
             //JWT
-
-            var appSettingsSection = configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingsSection);
-
-            var appSettings = appSettingsSection.Get<AppSettings>();
-
-            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-
-            services.AddAuthentication(opt =>
-            {
-                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-                .AddJwtBearer(bearerOpt =>
-                {
-                    bearerOpt.RequireHttpsMetadata = true;
-                    bearerOpt.SaveToken = true;
-                    bearerOpt.TokenValidationParameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(key),
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidAudience = appSettings.ValidoEm,
-                        ValidIssuer = appSettings.Emissor,
-                    };
-                });
+            services.AddJwtConfiguration(configuration);
 
             return services;
-        }
-
-        public static IApplicationBuilder UseIdentityConfiguration(this IApplicationBuilder app)
-        {
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            return app;
         }
     }
 }
