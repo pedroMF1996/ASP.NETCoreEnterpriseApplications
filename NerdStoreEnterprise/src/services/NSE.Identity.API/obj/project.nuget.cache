@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z607fDUhVOrpaPA2BHiyuZZkNnIoMj8tWTEmT6E3x0Z/d3AUy8srD657+v5OGn6kPdNhiojod1z71bGn95t5Tw==",
+  "dgSpecHash": "ILCz7pplSVWP1ysLxqC5wAuUREpPrDgsb0cUlPTGxUW43mQVEGGH/dHIS05gOjIQWFEw7uTJ/FRgg9HaOxIUHQ==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
+  "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\services\\NSE.Identity.API\\NSE.Identity.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\easynetq\\7.5.5\\easynetq.7.5.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",

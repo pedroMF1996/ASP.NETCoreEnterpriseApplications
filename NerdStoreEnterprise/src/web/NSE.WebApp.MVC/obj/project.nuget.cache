@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yAjdxu//8+FKLBmNGQTO1Uqml3tEqi9rJfsqWYz7Zm4MsP+gGsySdwyLhHq/IYvRhrhf85qVE7eihzf04wpzCw==",
+  "dgSpecHash": "Nqr0nrqNhJHWE2hvcHlWgKjHh9yORPvr46ELm3CIvOieTHSIbtU5a3joRomeg2BCpb86jVoj3vkwFxQLs3JVrg==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
+  "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\web\\NSE.WebApp.MVC\\NSE.WebApp.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\bootstrap\\5.3.2\\bootstrap.5.3.2.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
