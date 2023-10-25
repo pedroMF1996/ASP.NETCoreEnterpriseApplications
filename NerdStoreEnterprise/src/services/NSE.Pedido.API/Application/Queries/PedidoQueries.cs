@@ -6,7 +6,7 @@ namespace NSE.Pedido.API.Application.Queries
 {
     public interface IPedidoQueries
     {
-        Task<PedidoQueryDTO> ObterUltimoPedido(Guid clienteId);
+        Task<PedidoDTO> ObterUltimoPedido(Guid clienteId);
         Task<IEnumerable<PedidoDTO>> ObterListaPorClienteId(Guid clienteId);
     }
     public class PedidoQueries : IPedidoQueries
@@ -25,7 +25,7 @@ namespace NSE.Pedido.API.Application.Queries
             return pedidos.Select(PedidoDTO.ParaPedidoDTO);
         }
 
-        public async Task<PedidoQueryDTO> ObterUltimoPedido(Guid clienteId)
+        public async Task<PedidoDTO> ObterUltimoPedido(Guid clienteId)
         {
             const string sql = @"SELECT
                                 P.ID AS 'ProdutoId', P.CODIGO, P.VOUCHERUTILIZADO, P.DESCONTO, P.VALORTOTAL,P.PEDIDOSTATUS,
@@ -44,9 +44,9 @@ namespace NSE.Pedido.API.Application.Queries
             return MapearPedido(pedido);
         }
 
-        private PedidoQueryDTO MapearPedido(dynamic result)
+        private PedidoDTO MapearPedido(dynamic result)
         {
-            var pedido = new PedidoQueryDTO()
+            var pedido = new PedidoDTO()
             {
                 Codigo = result[0].CODIGO,
                 Status = result[0].PEDIDOSTATUS,
@@ -54,7 +54,7 @@ namespace NSE.Pedido.API.Application.Queries
                 Desconto = result[0].DESCONTO,
                 VoucherUtilizado = result[0].VOUCHERUTILIZADO,
 
-                PedidoItems = new List<PedidoItemQueryDTO>(),
+                PedidoItems = new List<PedidoItemDTO>(),
                 Endereco = new EnderecoDTO
                 {
                     Logradouro = result[0].LOGRADOURO,
@@ -69,10 +69,10 @@ namespace NSE.Pedido.API.Application.Queries
 
             foreach (var item in result)
             {
-                var pedidoItem = new PedidoItemQueryDTO
+                var pedidoItem = new PedidoItemDTO
                 {
                     Nome = item.PRODUTONOME,
-                    Valor = item.VALORUNITARIO,
+                    ValorUnitario = item.VALORUNITARIO,
                     Quantidade = item.QUANTIDADE,
                     Imagem = item.PRODUTOIMAGEM
                 };
