@@ -55,12 +55,14 @@ namespace NSE.Identity.API.Controllers
             if (result.Succeeded)
             {
                 var clienteResult = await RegistrarCliente(model);
-
+                
                 if (!clienteResult.ValidationResult.IsValid)
                 {
                     await _userManager.DeleteAsync(user);
                     return CustomResponse(clienteResult.ValidationResult);
                 }
+
+                await _userManager.AddClaimAsync(user, new Claim("catalogo", "Ler"));
 
                 return CustomResponse(await GerarJWT(model.Email));
             }
