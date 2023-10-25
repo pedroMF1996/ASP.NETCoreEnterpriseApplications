@@ -133,7 +133,6 @@ namespace NSE.BFF.Compras.Controllers
                 Imagem = item.Imagem
             }));
 
-
             pedido.Endereco = endereco;
         }
     }
