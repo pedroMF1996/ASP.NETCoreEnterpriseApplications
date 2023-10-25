@@ -8,7 +8,7 @@ namespace NSE.Pagamento.API.Configurations
         {
             services.AddSwaggerConfiguration();
             services.AddJwtConfiguration(configuration);
-
+            services.AddMessageBusConfiguration(configuration);
 
             services.AddCors(opt => 
                 opt.AddPolicy("total", builder => 
