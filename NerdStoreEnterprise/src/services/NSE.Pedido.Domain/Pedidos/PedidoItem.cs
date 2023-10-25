@@ -14,9 +14,9 @@ namespace NSE.Pedido.Domain.Pedidos
         public Pedido Pedido { get; set; }
 
         protected PedidoItem()
-        {}
+        { }
 
-        public PedidoItem(Guid produtoId, string produtoNome, int quantidade, 
+        public PedidoItem(Guid produtoId, string produtoNome, int quantidade,
             decimal valorUnitario, string produtoImagem = null)
         {
             ProdutoId = produtoId;
