@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/QCmm/0MK8o+iIGjuRLbdphMRBVbA7bK0TblwBejUeuvMCGk/DL1uB0YlBe6zk6sXC+C5pEmlzFKn8Pl8YVR8w==",
+  "dgSpecHash": "78nXeR6c6tDGljw+qO0vJ7AZA/bqDJb0kUpcAU8Kdf2GuIFm7M//OwPYZ1wuUx/7q+IlpooWveueL6Y6vtKlSQ==",
   "success": true,
-  "projectFilePath": "D:\\cursos\\NerdStoreEnterprise\\ASP.NETCoreEnterpriseApplications\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
+  "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

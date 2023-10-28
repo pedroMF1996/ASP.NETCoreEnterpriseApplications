@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using NSE.Identity.API.Data;
 using NSE.Identity.API.Extensions;
 using NSE.WebAPI.Core.Identidade;
-using System;
 
 namespace NSE.Identity.API.Configuration
 {

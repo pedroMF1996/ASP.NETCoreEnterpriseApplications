@@ -13,8 +13,8 @@ namespace NSE.Cliente.API.Controllers
         private readonly IClienteRepository _clienteRepository;
         private readonly IAspNetUser _user;
 
-        public ClientesController(IMediatorHandler mediatorHandler, 
-                                  IClienteRepository clienteRepository, 
+        public ClientesController(IMediatorHandler mediatorHandler,
+                                  IClienteRepository clienteRepository,
                                   IAspNetUser user)
         {
             _mediator = mediatorHandler;

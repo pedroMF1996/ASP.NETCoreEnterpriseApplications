@@ -11,7 +11,7 @@ namespace NSE.BFF.Compras.Configurations
             services.AddJwtConfiguration(configuration);
             services.AddSwaggerConfiguration();
             services.AddMessageBusConfiguration(configuration);
-            
+
             services.Configure<AppServiceSettings>(configuration);
 
             services.AddCors(opt =>
@@ -24,9 +24,9 @@ namespace NSE.BFF.Compras.Configurations
 
             // Add services to the container.
             services.AddControllers();
-            
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            services.AddEndpointsApiExplorer();           
+            services.AddEndpointsApiExplorer();
 
             return services;
         }

@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using NSE.Cliente.API.Data;
 using NSE.WebAPI.Core.Identidade;
-using System;
 
 namespace NSE.Cliente.API.Configuration
 {
@@ -30,7 +29,7 @@ namespace NSE.Cliente.API.Configuration
             services.AddSwaggerConfiguration();
 
             services.AddJwtConfiguration(configuration);
-           
+
             services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 
             // Add services to the container.
@@ -59,7 +58,7 @@ namespace NSE.Cliente.API.Configuration
             app.UseSwaggerConfiguration(environment);
 
             app.UseHttpsRedirection();
-            
+
             app.UseRouting();
 
             app.UseCors("Total");

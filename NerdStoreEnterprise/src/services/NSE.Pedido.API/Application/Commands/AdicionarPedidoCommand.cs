@@ -1,11 +1,13 @@
 ﻿using NSE.Core.Messages;
 using NSE.Pedido.API.Application.DTO;
+using System.Text.Json.Serialization;
 
 namespace NSE.Pedido.API.Application.Commands
 {
     public class AdicionarPedidoCommand : Command
     {
-        public Guid ClienteId { get; set; }
+        [JsonIgnore]
+        public Guid? ClienteId { get; set; }
         public decimal ValorTotal { get; set; }
         public List<PedidoItemDTO> PedidoItems { get; set; }
 

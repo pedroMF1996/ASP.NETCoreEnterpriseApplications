@@ -28,6 +28,12 @@ namespace NSE.BFF.Compras.Configurations
                 .AddTransientHttpErrorPolicy(
                     p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
+            services.AddHttpClient<IClienteService, ClienteService>()
+                .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
+                .AddPolicyHandler(PolicyExtensions.EsperarTentar())
+                .AddTransientHttpErrorPolicy(
+                    p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
+
             services.AddHttpClient<IPedidoService, PedidoService>()
                 .AddHttpMessageHandler<HttpCientAuthorizationDelegateHandler>()
                 .AddPolicyHandler(PolicyExtensions.EsperarTentar())
@@ -37,5 +43,5 @@ namespace NSE.BFF.Compras.Configurations
             return services;
         }
     }
-    
+
 }

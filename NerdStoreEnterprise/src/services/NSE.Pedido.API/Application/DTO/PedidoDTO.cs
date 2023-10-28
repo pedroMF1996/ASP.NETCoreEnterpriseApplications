@@ -27,13 +27,13 @@
                 Data = pedido.DataCadastro,
                 ValorTotal = pedido.ValorTotal,
                 Desconto = pedido.Desconto,
-                VoucherCodigo = pedido.Voucher.Codigo,
+                VoucherCodigo = pedido.Voucher?.Codigo,
                 VoucherUtilizado = pedido.VoucherUtilizado,
                 PedidoItems = new List<PedidoItemDTO>(),
                 Endereco = new EnderecoDTO()
             };
 
-            foreach (var item in pedido.PedidoItens)
+            foreach (var item in pedido.PedidoItems)
             {
                 pedidoDTO.PedidoItems.Add(new PedidoItemDTO()
                 {

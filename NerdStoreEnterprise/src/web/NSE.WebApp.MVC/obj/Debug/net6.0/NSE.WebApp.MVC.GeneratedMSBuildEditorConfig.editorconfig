@@ -10,97 +10,97 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NSE.WebApp.MVC
 build_property.RootNamespace = NSE.WebApp.MVC
-build_property.ProjectDir = D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\
+build_property.ProjectDir = D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\cursos\NerdStoreEnterprise\ASP.NETCoreEnterpriseApplications\NerdStoreEnterprise\src\web\NSE.WebApp.MVC
+build_property.MSBuildProjectDirectory = D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Carrinho/Index.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Carrinho/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmluaG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/Index.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/ProdutoDetalhe.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Catalogo/ProdutoDetalhe.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cUHJvZHV0b0RldGFsaGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Home/Index.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Home/Privacy.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Identidade/Login.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Identidade/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRlbnRpZGFkZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Identidade/Registro.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Identidade/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRlbnRpZGFkZVxSZWdpc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/ConfirmacaoPedido.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/ConfirmacaoPedido.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXENvbmZpcm1hY2FvUGVkaWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/EnderecoEntrega.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/EnderecoEntrega.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEVuZGVyZWNvRW50cmVnYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/MeusPedidos.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/MeusPedidos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXE1ldXNQZWRpZG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/Pagamento.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/Pagamento.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXFBhZ2FtZW50by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/_Endereco.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/_Endereco.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXF9FbmRlcmVjby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/_NovoEndereco.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/_NovoEndereco.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXF9Ob3ZvRW5kZXJlY28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/_ResumoFinanceiro.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Pedido/_ResumoFinanceiro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXF9SZXN1bW9GaW5hbmNlaXJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/Components/Carrinho/Default.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/Components/Carrinho/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FycmluaG9cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/Components/Summary/Default.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/Components/Summary/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3VtbWFyeVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/Error.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/_LoginPartial.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/_ViewImports.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/_ViewStart.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/cursos/NerdStoreEnterprise/ASP.NETCoreEnterpriseApplications/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/_Layout.cshtml]
+[D:/cursos/DesenvolvedorIO/NerdStore/NerdStoreEnterprise/src/web/NSE.WebApp.MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yjluyvp1r8

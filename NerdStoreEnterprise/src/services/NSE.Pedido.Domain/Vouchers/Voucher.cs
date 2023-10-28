@@ -17,7 +17,7 @@ namespace NSE.Pedido.Domain.Vouchers
         public bool Utilizado { get; private set; }
 
         public Voucher()
-        {}
+        { }
 
         public bool EstaValidoParaUso()
         {
@@ -39,7 +39,7 @@ namespace NSE.Pedido.Domain.Vouchers
         {
             Quantidade -= 1;
 
-            if(Quantidade >= 1) { return; }
+            if (Quantidade >= 1) { return; }
 
             Ativo = false;
             Utilizado = true;

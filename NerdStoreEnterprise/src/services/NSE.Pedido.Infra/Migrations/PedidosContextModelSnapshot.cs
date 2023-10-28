@@ -203,7 +203,7 @@ namespace NSE.Pedido.Infra.Migrations
             modelBuilder.Entity("NSE.Pedido.Domain.Pedidos.PedidoItem", b =>
                 {
                     b.HasOne("NSE.Pedido.Domain.Pedidos.Pedido", "Pedido")
-                        .WithMany("PedidoItens")
+                        .WithMany("PedidoItems")
                         .HasForeignKey("PedidoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -213,7 +213,7 @@ namespace NSE.Pedido.Infra.Migrations
 
             modelBuilder.Entity("NSE.Pedido.Domain.Pedidos.Pedido", b =>
                 {
-                    b.Navigation("PedidoItens");
+                    b.Navigation("PedidoItems");
                 });
 #pragma warning restore 612, 618
         }

@@ -7,7 +7,7 @@ builder.Configuration
     .AddJsonFile("appsettings.json", true, true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true);
 
-if(builder.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
     builder.Configuration.AddUserSecrets<Program>();
 
 builder.Services.AddApiConfiguration(builder.Configuration);

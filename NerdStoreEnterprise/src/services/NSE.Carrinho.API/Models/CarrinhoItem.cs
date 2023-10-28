@@ -14,7 +14,7 @@ namespace NSE.Carrinho.API.Models
         public Guid CarrinhoId { get; set; }
 
         [JsonIgnore]
-        public CarrinhoCliente? CarrinhoCliente { get; set; }
+        public CarrinhoCliente CarrinhoCliente { get; set; }
 
         public CarrinhoItem()
         {
