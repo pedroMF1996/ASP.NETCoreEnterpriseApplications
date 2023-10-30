@@ -22,18 +22,18 @@ namespace NSE.Pagamento.API.Services
 
             ValidationResult validationResult = new();
 
-            if (transacao.Status != StatusTransacao.Autorizado) 
+            if (transacao.Status != StatusTransacao.Autorizado)
             {
                 validationResult.Errors.Add(new ValidationFailure("Pagamento", "Pagamento recusado, entre em contato com a sua operadora de cartao"));
 
-                return new ResponseMessage(validationResult); 
+                return new ResponseMessage(validationResult);
             }
 
             pagamento.Transacoes.Add(transacao);
             _pagamentoRepository.AdicionarTransacao(transacao);
             _pagamentoRepository.AdicionarPagamento(pagamento);
 
-            if(!await _pagamentoRepository.UnitOfWork.Commit())
+            if (!await _pagamentoRepository.UnitOfWork.Commit())
             {
                 validationResult.Errors.Add(new ValidationFailure("Pagamento", "Houve um erro ao realizar o pagamento"));
 
