@@ -127,8 +127,8 @@ namespace NSE.Pedido.API.Application.Commands
         {
             PedidoIniciadoIntegrationEvent pedidoIniciadoIntegrationEvent = new()
             {
-                ClienteId = pedido.ClienteId,
                 PedidoId  = pedido.Id,
+                ClienteId = pedido.ClienteId,
                 Valor = pedido.ValorTotal,
                 TipoPagamento = 1,
 

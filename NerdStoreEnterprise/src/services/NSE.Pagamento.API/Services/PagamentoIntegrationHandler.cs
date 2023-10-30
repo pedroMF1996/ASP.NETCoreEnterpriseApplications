@@ -26,10 +26,10 @@ namespace NSE.Pagamento.API.Services
             return Task.CompletedTask;
         }
 
-        private void SetResponder()
+        private async void SetResponder()
         {
-            _messageBus.RespondAsync<PedidoIniciadoIntegrationEvent, ResponseMessage>(async request =>
-            await AutorizarPagamento(request));
+            await _messageBus.RespondAsync<PedidoIniciadoIntegrationEvent, ResponseMessage>(
+                async request => await AutorizarPagamento(request));
         }
 
         private async Task<ResponseMessage> AutorizarPagamento(PedidoIniciadoIntegrationEvent message)

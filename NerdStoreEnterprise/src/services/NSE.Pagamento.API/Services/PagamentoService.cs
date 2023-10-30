@@ -30,7 +30,7 @@ namespace NSE.Pagamento.API.Services
             }
 
             pagamento.Transacoes.Add(transacao);
-
+            _pagamentoRepository.AdicionarTransacao(transacao);
             _pagamentoRepository.AdicionarPagamento(pagamento);
 
             if(!await _pagamentoRepository.UnitOfWork.Commit())

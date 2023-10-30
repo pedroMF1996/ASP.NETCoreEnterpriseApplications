@@ -7,7 +7,9 @@ namespace NSE.Core.DomainObjects
         public Guid Id { get; set; }
 
         protected Entity()
-        { }
+        {
+            Id = Guid.NewGuid();
+        }
 
         private List<Event> _notificacoes;
         public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();

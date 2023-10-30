@@ -18,7 +18,7 @@ namespace NSE.Pagamento.API.Configurations
 
             services.AddRegisterServisesConfiguration();
          
-            services.AddSwaggerConfiguration();
+            //services.AddSwaggerConfiguration();
             services.AddJwtConfiguration(configuration);
             services.AddMessageBusConfiguration(configuration);
 
@@ -34,7 +34,7 @@ namespace NSE.Pagamento.API.Configurations
         public static IApplicationBuilder UseApiConfiguration(this IApplicationBuilder app, IWebHostEnvironment environment)
         {
             app.UseHttpsRedirection();
-            app.UseSwaggerConfiguration(environment);
+            //app.UseSwaggerConfiguration(environment);
             app.UseAuthConfiguration();
             app.UseCors("total");
             return app;
