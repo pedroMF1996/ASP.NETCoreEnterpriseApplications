@@ -1,4 +1,7 @@
-﻿using NSE.WebAPI.Core.Identidade;
+﻿using Microsoft.EntityFrameworkCore;
+using NSE.Pagamento.API.Data;
+using NSE.Pagamento.API.Facade;
+using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Pagamento.API.Configurations
 {
@@ -8,6 +11,12 @@ namespace NSE.Pagamento.API.Configurations
         {
             services.AddControllers();
             services.AddEndpointsApiExplorer();
+
+            services.AddDbContext<PagamentosContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.Configure<PagamentoConfig>(configuration.GetSection("PagamentoConfig"));
+
+            services.AddRegisterServisesConfiguration();
          
             services.AddSwaggerConfiguration();
             services.AddJwtConfiguration(configuration);
