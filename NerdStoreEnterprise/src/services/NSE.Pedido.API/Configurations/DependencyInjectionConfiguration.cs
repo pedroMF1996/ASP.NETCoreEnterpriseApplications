@@ -46,7 +46,7 @@ namespace NSE.Pedido.API.Configurations
             services.AddScoped<IVoucherRepository, VoucherRepository>();
             services.AddScoped<IPedidoRepository, PedidoRepository>();
 
-            #endregion
+            #endregion  
             return services;
         }
     }

@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSE.BFF.Compras", "src\api-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-gateway", "api-gateway", "{5F4954F7-3055-4389-BF25-C97E47CD3003}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSE.Pagamentos.NerdsPag", "src\services\NSE.Pagamentos.NerdsPag\NSE.Pagamentos.NerdsPag.csproj", "{ED0BDAD6-40E1-4EBC-BE77-74FCFF850E18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{FE18CB1C-A606-4D60-AB58-1D34DD1FC612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE18CB1C-A606-4D60-AB58-1D34DD1FC612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE18CB1C-A606-4D60-AB58-1D34DD1FC612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0BDAD6-40E1-4EBC-BE77-74FCFF850E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0BDAD6-40E1-4EBC-BE77-74FCFF850E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0BDAD6-40E1-4EBC-BE77-74FCFF850E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0BDAD6-40E1-4EBC-BE77-74FCFF850E18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{F78F5890-71F7-4C06-9FCA-B206EF40D275} = {BCEB07FD-BC23-4754-9DFA-E7DF1AEE5478}
 		{FE18CB1C-A606-4D60-AB58-1D34DD1FC612} = {5F4954F7-3055-4389-BF25-C97E47CD3003}
 		{5F4954F7-3055-4389-BF25-C97E47CD3003} = {A15E536A-BC03-4151-8789-612C390E3332}
+		{ED0BDAD6-40E1-4EBC-BE77-74FCFF850E18} = {44B45D4D-F494-450A-AAE2-2A08B8E8D62E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3CC2C47-ACC9-4B98-967B-953A689ADF8F}
