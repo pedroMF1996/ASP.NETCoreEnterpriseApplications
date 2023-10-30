@@ -91,8 +91,7 @@
 
         public Task<Transaction> AuthorizeCardTransaction()
         {
-            //var success = new Random().Next(2) == 0;
-            var success = false;
+            var success = new Random().Next(2) == 0;
             Transaction transaction;
 
             if (success)
