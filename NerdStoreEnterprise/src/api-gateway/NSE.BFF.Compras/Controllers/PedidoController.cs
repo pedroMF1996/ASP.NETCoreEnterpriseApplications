@@ -37,8 +37,9 @@ namespace NSE.BFF.Compras.Controllers
             if (!await ValidarCarrinhoProdutos(carrinho, produtos)) return CustomResponse();
 
             PopularDadosPedido(carrinho, endereco, pedido);
+            var result = await _pedidoService.FinalizarPedido(pedido);
 
-            return CustomResponse(await _pedidoService.FinalizarPedido(pedido));
+            return CustomResponse(result);
         }
 
         [HttpGet("pedido/ultimo")]
