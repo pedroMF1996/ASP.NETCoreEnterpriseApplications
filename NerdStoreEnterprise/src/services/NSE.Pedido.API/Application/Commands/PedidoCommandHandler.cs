@@ -1,6 +1,8 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 using NSE.Core.Messages;
+using NSE.Core.Messages.Integration;
+using NSE.MessageBus;
 using NSE.Pedido.API.Application.DTO;
 using NSE.Pedido.API.Application.Events;
 using NSE.Pedido.Domain.Pedidos;
@@ -15,11 +17,13 @@ namespace NSE.Pedido.API.Application.Commands
 
         private readonly IVoucherRepository _voucherRepository;
         private readonly IPedidoRepository _pedidoRepository;
+        private readonly IMessageBus _messageBus;
 
-        public PedidoCommandHandler(IVoucherRepository voucherRepository, IPedidoRepository pedidoRepository)
+        public PedidoCommandHandler(IVoucherRepository voucherRepository, IPedidoRepository pedidoRepository, IMessageBus messageBus)
         {
             _voucherRepository = voucherRepository;
             _pedidoRepository = pedidoRepository;
+            _messageBus = messageBus;
         }
 
         public async Task<ValidationResult> Handle(AdicionarPedidoCommand message, CancellationToken cancellationToken)
@@ -32,7 +36,7 @@ namespace NSE.Pedido.API.Application.Commands
 
             if (!ValidarPedido(pedido)) return ValidationResult;
 
-            if (!ProcessarPagamento(pedido)) return ValidationResult;
+            if (!await ProcessarPagamento(pedido, message)) return ValidationResult;
 
             pedido.AutorizarPedido();
 
@@ -41,11 +45,6 @@ namespace NSE.Pedido.API.Application.Commands
             await _pedidoRepository.Adicionar(pedido);
 
             return await PersistirDados(_pedidoRepository.UnitOfWork);
-        }
-
-        private bool ProcessarPagamento(Domain.Pedidos.Pedido pedido)
-        {
-            return true;
         }
 
         private bool ValidarPedido(Domain.Pedidos.Pedido pedido)
@@ -122,6 +121,29 @@ namespace NSE.Pedido.API.Application.Commands
             pedido.AtribuirEndereco(endereco);
 
             return pedido;
+        }
+
+        private async Task<bool> ProcessarPagamento(Domain.Pedidos.Pedido pedido, AdicionarPedidoCommand message)
+        {
+            PedidoIniciadoIntegrationEvent pedidoIniciadoIntegrationEvent = new()
+            {
+                ClienteId = pedido.ClienteId,
+                PedidoId  = pedido.Id,
+                Valor = pedido.ValorTotal,
+                TipoPagamento = 1,
+
+                NomeCartao = message.NomeCartao,
+                NumeroCartao = message.NumeroCartao,
+                CVV = message.CvvCartao,
+                MesAnoVencimento = message.ExpiracaoCartao,
+            };
+
+            var result = await _messageBus.RequestAsync<PedidoIniciadoIntegrationEvent, ResponseMessage>(pedidoIniciadoIntegrationEvent);
+
+            if (!result.ValidationResult.IsValid)
+                result.ValidationResult.Errors.ForEach(error => AdicionarErro(error.ErrorMessage));
+
+            return result.ValidationResult.IsValid;
         }
     }
 }
