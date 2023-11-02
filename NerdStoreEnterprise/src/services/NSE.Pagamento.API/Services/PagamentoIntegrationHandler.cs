@@ -37,8 +37,10 @@ namespace NSE.Pagamento.API.Services
 
         private async void SetSubscribers()
         {
-            await _messageBus.SubscribeAsync<PedidoBaixadoEstoqueIntegrationEvent>("PedidoBaixadoEstoque", async request => await CapturarPagamento(request));
-            await _messageBus.SubscribeAsync<CancelarPedidoSemEstoqueIntegrationEvent>("PedidoBaixadoEstoque", async request => await CancelarPagamento(request));
+            await _messageBus.SubscribeAsync<PedidoBaixadoEstoqueIntegrationEvent>("PedidoBaixadoEstoque", 
+                async request => await CapturarPagamento(request));
+            await _messageBus.SubscribeAsync<CancelarPedidoSemEstoqueIntegrationEvent>("PedidoBaixadoEstoque", 
+                async request => await CancelarPagamento(request));
         }
 
         private async Task CancelarPagamento(CancelarPedidoSemEstoqueIntegrationEvent request)
