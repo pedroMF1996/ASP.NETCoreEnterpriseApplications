@@ -234,3 +234,4 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalog
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\System.Threading.Channels.dll
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.MessageBus.dll
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.MessageBus.pdb
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Dapper.dll

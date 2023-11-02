@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2UPM2XJmka91+syyZD1Lyn5AQN2TSkDxSs22AeUIunEkh1Q+KytDi0oFnjDUszWjeX8rwTC56iqE1XHUveMLiQ==",
+  "dgSpecHash": "59jE59D/XUI9tJrTwI9aIVmPnaTKcGtfLNCgTZ6epkHucqppvLUiIkud+FM/zLzP47sdKt/VtbTsmgLI85fo6A==",
   "success": true,
   "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\services\\NSE.Catalogo.API\\NSE.Catalogo.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pmfrp\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\easynetq\\7.5.5\\easynetq.7.5.5.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
