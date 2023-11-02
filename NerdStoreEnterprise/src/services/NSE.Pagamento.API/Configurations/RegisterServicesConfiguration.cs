@@ -17,10 +17,10 @@ namespace NSE.Pagamento.API.Configurations
 
             services.AddScoped<IPagamentoFacace, PagamentoCartaoCreditoFacade>();
             services.AddScoped<IPagamentoService, PagamentoService>();
-            
+
             services.AddScoped<IPagamentoRepository, PagamentoRepository>();
             services.AddScoped<PagamentosContext>();
-            
+
             return services;
         }
     }

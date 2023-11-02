@@ -224,3 +224,13 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalog
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\obj\Debug\net6.0\NSE.Catalogo.API.pdb
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\obj\Debug\net6.0\NSE.Catalogo.API.genruntimeconfig.cache
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\obj\Debug\net6.0\ref\NSE.Catalogo.API.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\EasyNetQ.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\Polly.Core.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\RabbitMQ.Client.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\System.Threading.Channels.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.MessageBus.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Catalogo.API\bin\Debug\net6.0\NSE.MessageBus.pdb

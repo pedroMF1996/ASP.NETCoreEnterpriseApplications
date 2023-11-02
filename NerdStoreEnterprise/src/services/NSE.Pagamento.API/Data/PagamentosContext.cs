@@ -1,8 +1,8 @@
 ﻿using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
-using NSE.Pagamento.API.Models;
 using NSE.Core.Data;
 using NSE.Core.Messages;
+using NSE.Pagamento.API.Models;
 
 namespace NSE.Pagamento.API.Data
 {

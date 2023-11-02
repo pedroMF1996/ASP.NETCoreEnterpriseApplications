@@ -17,15 +17,15 @@ namespace NSE.Pagamento.API.Configurations
             services.Configure<PagamentoConfig>(configuration.GetSection("PagamentoConfig"));
 
             services.AddRegisterServisesConfiguration();
-         
+
             //services.AddSwaggerConfiguration();
             services.AddJwtConfiguration(configuration);
             services.AddMessageBusConfiguration(configuration);
 
-            services.AddCors(opt => 
-                opt.AddPolicy("total", builder => 
+            services.AddCors(opt =>
+                opt.AddPolicy("total", builder =>
                                         builder.AllowAnyHeader()
-                                                .AllowAnyMethod()   
+                                                .AllowAnyMethod()
                                                 .AllowAnyOrigin()));
 
             return services;

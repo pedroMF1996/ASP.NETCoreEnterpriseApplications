@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using NSE.Core.Messages.Integration;
 using NSE.Pagamento.API.Models;
 using NSE.Pagamentos.NerdsPag;
 
@@ -41,8 +42,26 @@ namespace NSE.Pagamento.API.Facade
             return ParaTransacao(await transacao.AuthorizeCardTransaction());
         }
 
+        public async Task<Transacao> CapturarPagamento(Transacao transacao)
+        {
+            NerdsPagService nerdsPag = new(_config.DefaultApiKey, _config.DefaultEncriptionKey);
+
+            var transaction = ParaTransaction(transacao, nerdsPag);
+
+            return ParaTransacao(await transaction.CaptureCardTransaction());
+        }
+
+        public async Task<Transacao> CancelarPagamento(Transacao transacao)
+        {
+            NerdsPagService nerdsPagSvc = new(_config.DefaultApiKey, _config.DefaultEncriptionKey);
+
+            var transaction = ParaTransaction(transacao, nerdsPagSvc);
+
+            return ParaTransacao(await transaction.CancelAuthorization());
+        }
+
         public static Transacao ParaTransacao(Transaction transaction) =>
-            new Transacao()
+            new()
             {
                 Id = Guid.NewGuid(),
                 Status = (StatusTransacao)transaction.Status,
@@ -54,5 +73,22 @@ namespace NSE.Pagamento.API.Facade
                 NSU = transaction.Nsu,
                 TID = transaction.Tid,
             };
+
+        private Transaction ParaTransaction(Transacao transacao, NerdsPagService nerdsPag)
+            => new(nerdsPag)
+            {
+                Status = (TransactionStatus)transacao.Status,
+                Amount = transacao.ValorTotal,
+                CardBrand = transacao.BandeiraCartao,
+                AuthorizationCode = transacao.CodigoAutorizacao,
+                Cost = transacao.CustoTransacao,
+                Nsu = transacao.NSU,
+                Tid = transacao.TID
+            };
+
+        public Task<Transacao> CancelarAutorizacao(object transacaoAutorizada)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

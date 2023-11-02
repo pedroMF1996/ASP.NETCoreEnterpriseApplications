@@ -95,5 +95,15 @@ namespace NSE.Pedido.Domain.Pedidos
 
             return desconto;
         }
+
+        public void FinalizarPedido()
+        {
+            PedidoStatus = PedidoStatus.Pago;
+        }
+
+        public void CancelarPedido()
+        {
+            PedidoStatus = PedidoStatus.Cancelado;
+        }
     }
 }

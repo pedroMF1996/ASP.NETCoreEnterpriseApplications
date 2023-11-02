@@ -1,4 +1,5 @@
 ﻿using EasyNetQ;
+using NSE.Core.DomainObjects;
 using NSE.Core.Messages.Integration;
 using NSE.MessageBus;
 using NSE.Pagamento.API.Models;
@@ -23,6 +24,8 @@ namespace NSE.Pagamento.API.Services
             SetResponder();
             _messageBus.AdvancedBus.Connected += OnConnect;
 
+            SetSubscribers();
+
             return Task.CompletedTask;
         }
 
@@ -30,6 +33,39 @@ namespace NSE.Pagamento.API.Services
         {
             await _messageBus.RespondAsync<PedidoIniciadoIntegrationEvent, ResponseMessage>(
                 async request => await AutorizarPagamento(request));
+        }
+
+        private async void SetSubscribers()
+        {
+            await _messageBus.SubscribeAsync<PedidoBaixadoEstoqueIntegrationEvent>("PedidoBaixadoEstoque", async request => await CapturarPagamento(request));
+            await _messageBus.SubscribeAsync<CancelarPedidoSemEstoqueIntegrationEvent>("PedidoBaixadoEstoque", async request => await CancelarPagamento(request));
+        }
+
+        private async Task CancelarPagamento(CancelarPedidoSemEstoqueIntegrationEvent request)
+        {
+            using var scope = _serviceProvider.CreateScope();
+
+            var pagamentoService = scope.ServiceProvider.GetRequiredService<IPagamentoService>();
+
+            var response = await pagamentoService.CancelarPagamento(request.Id);
+
+            if (!response.ValidationResult.IsValid)
+                throw new DomainException($"Falha ao cancelar pagamento do pedido {request.Id}");
+
+        }
+
+        private async Task CapturarPagamento(PedidoBaixadoEstoqueIntegrationEvent request)
+        {
+            using var scope = _serviceProvider.CreateScope();
+
+            var pagamentoService = scope.ServiceProvider.GetRequiredService<IPagamentoService>();
+
+            var response = await pagamentoService.CapturarPagamento(request.Id);
+
+            if (!response.ValidationResult.IsValid)
+                throw new DomainException($"Falha ao capturar pagamento do pedido {request.Id}");
+
+            await _messageBus.PublishAsync(new PedidoPagoIntegrationEvent(request.Id, request.ClienteId));
         }
 
         private async Task<ResponseMessage> AutorizarPagamento(PedidoIniciadoIntegrationEvent message)
