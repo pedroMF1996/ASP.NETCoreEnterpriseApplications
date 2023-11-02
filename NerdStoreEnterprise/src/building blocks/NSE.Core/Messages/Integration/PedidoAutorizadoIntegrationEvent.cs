@@ -2,15 +2,15 @@
 {
     public class PedidoAutorizadoIntegrationEvent : IntegrationEvent
     {
-        private object clienteId;
-        private Guid id;
-        private Dictionary<Guid, int> dictionary;
+        public Guid ClienteId { get; private set; }
+        public Guid Id { get; private set; }
+        public Dictionary<Guid, int> Itens { get; private set; }
 
-        public PedidoAutorizadoIntegrationEvent(object clienteId, Guid id, Dictionary<Guid, int> dictionary)
+        public PedidoAutorizadoIntegrationEvent(Guid clienteId, Guid id, Dictionary<Guid, int> dictionary)
         {
-            this.clienteId = clienteId;
-            this.id = id;
-            this.dictionary = dictionary;
+            ClienteId = clienteId;
+            Id = id;
+            Itens = dictionary;
         }
     }
 }
