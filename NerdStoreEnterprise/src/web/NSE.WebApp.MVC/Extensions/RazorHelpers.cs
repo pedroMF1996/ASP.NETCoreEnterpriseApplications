@@ -90,5 +90,11 @@ namespace NSE.WebApp.MVC.Extensions
 
             return $"<span class='badge badge-{statusClasse}'>{statusMensagem}</span>";
         }
+
+        public static string ObterClassPaginationItem(this RazorPage page, int i, int pageIndex)
+        {
+            var ativo = i == pageIndex ? "active" : "";
+            return string.Format("page-item {0}", ativo);
+        }
     }
 }
