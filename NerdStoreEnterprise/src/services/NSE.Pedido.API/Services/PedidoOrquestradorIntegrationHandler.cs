@@ -2,7 +2,6 @@
 using NSE.Core.Utils;
 using NSE.MessageBus;
 using NSE.Pedido.API.Application.Queries;
-using System.Globalization;
 
 namespace NSE.Pedido.API.Services
 {
@@ -12,7 +11,7 @@ namespace NSE.Pedido.API.Services
         private Timer _timer;
         private readonly IServiceProvider _serviceProvider;
 
-        public PedidoOrquestradorIntegrationHandler(ILogger logger, IServiceProvider serviceProvider)
+        public PedidoOrquestradorIntegrationHandler(ILogger<PedidoOrquestradorIntegrationHandler> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;

@@ -12,7 +12,7 @@ namespace NSE.Pedido.API.Services
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger _logger;
 
-        public PedidoIntegrationHandler(IMessageBus messageBus, IServiceProvider serviceProvider, ILogger logger)
+        public PedidoIntegrationHandler(IMessageBus messageBus, IServiceProvider serviceProvider, ILogger<PedidoIntegrationHandler> logger)
         {
             _messageBus = messageBus;
             _serviceProvider = serviceProvider;

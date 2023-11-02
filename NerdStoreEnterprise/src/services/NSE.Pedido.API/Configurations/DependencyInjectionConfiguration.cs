@@ -21,7 +21,6 @@ namespace NSE.Pedido.API.Configurations
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IAspNetUser, AspNetUser>();
             services.AddScoped<IMediatorHandler, MediatorHandler>();
-            services.AddSingleton<ILogger, Logger<AppDomain>>();
             #endregion
             #region Application
 

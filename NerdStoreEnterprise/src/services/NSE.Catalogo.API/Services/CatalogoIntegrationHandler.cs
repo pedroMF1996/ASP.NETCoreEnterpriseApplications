@@ -13,7 +13,7 @@ namespace NSE.Catalogo.API.Services
         private readonly ILogger _logger;
         private readonly IMessageBus _messageBus;
 
-        public CatalogoIntegrationHandler(IServiceProvider serviceProvider, ILogger logger, IMessageBus messageBus)
+        public CatalogoIntegrationHandler(IServiceProvider serviceProvider, ILogger<CatalogoIntegrationHandler> logger, IMessageBus messageBus)
         {
             _serviceProvider = serviceProvider;
             _logger = logger;
@@ -38,12 +38,6 @@ namespace NSE.Catalogo.API.Services
             List<Produto> produtosComEstoque = new();
 
             var produtoRepository = scope.ServiceProvider.GetRequiredService<IProdutoRepository>();
-
-            if (request.Itens == null)
-            {
-                CancelarPedidoSemEstoque(request);
-                return;
-            }
 
             var idProdutos = string.Join(",", request.Itens.Select(c => c.Key));
 
