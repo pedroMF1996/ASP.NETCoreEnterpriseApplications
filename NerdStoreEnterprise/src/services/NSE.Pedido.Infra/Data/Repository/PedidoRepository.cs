@@ -42,7 +42,7 @@ namespace NSE.Pedido.Infra.Data.Repository
             return await _context.Pedidos.Include(p => p.PedidoItems)
                                          .AsNoTracking()
                                          .Where(p => p.ClienteId == clienteId)
-                                         .ToListAsync(); 
+                                         .ToListAsync();
         }
 
         public async Task<Domain.Pedidos.Pedido> ObterPorId(Guid pedidoId)

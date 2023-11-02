@@ -21,6 +21,8 @@ namespace NSE.Catalogo.API.Configuration
 
             services.AddDbContext<CatalogoContext>(opt => opt.UseSqlServer(connectionString));
 
+            services.AddMessageBusConfiguration(configuration);
+
             services.AddDependencyInjectionConfiguration(configuration);
 
             services.AddControllers();

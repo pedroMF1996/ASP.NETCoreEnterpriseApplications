@@ -64,7 +64,7 @@ namespace NSE.WebAPI.Core.Controllers
 
         protected bool ResponsePossuiErros(ResponseResult result)
         {
-            if (result != null || !result.Errors.Mensagens.Any())
+            if (result != null && !result.Errors.Mensagens.Any())
                 return false;
 
             foreach (var mensagem in result.Errors.Mensagens)
