@@ -28,26 +28,31 @@ namespace NSE.Pedido.API.Application.Queries
 
         public async Task<PedidoDTO> ObterPedidosAutorizados()
         {
-            const string sql = @"SELECT TOP 1
-                                P.ID as 'PedidoId', P.ID, P.CLIENTEID,
-                                PI.ID as 'PedidoItemId', PI.ID, PI.PRODUTOID, PI.QUANTIDADE,
-                                FROM PEDIDOS P
-                                INNER JOIN PEDIDOITEMS PI ON P.ID = PI.PEDIDOID
-                                WHERE P.PEDIDOSTATUS = 1
+            const string sql = @"SELECT 
+                                P.ID as 'PedidoId', P.ID, P.CLIENTEID, 
+                                PI.ID as 'PedidoItemId', PI.ID, PI.PRODUTOID, PI.QUANTIDADE 
+                                FROM PEDIDOS P 
+                                INNER JOIN PEDIDOITEMS PI ON P.ID = PI.PEDIDOID 
+                                WHERE P.PEDIDOSTATUS = 1                                
                                 ORDER BY P.DATACADASTRO";
 
-            var pedido = await _pedidoRepository.ObterConexao().QueryAsync<PedidoDTO, PedidoItemDTO, PedidoDTO>(sql, 
+            var lookup = new Dictionary<Guid, PedidoDTO>();
+
+            await _pedidoRepository.ObterConexao().QueryAsync<PedidoDTO, PedidoItemDTO, PedidoDTO>(sql,
                 (p, pi) =>
                 {
-                    p.PedidoItems = new List<PedidoItemDTO>()
-                    {
-                        pi
-                    };
+                    if (!lookup.TryGetValue(p.Id, out var pedidoDTO))
+                        lookup.Add(p.Id, pedidoDTO = p);
 
-                    return p;
+                    pedidoDTO.PedidoItems ??= new List<PedidoItemDTO>();
+                    pedidoDTO.PedidoItems.Add(pi);
+
+                    return pedidoDTO;
+
                 }, splitOn: "PedidoId,PedidoItemId");
 
-            return pedido.FirstOrDefault();
+            // Obtendo dados o lookup
+            return lookup.Values.OrderBy(p => p.Data).FirstOrDefault();
         }
 
         public async Task<PedidoDTO> ObterUltimoPedido(Guid clienteId)

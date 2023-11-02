@@ -1,6 +1,7 @@
 ﻿using NSE.Catalogo.API.Models;
 using NSE.Core.DomainObjects;
 using NSE.Core.Messages.Integration;
+using NSE.Core.Utils;
 using NSE.MessageBus;
 
 namespace NSE.Catalogo.API.Services
@@ -38,6 +39,12 @@ namespace NSE.Catalogo.API.Services
 
             var produtoRepository = scope.ServiceProvider.GetRequiredService<IProdutoRepository>();
 
+            if (request.Itens == null)
+            {
+                CancelarPedidoSemEstoque(request);
+                return;
+            }
+
             var idProdutos = string.Join(",", request.Itens.Select(c => c.Key));
 
             var produtos = await produtoRepository.ObterProdutosPorId(idProdutos);
@@ -48,7 +55,7 @@ namespace NSE.Catalogo.API.Services
                 return;
             }
 
-            _logger.LogInformation("Produtos buscados do catalogo com sucesso");
+            _logger.LogInformation($"Produtos buscados do catalogo com sucesso {DataHora.ObterFormatado()}");
 
             foreach (var produto in produtos)
             {
@@ -56,12 +63,12 @@ namespace NSE.Catalogo.API.Services
 
                 if (produto.EstaDisponivel(quantidadeProduto))
                 {
-                    _logger.LogInformation($"Produto {produto.Id} esta disponivel");
+                    _logger.LogInformation($"Produto {produto.Id} esta disponivel {DataHora.ObterFormatado()}");
 
                     produto.RetirarEstoque(quantidadeProduto);
                     produtosComEstoque.Add(produto);
                     
-                    _logger.LogInformation($"Produto {produto.Id} abatido do catalogo com sucesso");
+                    _logger.LogInformation($"Produto {produto.Id} abatido do catalogo com sucesso {DataHora.ObterFormatado()}");
                 }
             }
 
@@ -74,12 +81,12 @@ namespace NSE.Catalogo.API.Services
             foreach (var produto in produtosComEstoque)
                 produtoRepository.Atualizar(produto);
 
-            _logger.LogInformation("Produtos atualizados no catalogo com sucesso");
+            _logger.LogInformation($"Produtos atualizados no catalogo com sucesso {DataHora.ObterFormatado()}");
 
             if (!await produtoRepository.UnitOfWork.Commit())
                 throw new DomainException($"Problemas ao atualizar estoque do pedido {request.Id}");
 
-            _logger.LogInformation("Produtos persistidos no catalogo com sucesso");
+            _logger.LogInformation($"Produtos persistidos no catalogo com sucesso {DataHora.ObterFormatado()}");
 
             var pedidoBaixado = new PedidoBaixadoEstoqueIntegrationEvent(request.ClienteId, request.Id);
 

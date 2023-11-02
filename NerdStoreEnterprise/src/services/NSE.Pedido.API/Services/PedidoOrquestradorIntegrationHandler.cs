@@ -1,6 +1,8 @@
 ﻿using NSE.Core.Messages.Integration;
+using NSE.Core.Utils;
 using NSE.MessageBus;
 using NSE.Pedido.API.Application.Queries;
+using System.Globalization;
 
 namespace NSE.Pedido.API.Services
 {
@@ -18,7 +20,7 @@ namespace NSE.Pedido.API.Services
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Servico de pedidos iniciado");
+            _logger.LogInformation($"Servico de pedidos iniciado {DataHora.ObterFormatado()}");
 
             _timer = new Timer(ProcessarPedidos, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
 
@@ -27,14 +29,14 @@ namespace NSE.Pedido.API.Services
 
         private async void ProcessarPedidos(object state)
         {
-            _logger.LogInformation("Processando pedidos");
+            _logger.LogInformation($"Processando pedidos: {DataHora.ObterFormatado()} ");
 
             using var scope = _serviceProvider.CreateScope();
 
             var pedidosQueries = scope.ServiceProvider.GetRequiredService<IPedidoQueries>();
             var pedido = await pedidosQueries.ObterPedidosAutorizados();
 
-            if (pedido == null)
+            if (pedido == null || pedido.PedidoItems == null)
                 return;
 
             var bus = scope.ServiceProvider.GetRequiredService<IMessageBus>();
@@ -43,14 +45,17 @@ namespace NSE.Pedido.API.Services
                                                                         pedido.Id,
                                                                         pedido.PedidoItems.ToDictionary(p => p.ProdutoId, p => p.Quantidade));
 
+            if (pedidoAutorizado.Itens == null)
+                return;
+
             await bus.PublishAsync(pedidoAutorizado);
 
-            _logger.LogInformation($"O Pedido ID: {pedido.Id} foi encaminhado para baixa no estoque.");
+            _logger.LogInformation($"O Pedido ID: {pedido.Id} foi encaminhado para baixa no estoque. {DataHora.ObterFormatado()}");
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"Servico de pedidos finalizado");
+            _logger.LogInformation($"Servico de pedidos finalizado {DataHora.ObterFormatado()}");
 
             _timer?.Change(Timeout.Infinite, 0);
             Dispose();
