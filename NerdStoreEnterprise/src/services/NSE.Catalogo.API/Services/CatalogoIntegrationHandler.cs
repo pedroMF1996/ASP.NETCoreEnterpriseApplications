@@ -48,14 +48,20 @@ namespace NSE.Catalogo.API.Services
                 return;
             }
 
+            _logger.LogInformation("Produtos buscados do catalogo com sucesso");
+
             foreach (var produto in produtos)
             {
                 var quantidadeProduto = request.Itens.FirstOrDefault(p => p.Key == produto.Id).Value;
 
                 if (produto.EstaDisponivel(quantidadeProduto))
                 {
+                    _logger.LogInformation($"Produto {produto.Id} esta disponivel");
+
                     produto.RetirarEstoque(quantidadeProduto);
                     produtosComEstoque.Add(produto);
+                    
+                    _logger.LogInformation($"Produto {produto.Id} abatido do catalogo com sucesso");
                 }
             }
 
@@ -66,22 +72,21 @@ namespace NSE.Catalogo.API.Services
             }
 
             foreach (var produto in produtosComEstoque)
-            {
                 produtoRepository.Atualizar(produto);
-            }
+
+            _logger.LogInformation("Produtos atualizados no catalogo com sucesso");
 
             if (!await produtoRepository.UnitOfWork.Commit())
-            {
                 throw new DomainException($"Problemas ao atualizar estoque do pedido {request.Id}");
-            }
+
+            _logger.LogInformation("Produtos persistidos no catalogo com sucesso");
 
             var pedidoBaixado = new PedidoBaixadoEstoqueIntegrationEvent(request.ClienteId, request.Id);
+
             await _messageBus.PublishAsync(pedidoBaixado);
         }
 
-        private async void CancelarPedidoSemEstoque(PedidoAutorizadoIntegrationEvent request)
-        {
+        private async void CancelarPedidoSemEstoque(PedidoAutorizadoIntegrationEvent request) =>
             await _messageBus.PublishAsync(new CancelarPedidoSemEstoqueIntegrationEvent(request.ClienteId, request.Id));
-        }
     }
 }

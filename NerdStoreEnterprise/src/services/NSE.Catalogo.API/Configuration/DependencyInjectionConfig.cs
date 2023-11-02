@@ -8,6 +8,8 @@ namespace NSE.Catalogo.API.Configuration
     {
         public static void AddDependencyInjectionConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddSingleton<ILogger, Logger<dynamic>>();
+
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<CatalogoContext>();
         }
