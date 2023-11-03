@@ -62,6 +62,6 @@ The ASP.NETCoreEnterpriseApplications Solution has a modular structure, with eac
 The client application is built using the Model-View-Controller (MVC) pattern. It interacts with the APIs to enable users to browse products, manage their shopping cart, place orders, and perform other relevant operations.
 
 ## [License](#license)
-This Microservices Solution is released under the <a href="LICENSE.md" target="_blank">MIT License</a>. 
+This Microservices Solution is released under the <a href="./LICENSE" target="_blank">MIT License</a>. 
 </br>
 Please review the license before using or contributing to this project.
