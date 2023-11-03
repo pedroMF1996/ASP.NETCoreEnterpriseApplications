@@ -8,8 +8,6 @@
   
 This GitHub repository contains a Microservices Solution built on .NET Core 6, consisting of 7 APIs that collectively form a robust and scalable architecture for various business operations. The solution leverages Microservices architecture, Repository Pattern, JWT Authentication, and AMQP-based integration services for seamless communication between the APIs. Additionally, it includes an Identity and JWT generation Authentication API and a Back-For-Front API, along with a client application following the MVC pattern.
 
-</details>
-
 <details open> 
   <summary>
     
@@ -25,6 +23,9 @@ This GitHub repository contains a Microservices Solution built on .NET Core 6, c
 - [Client Application](#client-application)
 - [License](#license)
   
+</details>
+
+
 </details>
 
 ## [Project Structure](#project-structure)
