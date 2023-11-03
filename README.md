@@ -23,6 +23,7 @@ This GitHub repository contains a Microservices Solution built on .NET Core 6, c
 - [Authentication](#authentication-api)
 - [Back-For-Front](#back-for-front)
 - [Client Application](#client-application)
+- [License](#license)
   
 </details>
 
@@ -59,3 +60,8 @@ The ASP.NETCoreEnterpriseApplications Solution has a modular structure, with eac
 
 ### [Client Application](#client-application)
 The client application is built using the Model-View-Controller (MVC) pattern. It interacts with the APIs to enable users to browse products, manage their shopping cart, place orders, and perform other relevant operations.
+
+## [License](#license)
+This Microservices Solution is released under the <a href="LICENSE.md" target="_blank">MIT License</a>. 
+</br>
+Please review the license before using or contributing to this project.
