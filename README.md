@@ -23,10 +23,11 @@ This GitHub repository contains a Microservices Solution built on .NET Core 6, c
 - [Authentication](#authentication-api)
 - [Back-For-Front](#back-for-front)
 - [Client Application](#client-application)
+- [License](#license)
   
 </details>
 
-### [Project Structure](#project-structure)
+## [Project Structure](#project-structure)
 The ASP.NETCoreEnterpriseApplications Solution has a modular structure, with each API residing in its own project. The core components are:
 
 <ul>
@@ -39,6 +40,8 @@ The ASP.NETCoreEnterpriseApplications Solution has a modular structure, with eac
   <li><b>Back-For-Front API:</b> Serves as a middleware layer to simplify communication between the client and the backend microservices.</li>
   <li><b>Client Application:</b> An MVC-based client application to interact with the microservices.</li>
 </ul>
+
+##
 
 ### [APIs](#apis)
 
@@ -54,8 +57,17 @@ The ASP.NETCoreEnterpriseApplications Solution has a modular structure, with eac
   #### [Authentication API](#authentication-api)
   <b>Authentication API:</b> Provides user authentication, identity management, and JWT token generation for secure access to the microservices.
 
-### [Back-For-Front](#back-for-front)
+#### [Back-For-Front](#back-for-front)
 <b>Back-For-Front API:</b> Acts as an intermediary layer to simplify communication between the client application and the microservices, offering a single entry point for client interactions.
+
+##
 
 ### [Client Application](#client-application)
 The client application is built using the Model-View-Controller (MVC) pattern. It interacts with the APIs to enable users to browse products, manage their shopping cart, place orders, and perform other relevant operations.
+
+##
+
+## [License](#license)
+This Microservices Solution is released under the <a href="./LICENSE" target="_blank">MIT License</a>. 
+</br>
+Please review the license before using or contributing to this project.
