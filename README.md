@@ -1,4 +1,4 @@
-# ASP.NETCoreEnterpriseApplications
+# ASP.NET Core Enterprise Applications
 <details open> 
   <summary> 
     
