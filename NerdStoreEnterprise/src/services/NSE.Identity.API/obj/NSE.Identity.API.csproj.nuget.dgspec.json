@@ -337,6 +337,14 @@
               "target": "Package",
               "version": "[1.19.4, )"
             },
+            "NetDevPack.Security.Jwt.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "NetDevPack.Security.Jwt.Store.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"

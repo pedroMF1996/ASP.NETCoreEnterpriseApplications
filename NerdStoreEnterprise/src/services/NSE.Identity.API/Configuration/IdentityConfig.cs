@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NetDevPack.Security.Jwt.Core.Jwa;
 using NSE.Identity.API.Data;
 using NSE.Identity.API.Extensions;
 using NSE.WebAPI.Core.Identidade;
@@ -8,7 +9,9 @@ namespace NSE.Identity.API.Configuration
 {
     public static class IdentityConfig
     {
-        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
+        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, 
+                                                                  IConfiguration configuration, 
+                                                                  IWebHostEnvironment environment)
         {
             string connectionString = "";
             if (environment.IsProduction())
@@ -23,12 +26,15 @@ namespace NSE.Identity.API.Configuration
             services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer(connectionString));
 
 
+            services.AddJwksManager(opt => opt.Jws = Algorithm.Create(DigitalSignaturesAlgorithm.EcdsaSha256))
+                .PersistKeysToDatabaseStore<ApplicationDBContext>()
+                .UseJwtValidation();
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddRoles<IdentityRole>()
                 .AddErrorDescriber<IdentityMensagensPortugues>()
                 .AddEntityFrameworkStores<ApplicationDBContext>()
                 .AddDefaultTokenProviders();
-
 
             //JWT
             services.AddJwtConfiguration(configuration);
