@@ -196,3 +196,5 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\o
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.pdb
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\NSE.WebApp.MVC.genruntimeconfig.cache
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\obj\Debug\net6.0\ref\NSE.WebApp.MVC.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\NetDevPack.Security.JwtExtensions.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\web\NSE.WebApp.MVC\bin\Debug\net6.0\System.Text.Json.dll

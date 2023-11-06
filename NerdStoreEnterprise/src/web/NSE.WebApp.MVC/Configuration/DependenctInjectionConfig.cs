@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.DataAnnotations;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using NSE.WebAPI.Core.Polly;
 using NSE.WebAPI.Core.Usuario;
 using NSE.WebApp.MVC.Extensions;
@@ -16,6 +17,7 @@ namespace NSE.WebApp.MVC.Configuration
             services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IAspNetUser, AspNetUser>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             #region HttpServices
 
