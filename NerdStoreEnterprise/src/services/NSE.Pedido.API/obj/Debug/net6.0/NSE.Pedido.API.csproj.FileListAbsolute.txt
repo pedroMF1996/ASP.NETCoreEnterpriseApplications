@@ -256,3 +256,5 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Pedido.
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Pedido.API\obj\Debug\net6.0\NSE.Pedido.API.pdb
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Pedido.API\obj\Debug\net6.0\NSE.Pedido.API.genruntimeconfig.cache
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Pedido.API\obj\Debug\net6.0\ref\NSE.Pedido.API.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\NetDevPack.Security.JwtExtensions.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Pedido.API\bin\Debug\net6.0\System.Text.Json.dll

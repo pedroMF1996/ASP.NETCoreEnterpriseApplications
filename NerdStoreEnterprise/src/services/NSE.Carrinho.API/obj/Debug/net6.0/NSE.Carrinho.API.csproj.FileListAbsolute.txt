@@ -244,3 +244,5 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Carrinh
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Carrinho.API\obj\Debug\net6.0\NSE.Carrinho.API.pdb
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Carrinho.API\obj\Debug\net6.0\NSE.Carrinho.API.genruntimeconfig.cache
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Carrinho.API\obj\Debug\net6.0\ref\NSE.Carrinho.API.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\NetDevPack.Security.JwtExtensions.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Carrinho.API\bin\Debug\net6.0\System.Text.Json.dll

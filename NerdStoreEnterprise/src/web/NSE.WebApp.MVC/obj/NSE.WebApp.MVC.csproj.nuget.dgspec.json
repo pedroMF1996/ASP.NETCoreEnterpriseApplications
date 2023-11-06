@@ -153,6 +153,10 @@
               "target": "Package",
               "version": "[6.0.21, )"
             },
+            "NetDevPack.Security.JwtExtensions": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"

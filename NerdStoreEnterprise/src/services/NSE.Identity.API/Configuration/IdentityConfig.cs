@@ -36,8 +36,8 @@ namespace NSE.Identity.API.Configuration
                 .AddEntityFrameworkStores<ApplicationDBContext>()
                 .AddDefaultTokenProviders();
 
-            //JWT
-            services.AddJwtConfiguration(configuration);
+            //interpretar JWT
+            //services.AddJwtConfiguration(configuration);
 
             return services;
         }

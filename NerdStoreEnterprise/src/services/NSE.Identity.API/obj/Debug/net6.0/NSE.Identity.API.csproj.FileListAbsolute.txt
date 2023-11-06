@@ -312,3 +312,4 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Identit
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NetDevPack.Security.Jwt.Core.dll
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NetDevPack.Security.Jwt.Store.EntityFrameworkCore.dll
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\System.Text.Json.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\services\NSE.Identity.API\bin\Debug\net6.0\NetDevPack.Security.JwtExtensions.dll

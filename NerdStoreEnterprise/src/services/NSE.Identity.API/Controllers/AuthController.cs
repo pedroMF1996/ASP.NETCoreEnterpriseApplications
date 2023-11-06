@@ -22,8 +22,6 @@ namespace NSE.Identity.API.Controllers
 
         private readonly UserManager<IdentityUser> _userManager;
 
-        private readonly AppSettings _appSettings;
-
         private readonly IMessageBus _bus;
 
         private readonly IJwtService _jwtService;
@@ -32,14 +30,12 @@ namespace NSE.Identity.API.Controllers
 
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings,
                               IMessageBus bus,
                               IJwtService jwtService,
                               IAspNetUser aspNerUser)
         {
             _signInManager = signInManager;
             _userManager = userManager;
-            _appSettings = appSettings.Value;
             _bus = bus;
             _jwtService = jwtService;
             _aspNerUser = aspNerUser;
@@ -158,7 +154,7 @@ namespace NSE.Identity.API.Controllers
             {
                 Issuer = currentIssuer,
                 Subject = identityClaims,
-                Expires = DateTime.UtcNow.AddHours(_appSettings.ExpiracaoHoras),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = key
             });
 
@@ -170,7 +166,7 @@ namespace NSE.Identity.API.Controllers
             return new LoginResponseViewModel()
             {
                 AccessToken = encodedToken,
-                ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiracaoHoras).TotalSeconds,
+                ExpiresIn = TimeSpan.FromHours(1).TotalSeconds,
                 UserToken = new UserTokenViewModel()
                 {
                     Id = user.Id,
