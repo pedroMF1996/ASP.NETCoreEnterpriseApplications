@@ -17,8 +17,9 @@ namespace NSE.WebApp.MVC.Controllers
         [Route("vitrine")]
         public async Task<IActionResult> Index([FromQuery] int ps = 8, [FromQuery] int page = 1, [FromQuery] string q = null)
         {
-            ViewBag.Pesquisa = q;
             var produtos = await _catalogoService.ObterTodos(ps, page, q);
+            ViewBag.Pesquisa = q;
+            produtos.ReferenceAction = "Index";
 
             return View(produtos);
         }
