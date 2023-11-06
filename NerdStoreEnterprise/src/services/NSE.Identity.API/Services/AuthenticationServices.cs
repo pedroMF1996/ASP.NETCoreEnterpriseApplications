@@ -94,7 +94,7 @@ namespace NSE.Identity.API.Services
             return new LoginResponseViewModel
             {
                 AccessToken = encodedToken,
-                RefreshToken = refreshToken.Token,
+                RefreshToken = refreshToken.Token.ToString(),
                 ExpiresIn = TimeSpan.FromHours(1).TotalSeconds,
                 UserToken = new UserTokenViewModel
                 {
