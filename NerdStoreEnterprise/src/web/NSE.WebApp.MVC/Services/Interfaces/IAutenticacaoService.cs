@@ -6,5 +6,9 @@ namespace NSE.WebApp.MVC.Services.Interfaces
     {
         Task<LoginResponseViewModel> Login(LoginUserViewModel usuarioLogin);
         Task<LoginResponseViewModel> Registro(RegisterUserViewModel usuarioRegistro);
+        Task RealizarLogin(LoginResponseViewModel usuarioLogin);
+        Task<bool> RefreshTokenValido();
+        Task Logout();
+        bool TokenExpirado();
     }
 }

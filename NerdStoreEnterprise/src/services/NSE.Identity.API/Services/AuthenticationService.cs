@@ -17,8 +17,8 @@ namespace NSE.Identity.API.Services
         public readonly SignInManager<IdentityUser> SignInManager;
         public readonly UserManager<IdentityUser> UserManager;
         private readonly AppTokenSettings _appTokenSettingsSettings;
-        private readonly IJwtService _jwtService;
         private readonly ApplicationDBContext _context;
+        private readonly IJwtService _jwtService;
         private readonly IAspNetUser _aspNetUser;
 
         public AuthenticationService(
@@ -26,13 +26,15 @@ namespace NSE.Identity.API.Services
             UserManager<IdentityUser> userManager,
             IOptions<AppTokenSettings> appTokenSettingsSettings,
             ApplicationDBContext context,
-            IAspNetUser aspNetUser)
+            IAspNetUser aspNetUser,
+            IJwtService jwtService)
         {
             SignInManager = signInManager;
             UserManager = userManager;
             _appTokenSettingsSettings = appTokenSettingsSettings.Value;
             _aspNetUser = aspNetUser;
             _context = context;
+            _jwtService = jwtService;
         }
 
         public async Task<LoginResponseViewModel> GerarJwt(string email)
@@ -113,11 +115,11 @@ namespace NSE.Identity.API.Services
         {
             var refreshToken = new RefreshToken
             {
-                Username = email,
+                UserName = email,
                 ExpirationDate = DateTime.UtcNow.AddHours(_appTokenSettingsSettings.RefreshTokenExpiration)
             };
 
-            _context.RefreshTokens.RemoveRange(_context.RefreshTokens.Where(u => u.Username == email));
+            _context.RefreshTokens.RemoveRange(_context.RefreshTokens.Where(u => u.UserName == email));
             await _context.RefreshTokens.AddAsync(refreshToken);
 
             await _context.SaveChangesAsync();

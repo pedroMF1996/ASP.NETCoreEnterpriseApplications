@@ -12,22 +12,14 @@ namespace NSE.Identity.API.Controllers
     [Route("api/identidade")]
     public class AuthController : MainController
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-
-        private readonly UserManager<IdentityUser> _userManager;
-
         private readonly IMessageBus _bus;
-
-
         private readonly AuthenticationService _authenticationService;
 
-        public AuthController(SignInManager<IdentityUser> signInManager,
-                              UserManager<IdentityUser> userManager,
-                              IMessageBus bus)
+        public AuthController(IMessageBus bus,
+                              AuthenticationService authenticationService)
         {
-            _signInManager = signInManager;
-            _userManager = userManager;
             _bus = bus;
+            _authenticationService = authenticationService;
         }
 
         [HttpPost("nova-conta")]
@@ -45,7 +37,7 @@ namespace NSE.Identity.API.Controllers
                 EmailConfirmed = true
             };
 
-            var result = await _userManager.CreateAsync(user, model.Password);
+            var result = await _authenticationService.UserManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
@@ -53,11 +45,11 @@ namespace NSE.Identity.API.Controllers
 
                 if (!clienteResult.ValidationResult.IsValid)
                 {
-                    await _userManager.DeleteAsync(user);
+                    await _authenticationService.UserManager.DeleteAsync(user);
                     return CustomResponse(clienteResult.ValidationResult);
                 }
 
-                await _userManager.AddClaimAsync(user, new Claim("catalogo", "Ler"));
+                await _authenticationService.UserManager.AddClaimAsync(user, new Claim("catalogo", "Ler"));
 
                 return CustomResponse(await _authenticationService.GerarJwt(model.Email));
             }
@@ -76,7 +68,7 @@ namespace NSE.Identity.API.Controllers
 
             if (!ModelState.IsValid) { return CustomResponse(ModelState); }
 
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, true);
+            var result = await _authenticationService.SignInManager.PasswordSignInAsync(model.Email, model.Password, false, true);
 
             if (result.Succeeded)
             {
@@ -112,12 +104,12 @@ namespace NSE.Identity.API.Controllers
                 return CustomResponse();
             }
 
-            return CustomResponse(await _authenticationService.GerarJwt(token.Username));
+            return CustomResponse(await _authenticationService.GerarJwt(token.UserName));
         }
 
         private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)
         {
-            var usuario = await _userManager.FindByEmailAsync(usuarioRegistro.Email);
+            var usuario = await _authenticationService.UserManager.FindByEmailAsync(usuarioRegistro.Email);
 
             var usuarioRegistrado = new UsuarioRegistradoIntegrationEvent(
                 Guid.Parse(usuario.Id), usuarioRegistro.Nome, usuarioRegistro.Email, usuarioRegistro.Cpf);
@@ -128,7 +120,7 @@ namespace NSE.Identity.API.Controllers
             }
             catch
             {
-                await _userManager.DeleteAsync(usuario);
+                await _authenticationService.UserManager.DeleteAsync(usuario);
                 throw;
             }
         }
