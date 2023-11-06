@@ -26,6 +26,9 @@ namespace NSE.Identity.API.Configuration
             services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer(connectionString));
 
 
+            var appSettingsToken = configuration.GetSection("AppSettingsToken");
+            services.Configure<AppTokenSettings>(appSettingsToken);
+
             services.AddJwksManager(opt => opt.Jws = Algorithm.Create(DigitalSignaturesAlgorithm.EcdsaSha256))
                 .PersistKeysToDatabaseStore<ApplicationDBContext>()
                 .UseJwtValidation();

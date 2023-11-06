@@ -1,17 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using NetDevPack.Security.Jwt.Core.Interfaces;
 using NSE.Core.Messages.Integration;
 using NSE.Identity.API.Models;
+using NSE.Identity.API.Services;
 using NSE.MessageBus;
 using NSE.WebAPI.Core.Controllers;
-using NSE.WebAPI.Core.Identidade;
-using NSE.WebAPI.Core.Usuario;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
 
 namespace NSE.Identity.API.Controllers
 {
@@ -24,21 +18,16 @@ namespace NSE.Identity.API.Controllers
 
         private readonly IMessageBus _bus;
 
-        private readonly IJwtService _jwtService;
 
-        private readonly IAspNetUser _aspNerUser;
+        private readonly AuthenticationService _authenticationService;
 
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IMessageBus bus,
-                              IJwtService jwtService,
-                              IAspNetUser aspNerUser)
+                              IMessageBus bus)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _bus = bus;
-            _jwtService = jwtService;
-            _aspNerUser = aspNerUser;
         }
 
         [HttpPost("nova-conta")]
@@ -70,7 +59,7 @@ namespace NSE.Identity.API.Controllers
 
                 await _userManager.AddClaimAsync(user, new Claim("catalogo", "Ler"));
 
-                return CustomResponse(await GerarJWT(model.Email));
+                return CustomResponse(await _authenticationService.GerarJwt(model.Email));
             }
 
             foreach (var error in result.Errors)
@@ -91,7 +80,7 @@ namespace NSE.Identity.API.Controllers
 
             if (result.Succeeded)
             {
-                return CustomResponse(await GerarJWT(model.Email));
+                return CustomResponse(await _authenticationService.GerarJwt(model.Email));
             }
 
             if (result.IsLockedOut)
@@ -105,75 +94,25 @@ namespace NSE.Identity.API.Controllers
             return CustomResponse();
         }
 
-        private async Task<LoginResponseViewModel> GerarJWT(string email)
+
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] string refreshToken)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-
-            var claims = await _userManager.GetClaimsAsync(user);
-
-            var identityClaims = await ObterClaimsUsuarioAsync(user, claims);
-
-            var encodedToken = await CodificarTokenAsync(identityClaims);
-
-            return ObterRespostaToken(encodedToken, user, claims);
-        }
-
-        private static long ToUnixEpochDate(DateTime utcNow)
-        {
-            return (long)Math.Round((utcNow.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
-        }
-
-        private async Task<ClaimsIdentity> ObterClaimsUsuarioAsync(IdentityUser user, IList<Claim> claims)
-        {
-            var roles = await _userManager.GetRolesAsync(user);
-
-            claims.Add(new Claim(JwtRegisteredClaimNames.Sub, user.Id));
-            claims.Add(new Claim(JwtRegisteredClaimNames.Email, user.Email));
-            claims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
-            claims.Add(new Claim(JwtRegisteredClaimNames.Nbf, ToUnixEpochDate(DateTime.UtcNow).ToString())); //quando vai espirar 
-            claims.Add(new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(DateTime.UtcNow).ToString(), ClaimValueTypes.Integer64)); //quando foi emitido
-            claims.Add(new Claim("catalogo", "Ler"));
-
-            foreach (var role in roles)
+            if (string.IsNullOrEmpty(refreshToken))
             {
-                claims.Add(new Claim("role", role));
+                AdicionarErroProcessamento("Refresh token invalido");
+                return CustomResponse();
             }
 
-            return new ClaimsIdentity(claims);
-        }
+            var token = await _authenticationService.ObterRefreshToken(Guid.Parse(refreshToken));
 
-        private async Task<string> CodificarTokenAsync(ClaimsIdentity identityClaims)
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-
-            var currentIssuer = $"{_aspNerUser.ObterHttpContext().Request.Scheme}://{_aspNerUser.ObterHttpContext().Request.Host}";
-
-            var key = await _jwtService.GetCurrentSigningCredentials();
-
-            var token = tokenHandler.CreateToken(new SecurityTokenDescriptor()
+            if(token is null)
             {
-                Issuer = currentIssuer,
-                Subject = identityClaims,
-                Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = key
-            });
+                AdicionarErroProcessamento("Refresh Token expirado");
+                return CustomResponse();
+            }
 
-            return tokenHandler.WriteToken(token);
-        }
-
-        private LoginResponseViewModel ObterRespostaToken(string encodedToken, IdentityUser user, IEnumerable<Claim> claims)
-        {
-            return new LoginResponseViewModel()
-            {
-                AccessToken = encodedToken,
-                ExpiresIn = TimeSpan.FromHours(1).TotalSeconds,
-                UserToken = new UserTokenViewModel()
-                {
-                    Id = user.Id,
-                    Email = user.Email,
-                    Claims = claims.Select(c => new ClaimViewModel() { Type = c.Type, Value = c.Value })
-                }
-            };
+            return CustomResponse(await _authenticationService.GerarJwt(token.Username));
         }
 
         private async Task<ResponseMessage> RegistrarCliente(RegisterUserViewModel usuarioRegistro)

@@ -1,4 +1,5 @@
-﻿using NSE.WebAPI.Core.Identidade;
+﻿using NSE.Identity.API.Services;
+using NSE.WebAPI.Core.Identidade;
 using NSE.WebAPI.Core.Usuario;
 
 namespace NSE.Identity.API.Configuration
@@ -9,6 +10,7 @@ namespace NSE.Identity.API.Configuration
         {
             // Add services to the container.
             services.AddScoped<IAspNetUser, AspNetUser>();
+            services.AddScoped<AuthenticationService>();
 
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
