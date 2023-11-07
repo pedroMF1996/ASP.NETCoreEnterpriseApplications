@@ -9,8 +9,8 @@ namespace NSE.Pedido.API.Configurations
         public static void AddMessageBusConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddMessageBus(configuration.GetMessageQueueConnectionString("RabbitMQ"))
-                .AddHostedService<PedidoOrquestradorIntegrationHandler>() 
-                .AddHostedService<PedidoIntegrationHandler>(); 
+                .AddHostedService<PedidoOrquestradorIntegrationHandler>()
+                .AddHostedService<PedidoIntegrationHandler>();
         }
     }
 }

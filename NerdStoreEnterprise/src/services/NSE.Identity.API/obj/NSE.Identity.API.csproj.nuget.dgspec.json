@@ -227,6 +227,10 @@
               "target": "Package",
               "version": "[6.0.21, )"
             },
+            "NetDevPack.Security.JwtExtensions": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -336,6 +340,14 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.19.4, )"
+            },
+            "NetDevPack.Security.Jwt.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "NetDevPack.Security.Jwt.Store.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

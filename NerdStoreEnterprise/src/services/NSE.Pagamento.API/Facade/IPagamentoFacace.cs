@@ -1,5 +1,4 @@
-﻿using NSE.Core.Messages.Integration;
-using NSE.Pagamento.API.Models;
+﻿using NSE.Pagamento.API.Models;
 
 namespace NSE.Pagamento.API.Facade
 {

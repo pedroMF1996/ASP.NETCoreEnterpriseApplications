@@ -1,0 +1,17 @@
+﻿@using NSE.WebApp.MVC.Extensions;
+@model IPagedList;
+
+<nav>
+    <ul class="pagination justify-content-center">
+        @for (int i = 1; i < Model.TotalPages + 1; i++)
+        {
+            <li class="@this.ObterClassPaginationItem(i, Model.PageIndex)">
+                <a class="page-link" 
+                   asp-action="@Model.ReferenceAction"
+                   asp-route-ps="@Model.PageSize"
+                   asp-route-page="@i"
+                   asp-route-q="@Model.Query"> @i </a>
+            </li>
+        }
+    </ul>
+</nav>
