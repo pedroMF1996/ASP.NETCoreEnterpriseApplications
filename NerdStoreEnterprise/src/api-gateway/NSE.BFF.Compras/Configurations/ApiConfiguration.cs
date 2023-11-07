@@ -12,6 +12,9 @@ namespace NSE.BFF.Compras.Configurations
             services.AddSwaggerConfiguration();
             services.AddMessageBusConfiguration(configuration);
 
+
+            services.AddGrpcConfig(configuration);
+
             services.Configure<AppServiceSettings>(configuration);
 
             services.AddCors(opt =>

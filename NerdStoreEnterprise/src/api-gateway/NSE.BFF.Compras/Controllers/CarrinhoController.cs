@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NSE.BFF.Compras.Models;
 using NSE.BFF.Compras.Services;
+using NSE.BFF.Compras.Services.gRPC;
 using NSE.WebAPI.Core.Controllers;
 using NSE.WebAPI.Core.Usuario;
 
@@ -12,29 +13,32 @@ namespace NSE.BFF.Compras.Controllers
     public class CarrinhoController : MainController
     {
         private readonly ICarrinhoService _carrinhoService;
+        private readonly ICarrinhoGrpcService _carrinhoGrpcService;
         private readonly ICatalogoService _catalogoService;
         private readonly IPedidoService _pedidoService;
 
         public CarrinhoController(IAspNetUser aspNetUser,
             ICarrinhoService carrinhoService,
             ICatalogoService catalogoService,
-            IPedidoService pedidoService)
+            IPedidoService pedidoService,
+            ICarrinhoGrpcService carrinhoGrpcService)
         {
             _carrinhoService = carrinhoService;
             _catalogoService = catalogoService;
             _pedidoService = pedidoService;
+            _carrinhoGrpcService = carrinhoGrpcService;
         }
 
         [HttpGet("carrinho")]
         public async Task<IActionResult> ObterCarrinho()
         {
-            return CustomResponse(await _carrinhoService.ObterCarrinho());
+            return CustomResponse(await _carrinhoGrpcService.ObterCarrinho());
         }
 
         [HttpGet("carrinho-quantidade")]
         public async Task<int> ObterQauntidadeCarrinho()
         {
-            var quantidade = await _carrinhoService.ObterCarrinho();
+            var quantidade = await _carrinhoGrpcService.ObterCarrinho();
             return quantidade?.Itens.Sum(i => i.Quantidade) ?? 0;
         }
 
