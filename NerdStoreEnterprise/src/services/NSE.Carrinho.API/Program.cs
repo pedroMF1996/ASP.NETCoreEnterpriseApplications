@@ -1,4 +1,5 @@
 using NSE.Carrinho.API.Configuration;
+using NSE.Carrinho.API.Services.gRPC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,5 +18,8 @@ var app = builder.Build();
 app.UseApiConfiguration(app.Environment);
 
 app.MapControllers();
+
+app.MapGrpcService<CarrinhoGrpcService>()
+    .RequireCors("Total");
 
 app.Run();
