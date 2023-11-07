@@ -61,12 +61,12 @@ namespace NSE.Catalogo.API.Services
 
                     produto.RetirarEstoque(quantidadeProduto);
                     produtosComEstoque.Add(produto);
-                    
+
                     _logger.LogInformation($"Produto {produto.Id} abatido do catalogo com sucesso {DataHora.ObterFormatado()}");
                 }
             }
 
-            if(produtosComEstoque.Count != request.Itens.Count)
+            if (produtosComEstoque.Count != request.Itens.Count)
             {
                 CancelarPedidoSemEstoque(request);
                 return;

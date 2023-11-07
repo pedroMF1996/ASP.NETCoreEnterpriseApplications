@@ -3,14 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using NetDevPack.Security.Jwt.Core.Jwa;
 using NSE.Identity.API.Data;
 using NSE.Identity.API.Extensions;
-using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Identity.API.Configuration
 {
     public static class IdentityConfig
     {
-        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services, 
-                                                                  IConfiguration configuration, 
+        public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services,
+                                                                  IConfiguration configuration,
                                                                   IWebHostEnvironment environment)
         {
             string connectionString = "";

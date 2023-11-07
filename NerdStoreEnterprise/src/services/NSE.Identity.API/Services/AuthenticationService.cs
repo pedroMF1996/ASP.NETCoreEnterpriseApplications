@@ -76,7 +76,7 @@ namespace NSE.Identity.API.Services
             var tokenHandler = new JwtSecurityTokenHandler();
             var currentIssuer =
                 $"{_aspNetUser.ObterHttpContext().Request.Scheme}://{_aspNetUser.ObterHttpContext().Request.Host}";
-            
+
             var key = await _jwtService.GetCurrentSigningCredentials();
 
             var token = tokenHandler.CreateToken(new SecurityTokenDescriptor

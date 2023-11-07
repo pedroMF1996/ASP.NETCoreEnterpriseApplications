@@ -17,7 +17,7 @@ namespace NSE.WebApp.MVC.Services
 
         private readonly IAuthenticationService _authenticationService;
         private readonly IAspNetUser _aspNetUser;
-        public AutenticacaoServise(HttpClient httpClient, IOptions<AppSettingsUrl> appSettings, 
+        public AutenticacaoServise(HttpClient httpClient, IOptions<AppSettingsUrl> appSettings,
                                    IAuthenticationService authenticationService = null, IAspNetUser aspNetUser = null)
             : base(httpClient, AppSettingsUrlEnum.Identidade, appSettings)
         {
@@ -126,7 +126,7 @@ namespace NSE.WebApp.MVC.Services
         {
             var response = await UtilizarRefreshToken(_aspNetUser.ObterUserRefreshToken());
 
-            if (response.AccessToken is not null && response.ResponseResult is null) 
+            if (response.AccessToken is not null && response.ResponseResult is null)
             {
                 await RealizarLogin(response);
                 return true;

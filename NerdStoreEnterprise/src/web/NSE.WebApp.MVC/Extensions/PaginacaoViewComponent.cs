@@ -5,9 +5,9 @@ namespace NSE.WebApp.MVC.Extensions
 {
     public class PaginacaoViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(IPagedList modeloPaginado) 
-        { 
-            return View(modeloPaginado); 
+        public IViewComponentResult Invoke(IPagedList modeloPaginado)
+        {
+            return View(modeloPaginado);
         }
 
     }

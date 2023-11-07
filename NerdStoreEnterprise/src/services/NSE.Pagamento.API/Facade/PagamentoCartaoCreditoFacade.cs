@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.Options;
-using NSE.Core.Messages.Integration;
 using NSE.Pagamento.API.Models;
 using NSE.Pagamentos.NerdsPag;
 
