@@ -43,13 +43,12 @@ namespace NSE.WebApp.MVC.Extensions
         {
             if (statusCode == HttpStatusCode.Unauthorized)
             {
-                if(_autenticacaoService.TokenExpirado())
-                    if(_autenticacaoService.RefreshTokenValido().Result)
-                    {
-                        context.Response.Redirect(context.Request.Path);
-                        return;
-                    }
-                
+                if (_autenticacaoService.TokenExpirado() && _autenticacaoService.RefreshTokenValido().Result)
+                {
+                    context.Response.Redirect(context.Request.Path);
+                    return;
+                }
+
                 _autenticacaoService.Logout();
 
                 context.Response.Redirect($"/login?ReturnUrl={context.Request.Path}");

@@ -31,11 +31,12 @@ namespace NSE.Catalogo.API.Data.Repository
                         SELECT COUNT(Id) FROM Produtos WHERE (@Nome IS NULL OR Nome LIKE '%' + @Nome + '%')";
 
             var multi = await _context.Database.GetDbConnection()
-                .QueryMultipleAsync(sql, new {  
-                                                Nome = query, 
-                                                PageIndex = pageSize * (pageIndex -1), 
-                                                PageSize = pageSize 
-                                             } 
+                .QueryMultipleAsync(sql, new
+                {
+                    Nome = query,
+                    PageIndex = pageSize * (pageIndex - 1),
+                    PageSize = pageSize
+                }
                                    );
 
             var produtos = multi.Read<Produto>();

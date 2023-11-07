@@ -98,7 +98,7 @@ namespace NSE.Identity.API.Controllers
 
             var token = await _authenticationService.ObterRefreshToken(Guid.Parse(refreshToken));
 
-            if(token is null)
+            if (token is null)
             {
                 AdicionarErroProcessamento("Refresh Token expirado");
                 return CustomResponse();

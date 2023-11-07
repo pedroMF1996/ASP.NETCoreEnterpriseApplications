@@ -19,7 +19,7 @@ namespace NSE.Catalogo.API.Models
 
         internal void RetirarEstoque(int quantidadeProduto)
         {
-            if(QuantidadeEstoque >= quantidadeProduto) 
+            if (QuantidadeEstoque >= quantidadeProduto)
                 QuantidadeEstoque -= quantidadeProduto;
         }
     }

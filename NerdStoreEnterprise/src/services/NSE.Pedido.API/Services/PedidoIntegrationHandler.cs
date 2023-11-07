@@ -27,9 +27,9 @@ namespace NSE.Pedido.API.Services
 
         private async void SetSubscribers()
         {
-            await _messageBus.SubscribeAsync<CancelarPedidoSemEstoqueIntegrationEvent>("PedidoCancelado", async request => 
-                await CancelarPedido(request) );
-            await _messageBus.SubscribeAsync<PedidoPagoIntegrationEvent>("PedidoPago", async request => 
+            await _messageBus.SubscribeAsync<CancelarPedidoSemEstoqueIntegrationEvent>("PedidoCancelado", async request =>
+                await CancelarPedido(request));
+            await _messageBus.SubscribeAsync<PedidoPagoIntegrationEvent>("PedidoPago", async request =>
                 await FinalizarPedido(request));
         }
 
@@ -47,7 +47,7 @@ namespace NSE.Pedido.API.Services
 
             pedidoRepository.Atualizar(pedido);
 
-            if (! await pedidoRepository.UnitOfWork.Commit())
+            if (!await pedidoRepository.UnitOfWork.Commit())
                 throw new DomainException("Problemas ao finalizar o pedido");
 
             _logger.LogInformation($"Pedido finalizado com sucesso {DataHora.ObterFormatado()}");
@@ -64,7 +64,7 @@ namespace NSE.Pedido.API.Services
             _logger.LogInformation($"Pedido obtido com sucesso {DataHora.ObterFormatado()}");
 
             pedido.CancelarPedido();
-            
+
             pedidoRepository.Atualizar(pedido);
 
             if (!await pedidoRepository.UnitOfWork.Commit())
