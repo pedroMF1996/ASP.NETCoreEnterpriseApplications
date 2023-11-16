@@ -27,6 +27,8 @@ namespace NSE.Carrinho.API.Configuration
 
             services.AddMessageBusConfiguration(configuration);
 
+            services.AddGrpc();
+
             services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
