@@ -56,7 +56,7 @@ The ASP.NETCoreEnterpriseApplications Solution has a modular structure, with eac
   </ul>
   
   #### [Authentication API](#authentication-api)
-  <b>Authentication API:</b> Provides user authentication, identity management, and JWT token generation for secure access to the microservices.
+  <b>Authentication API:</b> Provides user authentication, identity management, and JWT asymmetric token generation for secure access to the microservices.
 
 #### [Back-For-Front](#back-for-front)
 <b>Back-For-Front API:</b> Acts as an intermediary layer to simplify communication between the client application and the microservices, offering a single entry point for client interactions.
