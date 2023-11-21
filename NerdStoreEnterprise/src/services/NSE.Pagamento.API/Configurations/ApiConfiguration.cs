@@ -2,6 +2,7 @@
 using NSE.Pagamento.API.Data;
 using NSE.Pagamento.API.Facade;
 using NSE.WebAPI.Core.Identidade;
+using NSE.Core.Data;
 
 namespace NSE.Pagamento.API.Configurations
 {
@@ -37,6 +38,8 @@ namespace NSE.Pagamento.API.Configurations
             //app.UseSwaggerConfiguration(environment);
             app.UseAuthConfiguration();
             app.UseCors("total");
+            app.UseEnsureDatabaseMigrations<PagamentosContext>();
+
             return app;
         }
     }

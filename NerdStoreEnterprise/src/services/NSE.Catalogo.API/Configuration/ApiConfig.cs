@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NSE.Core.Data;
 using NSE.Catalogo.API.Data;
 using NSE.WebAPI.Core.Identidade;
 
@@ -50,6 +51,8 @@ namespace NSE.Catalogo.API.Configuration
             app.UseHttpsRedirection();
 
             app.UseAuthConfiguration();
+
+            app.UseEnsureDatabaseMigrations<CatalogoContext>();
         }
     }
 }

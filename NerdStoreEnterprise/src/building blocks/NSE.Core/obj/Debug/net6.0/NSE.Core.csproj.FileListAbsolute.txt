@@ -48,3 +48,4 @@ D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\building blocks\NSE.
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.pdb
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.genruntimeconfig.cache
 D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\ref\NSE.Core.dll
+D:\cursos\DesenvolvedorIO\NerdStore\NerdStoreEnterprise\src\building blocks\NSE.Core\obj\Debug\net6.0\NSE.Core.sourcelink.json
