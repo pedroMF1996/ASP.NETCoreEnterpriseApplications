@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>1104e32a-0d2b-4a7c-b672-8824ab2dad64</UserSecretsId>
@@ -11,11 +11,11 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.22" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.22" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.22" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.22" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.22">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
