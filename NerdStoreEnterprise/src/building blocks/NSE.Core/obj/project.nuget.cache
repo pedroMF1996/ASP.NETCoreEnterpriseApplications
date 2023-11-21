@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qCMebyzChqZd6U6yXR8KxVP4eionzi3sC1hwOLmJyJzEmBmjAfrUODzyobwVehpvk8VMEtRVX9DyNidIwd2gAw==",
+  "dgSpecHash": "uNRsOyCEZsT8AiuZAw9uhWzJhBiiWVkEWqmmn9DxxCnkRMstF8AR9m3lXzdGKKprwglq3f/fERs3+/pSRlU0vQ==",
   "success": true,
   "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\building blocks\\NSE.Core\\NSE.Core.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "C:\\Users\\pmfrp\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

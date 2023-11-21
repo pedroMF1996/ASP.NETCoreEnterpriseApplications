@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NSE.Core.Data;
 using NSE.Carrinho.API.Configurations;
 using NSE.Carrinho.API.Data;
 using NSE.WebAPI.Core.Identidade;
@@ -61,6 +62,8 @@ namespace NSE.Carrinho.API.Configuration
             app.UseHttpsRedirection();
 
             app.UseCors("Total");
+
+            app.UseEnsureDatabaseMigrations<CarrinhoContext>();
 
             app.UseAuthConfiguration();
         }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1RoimT1qStL4XCIL3fd2nRBk/Gq3NuVCJBRNIDxDtq8KYQsFBhvvG4EiiF81/OGDLOwnfQMkJWJruZMOOZ7oZA==",
+  "dgSpecHash": "Sp+e1GOFsi3ndSXtaQvouDA3XCJ4SBqKm8TO33LE4EEDdJkrK3BrNwZfigkGDkBirQg0vAx/RGZztd/JU2HBDQ==",
   "success": true,
   "projectFilePath": "D:\\cursos\\DesenvolvedorIO\\NerdStore\\NerdStoreEnterprise\\src\\services\\NSE.Pedido.API\\NSE.Pedido.API.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,8 @@
     "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.14\\microsoft.aspnetcore.authentication.jwtbearer.7.0.14.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.14\\microsoft.aspnetcore.jsonpatch.7.0.14.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.14\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.14.nupkg.sha512",
     "C:\\Users\\pmfrp\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

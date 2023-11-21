@@ -1889,6 +1889,7 @@
         "dependencies": {
           "FluentValidation": "11.7.1",
           "MediatR": "10.0.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.EntityFrameworkCore": "7.0.14",
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.14",
           "Microsoft.EntityFrameworkCore.Relational": "7.0.14",
