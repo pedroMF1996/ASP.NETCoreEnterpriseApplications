@@ -1,6 +1,8 @@
 ﻿using NSE.Identity.API.Services;
 using NSE.WebAPI.Core.Identidade;
 using NSE.WebAPI.Core.Usuario;
+using NSE.Core.Data;
+using NSE.Identity.API.Data;
 
 namespace NSE.Identity.API.Configuration
 {
@@ -30,6 +32,8 @@ namespace NSE.Identity.API.Configuration
 
             //localhost/jwks
             app.UseJwksDiscovery();
+
+            app.UseEnsureDatabaseMigrations<ApplicationDBContext>();
 
             return app;
         }

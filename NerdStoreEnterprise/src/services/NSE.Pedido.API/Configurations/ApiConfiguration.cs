@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using NSE.Pedido.Infra.Data;
 using NSE.WebAPI.Core.Identidade;
+using NSE.Core.Data;
 
 namespace NSE.Pedido.API.Configurations
 {
@@ -60,6 +61,8 @@ namespace NSE.Pedido.API.Configurations
             app.UseCors("Total");
 
             app.UseAuthConfiguration();
+
+            app.UseEnsureDatabaseMigrations<PedidosContext>();
 
             return app;
         }

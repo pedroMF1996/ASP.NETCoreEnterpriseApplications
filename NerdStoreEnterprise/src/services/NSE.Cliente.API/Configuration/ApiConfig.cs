@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using NSE.Cliente.API.Data;
+using NSE.Core.Data;
 using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Cliente.API.Configuration
@@ -64,6 +65,8 @@ namespace NSE.Cliente.API.Configuration
             app.UseCors("Total");
 
             app.UseAuthConfiguration();
+
+            app.UseEnsureDatabaseMigrations<ClienteDbContext>();
         }
     }
 }
