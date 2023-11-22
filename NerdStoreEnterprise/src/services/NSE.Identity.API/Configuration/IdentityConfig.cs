@@ -12,17 +12,8 @@ namespace NSE.Identity.API.Configuration
                                                                   IConfiguration configuration,
                                                                   IWebHostEnvironment environment)
         {
-            string connectionString = "";
-            if (environment.IsProduction())
-            {
-                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
-            }
-            if (environment.IsDevelopment())
-            {
-                connectionString = configuration.GetConnectionString("DefaultConnection");
-            }
 
-            services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer(connectionString));
+            services.AddDbContext<ApplicationDBContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
 
             var appSettingsToken = configuration.GetSection("AppSettingsToken");

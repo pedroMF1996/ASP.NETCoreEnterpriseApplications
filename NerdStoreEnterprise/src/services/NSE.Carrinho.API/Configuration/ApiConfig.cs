@@ -13,18 +13,7 @@ namespace NSE.Carrinho.API.Configuration
         {
             services.AddRegisterServices();
 
-            // Add services to the container.
-            string connectionString = "";
-            if (environment.IsProduction())
-            {
-                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
-            }
-            if (environment.IsDevelopment())
-            {
-                connectionString = configuration.GetConnectionString("DefaultConnection");
-            }
-
-            services.AddDbContext<CarrinhoContext>(opt => opt.UseSqlServer(connectionString));
+            services.AddDbContext<CarrinhoContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMessageBusConfiguration(configuration);
 

@@ -14,18 +14,7 @@ namespace NSE.Pedido.API.Configurations
             services.AddControllers();
             services.AddEndpointsApiExplorer();
 
-
-            string connectionString = "";
-            if (environment.IsProduction())
-            {
-                connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING") ?? "";
-            }
-            if (environment.IsDevelopment())
-            {
-                connectionString = configuration.GetConnectionString("DefaultConnection");
-            }
-
-            services.AddDbContext<PedidosContext>(opt => opt.UseSqlServer(connectionString));
+            services.AddDbContext<PedidosContext>(opt => opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddJwtConfiguration(configuration);
             services.AddMessageBusConfiguration(configuration);
